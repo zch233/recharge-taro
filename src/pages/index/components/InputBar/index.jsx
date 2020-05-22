@@ -7,17 +7,19 @@ import CountryList from './components/CountryList/index'
 const initialState = {
   rechargePhone: '',
   countryListVisible: false,
+  phoneInputHighLight: false,
 };
 const reducer = (state, { type, payload }) => {
   const typeMap = {
     setRechargePhone: () => ({ ...state, rechargePhone: payload }),
-    setCountryListVisible: () => ({ ...state, countryListVisible: payload })
+    setCountryListVisible: () => ({ ...state, countryListVisible: payload }),
+    setPhoneInputHighLight: () => ({ ...state, phoneInputHighLight: payload }),
   };
   return typeMap[type]() || state;
 };
 export default function OverHeader ()  {
   const [state, setState] = useReducer(reducer, initialState);
-  const phoneInput = value => {
+  const phoneInputChange = value => {
     setState({ type: 'setRechargePhone', payload: value })
   }
   const selectCountry = () => {
@@ -37,12 +39,17 @@ export default function OverHeader ()  {
               type='text'
               border={false}
               placeholder='请输入手机号'
+              maxLength={15}
               value={state.rechargePhone}
-              onChange={phoneInput}
+              onChange={phoneInputChange}
+              onConfirm={() => setState({ type: 'setPhoneInputHighLight', payload: true })}
+              onFocus={() => setState({ type: 'setPhoneInputHighLight', payload: true })}
+              onBlur={() => setState({ type: 'setPhoneInputHighLight', payload: false })}
             />
           </View>
         </View>
       </View>
+      <View className={`${state.phoneInputHighLight && 'active'} phoneInputBg`} />
       <View className='InputBar-bottom'>
         <View className='countryName'>中国</View>
         <View className='carrierName'>中国移动</View>

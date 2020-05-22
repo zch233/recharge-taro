@@ -7,14 +7,15 @@
             <view class="phoneInputBar">
                 <view class="areaNumber">+86</view>
                 <view class="phoneInput">
-                    <at-input compid="{{$compid__162}}"></at-input>
+                    <at-input compid="{{$compid__108}}"></at-input>
                 </view>
             </view>
         </view>
+        <view class="{{(state.phoneInputHighLight && 'active') + ' phoneInputBg'}}"></view>
         <view class="InputBar-bottom">
             <view class="countryName">中国</view>
             <view class="carrierName">中国移动</view>
         </view>
-        <country-list compid="{{$compid__163}}"></country-list>
+        <country-list compid="{{$compid__109}}"></country-list>
     </view>
 </block>

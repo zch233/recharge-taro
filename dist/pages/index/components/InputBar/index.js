@@ -40,7 +40,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var initialState = {
   rechargePhone: '',
-  countryListVisible: false
+  countryListVisible: false,
+  phoneInputHighLight: false
 };
 var reducer = function reducer(state, _ref) {
   var type = _ref.type,
@@ -52,6 +53,9 @@ var reducer = function reducer(state, _ref) {
     },
     setCountryListVisible: function setCountryListVisible() {
       return _extends({}, state, { countryListVisible: payload });
+    },
+    setPhoneInputHighLight: function setPhoneInputHighLight() {
+      return _extends({}, state, { phoneInputHighLight: payload });
     }
   };
   return typeMap[type]() || state;
@@ -71,7 +75,7 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__162", "$compid__163"], _this.customComponents = ["AtInput", "CountryList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__108", "$compid__109", "state"], _this.customComponents = ["AtInput", "CountryList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(OverHeader, [{
@@ -90,22 +94,22 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__162"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__108"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__162 = _genCompid2[0],
-          $compid__162 = _genCompid2[1];
+          $prevCompid__108 = _genCompid2[0],
+          $compid__108 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__163"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__109"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__163 = _genCompid4[0],
-          $compid__163 = _genCompid4[1];
+          $prevCompid__109 = _genCompid4[0],
+          $compid__109 = _genCompid4[1];
 
       var _useReducer = (0, _taroWeapp.useReducer)(reducer, initialState),
           _useReducer2 = _slicedToArray(_useReducer, 2),
           state = _useReducer2[0],
           setState = _useReducer2[1];
 
-      var phoneInput = function phoneInput(value) {
+      var phoneInputChange = function phoneInputChange(value) {
         setState({ type: 'setRechargePhone', payload: value });
       };
       var selectCountry = function selectCountry() {
@@ -116,13 +120,25 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         return setState({ type: 'setCountryListVisible', payload: true });
       };
 
-      this.anonymousFunc1 = phoneInput;
+      this.anonymousFunc1 = phoneInputChange;
 
       this.anonymousFunc2 = function () {
-        return setState({ type: 'setCountryListVisible', payload: false });
+        return setState({ type: 'setPhoneInputHighLight', payload: true });
       };
 
       this.anonymousFunc3 = function () {
+        return setState({ type: 'setPhoneInputHighLight', payload: true });
+      };
+
+      this.anonymousFunc4 = function () {
+        return setState({ type: 'setPhoneInputHighLight', payload: false });
+      };
+
+      this.anonymousFunc5 = function () {
+        return setState({ type: 'setCountryListVisible', payload: false });
+      };
+
+      this.anonymousFunc6 = function () {
         return setState({ type: 'setCountryListVisible', payload: false });
       };
 
@@ -132,17 +148,22 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         "type": "text",
         "border": false,
         "placeholder": '\u8BF7\u8F93\u5165\u624B\u673A\u53F7',
+        "maxLength": 15,
         "value": state.rechargePhone,
-        "onChange": this.anonymousFunc1
-      }, $compid__162, $prevCompid__162);
+        "onChange": this.anonymousFunc1,
+        "onConfirm": this.anonymousFunc2,
+        "onFocus": this.anonymousFunc3,
+        "onBlur": this.anonymousFunc4
+      }, $compid__108, $prevCompid__108);
       _taroWeapp.propsManager.set({
         "listVisible": state.countryListVisible,
-        "onConfirm": this.anonymousFunc2,
-        "onClose": this.anonymousFunc3
-      }, $compid__163, $prevCompid__163);
+        "onConfirm": this.anonymousFunc5,
+        "onClose": this.anonymousFunc6
+      }, $compid__109, $prevCompid__109);
       Object.assign(this.__state, {
-        $compid__162: $compid__162,
-        $compid__163: $compid__163
+        $compid__108: $compid__108,
+        $compid__109: $compid__109,
+        state: state
       });
       return this.__state;
     }
@@ -166,6 +187,21 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
     value: function anonymousFunc3(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc4',
+    value: function anonymousFunc4(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc5',
+    value: function anonymousFunc5(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc6',
+    value: function anonymousFunc6(e) {
+      ;
+    }
   }]);
 
   return OverHeader;
@@ -176,10 +212,10 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 
 /***/ }),
 
-/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/InputBar/index.jsx?taro&type=template&parse=COMPONENT&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/InputBar/index.jsx?taro&type=template&parse=COMPONENT& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/InputBar/index.jsx?taro&type=template&parse=COMPONENT&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/InputBar/index.jsx?taro&type=template&parse=COMPONENT& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -230,9 +266,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/InputBar/index.jsx?taro&type=template&parse=COMPONENT&");
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/InputBar/index.jsx?taro&type=template&parse=COMPONENT&");
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),

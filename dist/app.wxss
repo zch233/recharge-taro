@@ -28,6 +28,9 @@
   font-size: 30rpx;
   font-weight: bold;
 }
+.myCountryList .layout-body .layout-body__content {
+  max-height: none;
+}
 @charset "UTF-8";
 /**
  * Taro UI - Default variables
