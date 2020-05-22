@@ -3,10 +3,12 @@ import { View, Text } from '@tarojs/components'
 import './index.scss'
 import { AtTabs, AtTabsPane } from 'taro-ui'
 import ProductItem from './components/ProductItem/index'
+import Order from './components/Order/index'
 
 export default function ProductBar ()  {
   const tabList = [{ title: '充话费' }, { title: '充流量' }, { title: '余额查询' }]
   const [activeTab, setActiveTab] = useState(0)
+  const [orderVisible, setOrderVisible] = useState(false)
   const clickTab = (index) => {
     setActiveTab(index)
   }
@@ -15,7 +17,7 @@ export default function ProductBar ()  {
       <AtTabs className="myProductTab" current={activeTab} tabList={tabList} onClick={clickTab}>
         <AtTabsPane current={activeTab} index={0} >
           <View className='productList'>
-            <ProductItem />
+            <ProductItem onClick={() => setOrderVisible(true)} />
             <ProductItem />
             <ProductItem />
             <ProductItem />
@@ -30,6 +32,7 @@ export default function ProductBar ()  {
           <View className='productList'>请选择国家或地区再输入号码</View>
         </AtTabsPane>
       </AtTabs>
+      <Order orderVisible={orderVisible} onClose={() => setOrderVisible(false)} />
     </View>
   )
 }

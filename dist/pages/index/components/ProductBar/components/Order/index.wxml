@@ -1,0 +1,3 @@
+<block wx:if="{{$taroCompReady}}">
+    <at-float-layout compid="{{$compid__131}}">12313223</at-float-layout>
+</block>

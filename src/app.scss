@@ -24,14 +24,16 @@
   }
 }
 .myCountryList {
+  .layout-body .layout-body__content {
+    max-height: none;
+  }
+}
+.myOrder, .myCountryList {
   .layout-header .layout-header__title {
     text-align: center;
     padding: 0;
     color: #060606;
     font-size: 30px;
     font-weight: bold;
-  }
-  .layout-body .layout-body__content {
-    max-height: none;
   }
 }

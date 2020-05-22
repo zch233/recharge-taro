@@ -66,13 +66,20 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+      var onClick = this.__props.onClick;
+
       Object.assign(this.__state, {});
       return this.__state;
+    }
+  }, {
+    key: "funPrivatehzzzz",
+    value: function funPrivatehzzzz() {
+      return this.props.onClick.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }]);
 
   return ProductItem;
-}(_taroWeapp2.default.Component), _class.$$events = [], _class.$$componentPath = "pages/index/components/ProductBar/components/ProductItem/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["funPrivatehzzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/ProductItem/index", _temp2);
 exports.default = ProductItem;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(ProductItem));
