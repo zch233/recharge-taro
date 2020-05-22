@@ -49,8 +49,8 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      navigationBarTitleText: '专属二维码'
-    }, _this.$usedState = [], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+      navigationBarTitleText: '游全球'
+    }, _this.$usedState = [], _this.customComponents = ["OverHeader", "InputBar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -77,7 +77,7 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
 }(_taroWeapp2.default.Component), _class.$$events = [], _class.$$componentPath = "pages/index/index", _temp2);
 
 
-Index.config = { navigationBarTitleText: '专属二维码' };
+Index.config = { navigationBarTitleText: '游全球' };
 exports.default = Index;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(Index, true));

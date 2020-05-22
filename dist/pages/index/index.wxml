@@ -1,4 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
-    <view><text>Hello world!</text>
+    <view>
+        <over-header></over-header>
+        <input-bar></input-bar>
     </view>
 </block>

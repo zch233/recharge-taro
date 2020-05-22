@@ -1,14 +1,17 @@
 import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import OverHeader from './components/OverHeader/index'
+import InputBar from './components/InputBar/index'
 
 export default function Index ()  {
   return (
     <View>
-      <Text>Hello world!</Text>
+      <OverHeader />
+      <InputBar />
     </View>
   )
 }
 Index.config = {
-  navigationBarTitleText: '专属二维码',
+  navigationBarTitleText: '游全球',
 }

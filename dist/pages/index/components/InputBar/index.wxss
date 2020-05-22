@@ -1,0 +1,6 @@
+.InputBar {
+  box-shadow: 0 0 12rpx 3rpx rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  margin: 0 auto;
+  width: 96%;
+}

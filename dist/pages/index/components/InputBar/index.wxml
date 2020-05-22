@@ -1,0 +1,4 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="InputBar"><text>1231232</text>
+    </view>
+</block>
