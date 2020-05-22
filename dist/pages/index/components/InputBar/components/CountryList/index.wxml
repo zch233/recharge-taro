@@ -1,0 +1,19 @@
+<block wx:if="{{$taroCompReady}}">
+    <at-float-layout compid="{{$compid__233}}">
+        <view class="searchBar">
+            <at-icon compid="{{$compid__234}}"></at-icon>
+            <view class="searchInput">
+                <at-input compid="{{$compid__235}}"></at-input>
+            </view>
+        </view>
+        <scroll-view class="countryList" scroll-y="{{true}}">
+            <view wx:key="i" class="countryList-item" wx:for="{{$anonymousCallee__29}}" wx:for-item="v" wx:for-index="i">
+                <view class="view-image">
+                    <image class="image" mode="widthFix" src="https://oss.globalcharge.cn/prod/wechat/countryFlags/China.svg"></image>
+                </view>
+                <view class="areaNumber">+62</view>
+                <view class="countryName">印度尼西亚</view>
+            </view>
+        </scroll-view>
+    </at-float-layout>
+</block>

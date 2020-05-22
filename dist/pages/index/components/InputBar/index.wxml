@@ -2,12 +2,12 @@
     <view class="InputBar">
         <view class="InputBar-top">
             <view class="view-image">
-                <image mode="widthFix" src="https://oss.globalcharge.cn/prod/wechat/countryFlags/China.svg"></image>
+                <image class="image" bindtap="anonymousFunc0" mode="widthFix" src="https://oss.globalcharge.cn/prod/wechat/countryFlags/China.svg"></image>
             </view>
             <view class="phoneInputBar">
                 <view class="areaNumber">+86</view>
                 <view class="phoneInput">
-                    <at-input compid="{{$compid__19}}"></at-input>
+                    <at-input compid="{{$compid__162}}"></at-input>
                 </view>
             </view>
         </view>
@@ -15,5 +15,6 @@
             <view class="countryName">中国</view>
             <view class="carrierName">中国移动</view>
         </view>
+        <country-list compid="{{$compid__163}}"></country-list>
     </view>
 </block>

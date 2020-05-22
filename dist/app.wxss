@@ -6,6 +6,12 @@
   line-height: 1;
   font-weight: bold;
 }
+.mySearchInput.at-input {
+  margin: 0;
+  padding: 0;
+  color: #969696;
+  font-size: 24rpx;
+}
 .myProductTab .at-tabs__header {
   background-color: #f9f9f9;
   font-weight: bold;
@@ -14,6 +20,13 @@
   height: 7rpx;
   width: 60%;
   left: 20%;
+}
+.myCountryList .layout-header .layout-header__title {
+  text-align: center;
+  padding: 0;
+  color: #060606;
+  font-size: 30rpx;
+  font-weight: bold;
 }
 @charset "UTF-8";
 /**

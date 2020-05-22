@@ -17,7 +17,7 @@
   font-weight: bold;
   font-size: 30rpx;
 }
-.ProductItem .name text {
+.ProductItem .name .days {
   font-size: 18rpx;
 }
 .ProductItem .price {

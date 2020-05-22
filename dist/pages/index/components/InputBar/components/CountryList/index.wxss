@@ -1,0 +1,42 @@
+.view-image .image {
+  width: 100%;
+}
+.countryList {
+  height: 70vh;
+}
+.countryList-item {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0;
+  padding-left: 24vw;
+  border-bottom: 1rpx solid #F2F2F3;
+  color: #808080;
+}
+.countryList-item.active {
+  background-color: #EBF7FF;
+  color: #108EE8;
+}
+.countryList-item .view-image {
+  width: 60rpx;
+}
+.countryList-item .areaNumber {
+  width: 3.4em;
+  margin-left: 50rpx;
+  text-align: left;
+  margin-top: -9rpx;
+}
+.countryList-item .countryName {
+  margin-top: -9rpx;
+}
+.searchBar {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1rpx solid #666666;
+  padding: 19rpx 24rpx;
+  margin-bottom: 20rpx;
+}
+.searchBar .searchInput {
+  flex: 1;
+  margin-left: 20rpx;
+}

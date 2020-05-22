@@ -1,1 +1,1 @@
-{"component":true,"usingComponents":{"at-input":"../../../../npm/taro-ui/dist/weapp/components/input/index"}}
+{"component":true,"usingComponents":{"at-input":"../../../../npm/taro-ui/dist/weapp/components/input/index","country-list":"./components/CountryList/index"}}

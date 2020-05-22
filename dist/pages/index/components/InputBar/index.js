@@ -22,6 +22,8 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _taroWeapp = __webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js");
 
 var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
@@ -36,11 +38,30 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var initialState = {
+  rechargePhone: '',
+  countryListVisible: false
+};
+var reducer = function reducer(state, _ref) {
+  var type = _ref.type,
+      payload = _ref.payload;
+
+  var typeMap = {
+    setRechargePhone: function setRechargePhone() {
+      return _extends({}, state, { rechargePhone: payload });
+    },
+    setCountryListVisible: function setCountryListVisible() {
+      return _extends({}, state, { countryListVisible: payload });
+    }
+  };
+  return typeMap[type]() || state;
+};
+
 var OverHeader = (_temp2 = _class = function (_Taro$Component) {
   _inherits(OverHeader, _Taro$Component);
 
   function OverHeader() {
-    var _ref;
+    var _ref2;
 
     var _temp, _this, _ret;
 
@@ -50,18 +71,18 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__19"], _this.customComponents = ["AtInput"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__162", "$compid__163"], _this.customComponents = ["AtInput", "CountryList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(OverHeader, [{
-    key: "_constructor",
+    key: '_constructor',
     value: function _constructor(props) {
-      _get(OverHeader.prototype.__proto__ || Object.getPrototypeOf(OverHeader.prototype), "_constructor", this).call(this, props);
+      _get(OverHeader.prototype.__proto__ || Object.getPrototypeOf(OverHeader.prototype), '_constructor', this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: "_createData",
+    key: '_createData',
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -69,44 +90,86 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__19"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__162"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__19 = _genCompid2[0],
-          $compid__19 = _genCompid2[1];
+          $prevCompid__162 = _genCompid2[0],
+          $compid__162 = _genCompid2[1];
 
-      var _useState = (0, _taroWeapp.useState)(''),
-          _useState2 = _slicedToArray(_useState, 2),
-          rechargePhone = _useState2[0],
-          setRechargePhone = _useState2[1];
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__163"),
+          _genCompid4 = _slicedToArray(_genCompid3, 2),
+          $prevCompid__163 = _genCompid4[0],
+          $compid__163 = _genCompid4[1];
+
+      var _useReducer = (0, _taroWeapp.useReducer)(reducer, initialState),
+          _useReducer2 = _slicedToArray(_useReducer, 2),
+          state = _useReducer2[0],
+          setState = _useReducer2[1];
 
       var phoneInput = function phoneInput(value) {
-        setRechargePhone(value);
+        setState({ type: 'setRechargePhone', payload: value });
+      };
+      var selectCountry = function selectCountry() {
+        console.log(12312);
       };
 
-      this.anonymousFunc0 = phoneInput;
+      this.anonymousFunc0 = function () {
+        return setState({ type: 'setCountryListVisible', payload: true });
+      };
+
+      this.anonymousFunc1 = phoneInput;
+
+      this.anonymousFunc2 = function () {
+        return setState({ type: 'setCountryListVisible', payload: false });
+      };
+
+      this.anonymousFunc3 = function () {
+        return setState({ type: 'setCountryListVisible', payload: false });
+      };
+
       _taroWeapp.propsManager.set({
         "className": "myPhoneInput",
         "name": "value",
         "type": "text",
         "border": false,
-        "placeholder": "\u8BF7\u8F93\u5165\u624B\u673A\u53F7",
-        "value": rechargePhone,
-        "onChange": this.anonymousFunc0
-      }, $compid__19, $prevCompid__19);
+        "placeholder": '\u8BF7\u8F93\u5165\u624B\u673A\u53F7',
+        "value": state.rechargePhone,
+        "onChange": this.anonymousFunc1
+      }, $compid__162, $prevCompid__162);
+      _taroWeapp.propsManager.set({
+        "listVisible": state.countryListVisible,
+        "onConfirm": this.anonymousFunc2,
+        "onClose": this.anonymousFunc3
+      }, $compid__163, $prevCompid__163);
       Object.assign(this.__state, {
-        $compid__19: $compid__19
+        $compid__162: $compid__162,
+        $compid__163: $compid__163
       });
       return this.__state;
     }
   }, {
-    key: "anonymousFunc0",
+    key: 'anonymousFunc0',
     value: function anonymousFunc0(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc1',
+    value: function anonymousFunc1(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc2',
+    value: function anonymousFunc2(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc3',
+    value: function anonymousFunc3(e) {
       ;
     }
   }]);
 
   return OverHeader;
-}(_taroWeapp2.default.Component), _class.$$events = [], _class.$$componentPath = "pages/index/components/InputBar/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/index/components/InputBar/index", _temp2);
 exports.default = OverHeader;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(OverHeader));
