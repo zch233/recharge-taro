@@ -1,4 +1,19 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="InputBar"><text>1231232</text>
+    <view class="InputBar">
+        <view class="InputBar-top">
+            <view class="view-image">
+                <image mode="widthFix" src="https://oss.globalcharge.cn/prod/wechat/countryFlags/China.svg"></image>
+            </view>
+            <view class="phoneInputBar">
+                <view class="areaNumber">+86</view>
+                <view class="phoneInput">
+                    <at-input compid="{{$compid__19}}"></at-input>
+                </view>
+            </view>
+        </view>
+        <view class="InputBar-bottom">
+            <view class="countryName">中国</view>
+            <view class="carrierName">中国移动</view>
+        </view>
     </view>
 </block>

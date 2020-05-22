@@ -25,6 +25,8 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 __webpack_require__(/*! ./app.scss */ "./src/app.scss");
 
+__webpack_require__(/*! taro-ui/dist/style/index.scss */ "./node_modules/taro-ui/dist/style/index.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -97,6 +99,17 @@ _taroWeapp2.default.initPxTransform({
     "828": 0.905
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/taro-ui/dist/style/index.scss":
+/*!****************************************************!*\
+  !*** ./node_modules/taro-ui/dist/style/index.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 

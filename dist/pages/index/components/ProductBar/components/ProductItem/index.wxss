@@ -1,0 +1,26 @@
+.ProductItem {
+  width: 29.2vw;
+  min-height: 110rpx;
+  border: 1rpx solid #0C7AD6;
+  border-radius: 10rpx;
+  padding: 0 16rpx;
+  color: #0C7AD6;
+  margin: 0 1vw 28rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.ProductItem .name {
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.ProductItem .name text {
+  font-size: 18rpx;
+}
+.ProductItem .price {
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}

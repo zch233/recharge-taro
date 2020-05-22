@@ -50,7 +50,7 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '游全球'
-    }, _this.$usedState = [], _this.customComponents = ["OverHeader", "InputBar"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = [], _this.customComponents = ["OverHeader", "InputBar", "ProductBar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{

@@ -1,0 +1,22 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="ProductBar">
+        <at-tabs compid="{{$compid__136}}">
+            <at-tabs-pane compid="{{$compid__137}}">
+                <view class="productList">
+                    <product-item></product-item>
+                    <product-item></product-item>
+                    <product-item></product-item>
+                    <product-item></product-item>
+                </view>
+            </at-tabs-pane>
+            <at-tabs-pane compid="{{$compid__138}}">
+                <view class="productList">
+                    <product-item></product-item>
+                </view>
+            </at-tabs-pane>
+            <at-tabs-pane compid="{{$compid__139}}">
+                <view class="productList">请选择国家或地区再输入号码</view>
+            </at-tabs-pane>
+        </at-tabs>
+    </view>
+</block>

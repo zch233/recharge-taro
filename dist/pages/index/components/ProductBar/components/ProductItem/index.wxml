@@ -1,0 +1,7 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="ProductItem">
+        <view class="name">10K IDR<text>（10天）</text>
+        </view>
+        <view class="price">售价10.00元</view>
+    </view>
+</block>

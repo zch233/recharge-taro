@@ -2,5 +2,6 @@
     <view>
         <over-header></over-header>
         <input-bar></input-bar>
+        <product-bar></product-bar>
     </view>
 </block>
