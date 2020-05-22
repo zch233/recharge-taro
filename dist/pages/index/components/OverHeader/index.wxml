@@ -1,4 +1,4 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="overHeader"><text>现已开通10个国家手机充值服务</text>
+    <view class="overHeader"><text>现已开通200+个国家手机充值服务</text>
     </view>
 </block>
