@@ -7,7 +7,7 @@
             <view class="phoneInputBar">
                 <view class="areaNumber">+86</view>
                 <view class="phoneInput">
-                    <at-input compid="{{$compid__18}}"></at-input>
+                    <at-input compid="{{$compid__230}}"></at-input>
                 </view>
             </view>
         </view>
@@ -16,6 +16,6 @@
             <view class="countryName">中国</view>
             <view class="carrierName">中国移动</view>
         </view>
-        <country-list compid="{{$compid__19}}"></country-list>
+        <country-list compid="{{$compid__231}}"></country-list>
     </view>
 </block>

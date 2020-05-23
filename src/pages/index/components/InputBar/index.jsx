@@ -36,7 +36,7 @@ export default function OverHeader ()  {
             <AtInput
               className='myPhoneInput'
               name='value'
-              type='text'
+              type='phone'
               border={false}
               placeholder='请输入手机号'
               maxLength={15}
