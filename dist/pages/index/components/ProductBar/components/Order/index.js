@@ -50,7 +50,7 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__131", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__117", "$compid__118", "$compid__119", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Order, [{
@@ -69,10 +69,20 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__131"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__117"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__131 = _genCompid2[0],
-          $compid__131 = _genCompid2[1];
+          $prevCompid__117 = _genCompid2[0],
+          $compid__117 = _genCompid2[1];
+
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__118"),
+          _genCompid4 = _slicedToArray(_genCompid3, 2),
+          $prevCompid__118 = _genCompid4[0],
+          $compid__118 = _genCompid4[1];
+
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__119"),
+          _genCompid6 = _slicedToArray(_genCompid5, 2),
+          $prevCompid__119 = _genCompid6[0],
+          $compid__119 = _genCompid6[1];
 
       var _props = this.__props,
           orderVisible = _props.orderVisible,
@@ -83,9 +93,21 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": orderVisible,
         "title": "\u786E\u8BA4\u4ED8\u6B3E",
         "onClose": this.__props.onClose
-      }, $compid__131, $prevCompid__131);
+      }, $compid__117, $prevCompid__117);
+      _taroWeapp.propsManager.set({
+        "value": "check",
+        "size": "18",
+        "color": "#fff"
+      }, $compid__118, $prevCompid__118);
+      _taroWeapp.propsManager.set({
+        "value": "check",
+        "size": "18",
+        "color": "#fff"
+      }, $compid__119, $prevCompid__119);
       Object.assign(this.__state, {
-        $compid__131: $compid__131
+        $compid__117: $compid__117,
+        $compid__118: $compid__118,
+        $compid__119: $compid__119
       });
       return this.__state;
     }

@@ -1,0 +1,117 @@
+.orderDetail {
+  &-item {
+    display: flex;
+    align-items: center;
+    padding: 26px 4%;
+    border-bottom: 1px solid #F2F2F3;
+    justify-content: space-between;
+    font-size: 28px;
+    color: #808080;
+    &.radio {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      color: #DFDFDF;
+    }
+    &-label {
+      .pointDiscount {
+        color: #999999;
+        font-size: 24px;
+        background-color: #FBEBEF;
+        margin-left: 60px;
+        padding: 8px 15px;
+        .count {
+          color: #323232;
+          font-weight: bold;
+        }
+        .price {
+          color: #EA5675;
+          font-weight: bold;
+        }
+      }
+      .couponDiscount {
+        background-color: #FFD3B9;
+        padding: 8px 15px;
+        color: #EA5675;
+        margin-left: 32px;
+      }
+    }
+    &.selected {
+      color: #808080;
+    }
+    &.disabled {
+      color: #DFDFDF;
+    }
+    &-value {
+      color: #141414;
+      flex: 1;
+      text-align: right;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-left: .6em;
+      &.coupon {
+        color: #E66228;
+      }
+    }
+    &-radio {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid #C7C7C7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.selected {
+        background-color: #FC6E50;
+        border-color: #FC6E50;
+      }
+    }
+  }
+}
+.orderDiscountTips {
+  display: inline-block;
+  color: #108EE8;
+  font-size: 24px;
+  padding: 20px 4% 0;
+}
+.orderButton {
+  box-shadow: 1px 4px 6px 1px rgba(0, 0, 0, 0.45);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  width: 92%;
+  margin: 160px auto 45px;
+  background-color: #323232;
+  overflow: hidden;
+  .totalPrice {
+    color: #D3D3D3;
+    flex: 1;
+    font-size: 24px;
+    background-color: #323232;
+    padding-left: .7em;
+    margin-top: -6px;
+    .mark {
+      color: #fff;
+      padding-left: .2em;
+    }
+    .price {
+      font-weight: bold;
+      color: #fff;
+      font-size: 36px;
+    }
+  }
+  .discountPrice {
+    background-color: #323232;
+    color: #D3D3D3;
+    font-size: 24px;
+    margin-top: -6px;
+    padding-right: 36px;
+  }
+  .buyButton {
+    color: #fff;
+    font-size: 30px;
+    background-color: #108EE8;
+    border: 1px solid #108ee8;
+    padding: 24px 35px 31px 29px;
+  }
+}

@@ -75,7 +75,7 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__108", "$compid__109", "state"], _this.customComponents = ["AtInput", "CountryList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__18", "$compid__19", "state"], _this.customComponents = ["AtInput", "CountryList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(OverHeader, [{
@@ -94,15 +94,15 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__108"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__18"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__108 = _genCompid2[0],
-          $compid__108 = _genCompid2[1];
+          $prevCompid__18 = _genCompid2[0],
+          $compid__18 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__109"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__19"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__109 = _genCompid4[0],
-          $compid__109 = _genCompid4[1];
+          $prevCompid__19 = _genCompid4[0],
+          $compid__19 = _genCompid4[1];
 
       var _useReducer = (0, _taroWeapp.useReducer)(reducer, initialState),
           _useReducer2 = _slicedToArray(_useReducer, 2),
@@ -154,15 +154,15 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         "onConfirm": this.anonymousFunc2,
         "onFocus": this.anonymousFunc3,
         "onBlur": this.anonymousFunc4
-      }, $compid__108, $prevCompid__108);
+      }, $compid__18, $prevCompid__18);
       _taroWeapp.propsManager.set({
         "listVisible": state.countryListVisible,
         "onConfirm": this.anonymousFunc5,
         "onClose": this.anonymousFunc6
-      }, $compid__109, $prevCompid__109);
+      }, $compid__19, $prevCompid__19);
       Object.assign(this.__state, {
-        $compid__108: $compid__108,
-        $compid__109: $compid__109,
+        $compid__18: $compid__18,
+        $compid__19: $compid__19,
         state: state
       });
       return this.__state;

@@ -137,24 +137,24 @@ var AtFloatLayout = (_temp2 = _class = function (_AtComponent) {
       return this.__state;
     }
   }, {
-    key: 'funPrivatedzzzz',
-    value: function funPrivatedzzzz() {
+    key: 'funPrivatefzzzz',
+    value: function funPrivatefzzzz() {
       return this.props.onScroll.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }, {
-    key: 'funPrivateezzzz',
-    value: function funPrivateezzzz() {
+    key: 'funPrivategzzzz',
+    value: function funPrivategzzzz() {
       return this.props.onScrollToLower.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }, {
-    key: 'funPrivatefzzzz',
-    value: function funPrivatefzzzz() {
+    key: 'funPrivatehzzzz',
+    value: function funPrivatehzzzz() {
       return this.props.onScrollToUpper.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }]);
 
   return AtFloatLayout;
-}(_component2.default), _class.$$events = ["handleTouchMove", "close", "funPrivatedzzzz", "funPrivateezzzz", "funPrivatefzzzz"], _class.$$componentPath = "node_modules/taro-ui/dist/weapp/components/float-layout/index", _temp2);
+}(_component2.default), _class.$$events = ["handleTouchMove", "close", "funPrivatefzzzz", "funPrivategzzzz", "funPrivatehzzzz"], _class.$$componentPath = "node_modules/taro-ui/dist/weapp/components/float-layout/index", _temp2);
 
 
 AtFloatLayout.defaultProps = {
