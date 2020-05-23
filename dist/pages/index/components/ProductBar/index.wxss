@@ -2,6 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding: 38rpx 3%;
+  padding: 38rpx 2vw;
   position: relative;
 }

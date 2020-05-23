@@ -1,9 +1,9 @@
 .ProductItem {
-  width: 29.2vw;
+  width: 30vw;
   min-height: 110rpx;
   border: 1PX solid #0C7AD6;
   border-radius: 10rpx;
-  padding: 0 16rpx;
+  padding: 10rpx 0;
   color: #0C7AD6;
   margin: 0 1vw 28rpx;
   position: relative;
