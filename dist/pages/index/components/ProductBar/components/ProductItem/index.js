@@ -72,14 +72,14 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
       return this.__state;
     }
   }, {
-    key: "funPrivateezzzz",
-    value: function funPrivateezzzz() {
+    key: "funPrivategzzzz",
+    value: function funPrivategzzzz() {
       return this.props.onClick.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }]);
 
   return ProductItem;
-}(_taroWeapp2.default.Component), _class.$$events = ["funPrivateezzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/ProductItem/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["funPrivategzzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/ProductItem/index", _temp2);
 exports.default = ProductItem;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(ProductItem));

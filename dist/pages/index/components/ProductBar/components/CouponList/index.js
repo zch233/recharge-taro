@@ -50,7 +50,7 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CouponList.__proto__ || Object.getPrototypeOf(CouponList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray11", "$compid__217", "$anonymousCallee__7", "couponListVisible", "__fn_onClick"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CouponList.__proto__ || Object.getPrototypeOf(CouponList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray2", "$compid__25", "$anonymousCallee__1", "couponListVisible", "__fn_onClick"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CouponList, [{
@@ -69,33 +69,33 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__217"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__25"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__217 = _genCompid2[0],
-          $compid__217 = _genCompid2[1];
+          $prevCompid__25 = _genCompid2[0],
+          $compid__25 = _genCompid2[1];
 
       var _props = this.__props,
           couponListVisible = _props.couponListVisible,
           onClose = _props.onClose;
 
-      var $anonymousCallee__7 = '1236456789'.split('');
-      var loopArray11 = '1236456789'.split('').map(function (v, _anonIdx) {
+      var $anonymousCallee__1 = '1236456789'.split('');
+      var loopArray2 = '1236456789'.split('').map(function (v, _anonIdx) {
         v = {
           $original: (0, _taroWeapp.internal_get_original)(v)
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bhzzzzzzzz" + _anonIdx, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "izzzzzzzzz" + _anonIdx, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__216 = _genCompid4[0],
-            $compid__216 = _genCompid4[1];
+            $prevCompid__24 = _genCompid4[0],
+            $compid__24 = _genCompid4[1];
 
         _taroWeapp.propsManager.set({
           "value": "check",
           "size": "18",
           "color": "#fff"
-        }, $compid__216, $prevCompid__216);
+        }, $compid__24, $prevCompid__24);
         return {
-          $compid__216: $compid__216,
+          $compid__24: $compid__24,
           $original: v.$original
         };
       });
@@ -104,23 +104,23 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": couponListVisible,
         "title": "\u4F18\u60E0\u5238",
         "onClose": this.__props.onClose
-      }, $compid__217, $prevCompid__217);
+      }, $compid__25, $prevCompid__25);
       Object.assign(this.__state, {
-        loopArray11: loopArray11,
-        $compid__217: $compid__217,
-        $anonymousCallee__7: $anonymousCallee__7
+        loopArray2: loopArray2,
+        $compid__25: $compid__25,
+        $anonymousCallee__1: $anonymousCallee__1
       });
       return this.__state;
     }
   }, {
-    key: "funPrivatebgzzz",
-    value: function funPrivatebgzzz() {
+    key: "funPrivatehzzzz",
+    value: function funPrivatehzzzz() {
       return this.props.onClose.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }]);
 
   return CouponList;
-}(_taroWeapp2.default.Component), _class.$$events = ["funPrivatebgzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/CouponList/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["funPrivatehzzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/CouponList/index", _temp2);
 exports.default = CouponList;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(CouponList));

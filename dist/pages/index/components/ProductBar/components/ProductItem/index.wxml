@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="ProductItem" bindtap="funPrivateezzzz">
+    <view class="ProductItem" bindtap="funPrivategzzzz">
         <view class="name">10K IDR<text class="days">（10天）</text>
         </view>
         <view class="price">售价10.00元</view>

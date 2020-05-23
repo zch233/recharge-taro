@@ -1,7 +1,7 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__217}}">
+    <at-float-layout compid="{{$compid__25}}">
         <view class="couponList">
-            <view wx:key="$original" class="couponList-item" wx:for="{{loopArray11}}" wx:for-item="v" wx:for-index="_anonIdx2">
+            <view wx:key="$original" class="couponList-item" wx:for="{{loopArray2}}" wx:for-item="v" wx:for-index="_anonIdx2">
                 <view class="popup-coupon HF">
                     <view class="popup-coupon-price"><text class="discount">2</text>元</view>
                     <view class="popup-coupon-info"><text class="name">流量满减券</text>
@@ -9,10 +9,10 @@
                     </view>
                 </view>
                 <view class="popup-radio">
-                    <at-icon compid="{{v.$compid__216}}"></at-icon>
+                    <at-icon compid="{{v.$compid__24}}"></at-icon>
                 </view>
             </view>
         </view>
-        <view class="notUseCoupon" bindtap="funPrivatebgzzz">不使用优惠券</view>
+        <view class="notUseCoupon" bindtap="funPrivatehzzzz">不使用优惠券</view>
     </at-float-layout>
 </block>
