@@ -27,8 +27,8 @@ export default function CountryList ({ listVisible, onClose })  {
       </View>
       <ScrollView className='countryList' scroll-y>
         {
-          '11111111111111111111111'.split('').map((v, i) => (
-            <View key={i} className='countryList-item'>
+          '123456789'.split('').map(v => (
+            <View key={v} className='countryList-item'>
               <View className='view-image'><Image className='image' mode='widthFix' src='https://oss.globalcharge.cn/prod/wechat/countryFlags/China.svg' /></View>
               <View className='areaNumber'>+62</View>
               <View className='countryName'>印度尼西亚</View>
