@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__117}}">
+    <at-float-layout compid="{{$compid__167}}">
         <view class="orderDetail">
             <view class="orderDetail-item">
                 <view class="orderDetail-item-label">订单详情</view>
@@ -17,14 +17,20 @@
                 <view class="orderDetail-item-label">积分<text class="pointDiscount">可用<text class="count">152积分</text>抵扣<text class="price">￥120元</text></text>
                 </view>
                 <view class="orderDetail-item-radio">
-                    <at-icon compid="{{$compid__118}}"></at-icon>
+                    <at-icon compid="{{$compid__168}}"></at-icon>
                 </view>
             </view>
-            <view class="orderDetail-item radio selected">
+            <view class="orderDetail-item radio selected" bindtap="anonymousFunc0">
                 <view class="orderDetail-item-label">优惠券<text class="couponDiscount">满10-5</text>
                 </view>
                 <view class="orderDetail-item-radio selected">
-                    <at-icon compid="{{$compid__119}}"></at-icon>
+                    <at-icon compid="{{$compid__169}}"></at-icon>
+                </view>
+            </view>
+            <view class="orderDetail-item radio selected">
+                <view class="orderDetail-item-label">不使用优惠</view>
+                <view class="orderDetail-item-radio selected">
+                    <at-icon compid="{{$compid__170}}"></at-icon>
                 </view>
             </view>
         </view>
@@ -33,5 +39,6 @@
             <view class="totalPrice">应付金额<text class="mark">￥</text><text class="price">152</text>
             </view><text class="discountPrice">已优惠￥125</text><text class="buyButton">立即付款</text>
         </view>
+        <coupon-list compid="{{$compid__171}}"></coupon-list>
     </at-float-layout>
 </block>

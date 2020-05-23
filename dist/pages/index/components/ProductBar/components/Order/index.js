@@ -50,7 +50,7 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__117", "$compid__118", "$compid__119", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__167", "$compid__168", "$compid__169", "$compid__170", "$compid__171", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon", "CouponList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Order, [{
@@ -69,52 +69,96 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__117"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__167"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__117 = _genCompid2[0],
-          $compid__117 = _genCompid2[1];
+          $prevCompid__167 = _genCompid2[0],
+          $compid__167 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__118"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__168"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__118 = _genCompid4[0],
-          $compid__118 = _genCompid4[1];
+          $prevCompid__168 = _genCompid4[0],
+          $compid__168 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__119"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__169"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__119 = _genCompid6[0],
-          $compid__119 = _genCompid6[1];
+          $prevCompid__169 = _genCompid6[0],
+          $compid__169 = _genCompid6[1];
+
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__170"),
+          _genCompid8 = _slicedToArray(_genCompid7, 2),
+          $prevCompid__170 = _genCompid8[0],
+          $compid__170 = _genCompid8[1];
+
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__171"),
+          _genCompid10 = _slicedToArray(_genCompid9, 2),
+          $prevCompid__171 = _genCompid10[0],
+          $compid__171 = _genCompid10[1];
 
       var _props = this.__props,
           orderVisible = _props.orderVisible,
           onClose = _props.onClose;
+
+      var _useState = (0, _taroWeapp.useState)(false),
+          _useState2 = _slicedToArray(_useState, 2),
+          couponListVisible = _useState2[0],
+          setCouponListVisible = _useState2[1];
+
+      this.anonymousFunc0 = function () {
+        return setCouponListVisible(true);
+      };
+
+      this.anonymousFunc1 = function () {
+        return setCouponListVisible(false);
+      };
 
       _taroWeapp.propsManager.set({
         "className": "myOrder",
         "isOpened": orderVisible,
         "title": "\u786E\u8BA4\u4ED8\u6B3E",
         "onClose": this.__props.onClose
-      }, $compid__117, $prevCompid__117);
+      }, $compid__167, $prevCompid__167);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__118, $prevCompid__118);
+      }, $compid__168, $prevCompid__168);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__119, $prevCompid__119);
+      }, $compid__169, $prevCompid__169);
+      _taroWeapp.propsManager.set({
+        "value": "check",
+        "size": "18",
+        "color": "#fff"
+      }, $compid__170, $prevCompid__170);
+      _taroWeapp.propsManager.set({
+        "couponListVisible": couponListVisible,
+        "onClose": this.anonymousFunc1
+      }, $compid__171, $prevCompid__171);
       Object.assign(this.__state, {
-        $compid__117: $compid__117,
-        $compid__118: $compid__118,
-        $compid__119: $compid__119
+        $compid__167: $compid__167,
+        $compid__168: $compid__168,
+        $compid__169: $compid__169,
+        $compid__170: $compid__170,
+        $compid__171: $compid__171
       });
       return this.__state;
+    }
+  }, {
+    key: "anonymousFunc0",
+    value: function anonymousFunc0(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc1",
+    value: function anonymousFunc1(e) {
+      ;
     }
   }]);
 
   return Order;
-}(_taroWeapp2.default.Component), _class.$$events = [], _class.$$componentPath = "pages/index/components/ProductBar/components/Order/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/index/components/ProductBar/components/Order/index", _temp2);
 exports.default = Order;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(Order));

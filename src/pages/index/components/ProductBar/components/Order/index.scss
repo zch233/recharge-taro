@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     padding: 26px 4%;
-    border-bottom: 1px solid #F2F2F3;
+    border-bottom: 1PX solid #F2F2F3;
     justify-content: space-between;
     font-size: 28px;
     color: #808080;
@@ -57,7 +57,7 @@
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      border: 1px solid #C7C7C7;
+      border: 1PX solid #C7C7C7;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   width: 92%;
-  margin: 160px auto 45px;
+  margin: 100px auto 25px;
   background-color: #323232;
   overflow: hidden;
   .totalPrice {

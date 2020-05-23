@@ -1,9 +1,11 @@
-import Taro from '@tarojs/taro'
+import Taro, { useState } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 import { AtFloatLayout, AtIcon } from "taro-ui"
+import CouponList from '../CouponList/index'
 
 export default function Order ({ orderVisible, onClose })  {
+  const [couponListVisible, setCouponListVisible] = useState(false)
   return (
     <AtFloatLayout className='myOrder' isOpened={orderVisible} title="确认付款" onClose={onClose}>
       <View className='orderDetail'>
@@ -23,8 +25,12 @@ export default function Order ({ orderVisible, onClose })  {
           <View className='orderDetail-item-label'>积分<Text className='pointDiscount'>可用<Text className='count'>152积分</Text>抵扣<Text className='price'>￥120元</Text></Text></View>
           <View className='orderDetail-item-radio'><AtIcon value='check' size='18' color='#fff'></AtIcon></View>
         </View>
-        <View className='orderDetail-item radio selected'>
+        <View className='orderDetail-item radio selected' onClick={() => setCouponListVisible(true)}>
           <View className='orderDetail-item-label'>优惠券<Text className='couponDiscount'>满10-5</Text></View>
+          <View className='orderDetail-item-radio selected'><AtIcon value='check' size='18' color='#fff'></AtIcon></View>
+        </View>
+        <View className='orderDetail-item radio selected'>
+          <View className='orderDetail-item-label'>不使用优惠</View>
           <View className='orderDetail-item-radio selected'><AtIcon value='check' size='18' color='#fff'></AtIcon></View>
         </View>
       </View>
@@ -34,6 +40,10 @@ export default function Order ({ orderVisible, onClose })  {
         <Text className='discountPrice'>已优惠￥125</Text>
         <Text className='buyButton'>立即付款</Text>
       </View>
+      <CouponList
+        couponListVisible={couponListVisible}
+        onClose={() => setCouponListVisible(false)}
+      />
     </AtFloatLayout>
   )
 }

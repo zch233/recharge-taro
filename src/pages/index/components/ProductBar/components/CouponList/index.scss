@@ -1,0 +1,100 @@
+.couponList {
+  padding: 16px;
+  padding-bottom: 160px;
+  &-item {
+    background-color: #fff;
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+}
+.notUseCoupon {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 24px;
+  left: 0;
+  bottom: 0;
+  border-top: 1PX solid #f2f2f2;
+  background-color: #F6F8F9;
+}
+.popup-coupon {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 24px;
+  color: #fff;
+  flex: 1;
+  &.HF {
+    background-image: linear-gradient(0deg,rgba(242,79,75,1),rgba(242,98,59,1));
+    &-info {
+      .time {
+        color: #A21508;
+      }
+    }
+  }
+  &.LL {
+    background-image: linear-gradient(0deg, #179cf9, #11b5f8);
+    &-info {
+      .time {
+        color: #06467D;
+      }
+    }
+  }
+  &-price {
+    font-weight: bolder;
+    padding: 24px 0;
+    text-align: center;
+    width: 5em;
+    border-color: #ffeaea;
+    border-width: 0 1PX 0 0;
+    border-style: dashed;
+    position: relative;
+    .discount {
+      font-size: 42px;
+    }
+    $shape: 20px;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      right: -($shape / 2);
+      background-color: #fff;
+      width: $shape;
+      height: $shape;
+      border-radius: 50%;
+    }
+    &::before {
+      top: -($shape / 2);
+    }
+    &::after {
+      bottom: -($shape / 2);
+    }
+  }
+  &-info {
+    padding: 0 1em;
+    text-align: left;
+    font-size: 30px;
+    .time {
+      color: #A21508;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+  }
+}
+.popup-radio {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1PX solid #C7C7C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 140px;
+  &.selected {
+    background-color: #FC6E50;
+    border-color: #FC6E50;
+  }
+}

@@ -9,7 +9,7 @@
   align-items: center;
   padding: 8rpx 0;
   padding-left: 24vw;
-  border-bottom: 1rpx solid #F2F2F3;
+  border-bottom: 1PX solid #F2F2F3;
   color: #808080;
 }
 .countryList-item.active {
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  border: 1rpx solid #666666;
+  border: 1PX solid #666666;
   padding: 19rpx 24rpx;
   margin-bottom: 20rpx;
 }

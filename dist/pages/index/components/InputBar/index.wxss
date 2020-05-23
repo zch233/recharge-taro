@@ -24,7 +24,7 @@
   margin-left: 14rpx;
   display: flex;
   align-items: center;
-  border-bottom: 1rpx solid #DBDBDB;
+  border-bottom: 1PX solid #DBDBDB;
   margin-top: -9rpx;
 }
 .InputBar-top .phoneInputBar .areaNumber {

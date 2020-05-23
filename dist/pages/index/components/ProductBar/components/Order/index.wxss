@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: 26rpx 4%;
-  border-bottom: 1rpx solid #F2F2F3;
+  border-bottom: 1PX solid #F2F2F3;
   justify-content: space-between;
   font-size: 28rpx;
   color: #808080;
@@ -55,7 +55,7 @@
   width: 52rpx;
   height: 52rpx;
   border-radius: 50%;
-  border: 1rpx solid #C7C7C7;
+  border: 1PX solid #C7C7C7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +76,7 @@
   display: flex;
   align-items: center;
   width: 92%;
-  margin: 160rpx auto 45rpx;
+  margin: 100rpx auto 25rpx;
   background-color: #323232;
   overflow: hidden;
 }
