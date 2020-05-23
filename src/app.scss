@@ -16,6 +16,7 @@
   .at-tabs__header {
     background-color: rgb(249, 249, 249);
     font-weight: bold;
+    font-size: 30px;
   }
   .at-tabs__item-underline {
     height: 7px;
@@ -40,6 +41,11 @@
 .at-float-layout.myOrder, .at-float-layout.myCouponList {
   .at-float-layout__container .layout-body {
     padding: 0;
+  }
+}
+.at-float-layout.myOrder {
+  .at-float-layout__container, .layout-body, .layout-body__content {
+    max-height: 100vh;
   }
 }
 .at-float-layout.myCouponList {

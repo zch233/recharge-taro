@@ -15,6 +15,7 @@
 .at-tabs.myProductTab .at-tabs__header {
   background-color: #f9f9f9;
   font-weight: bold;
+  font-size: 30rpx;
 }
 .at-tabs.myProductTab .at-tabs__item-underline {
   height: 7rpx;
@@ -33,6 +34,9 @@
 }
 .at-float-layout.myOrder .at-float-layout__container .layout-body, .at-float-layout.myCouponList .at-float-layout__container .layout-body {
   padding: 0;
+}
+.at-float-layout.myOrder .at-float-layout__container, .at-float-layout.myOrder .layout-body, .at-float-layout.myOrder .layout-body__content {
+  max-height: 100vh;
 }
 .at-float-layout.myCouponList .layout-body {
   background-color: #F6F8F9;
