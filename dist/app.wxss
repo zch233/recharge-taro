@@ -31,7 +31,7 @@
 .at-float-layout.myCountryList .layout-body .layout-body__content {
   max-height: none;
 }
-.at-float-layout.myOrder .at-float-layout__container .layout-body {
+.at-float-layout.myOrder .at-float-layout__container .layout-body, .at-float-layout.myCouponList .at-float-layout__container .layout-body {
   padding: 0;
 }
 .at-float-layout.myCouponList .layout-body {

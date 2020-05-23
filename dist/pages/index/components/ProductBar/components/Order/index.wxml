@@ -1,44 +1,46 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__167}}">
-        <view class="orderDetail">
-            <view class="orderDetail-item">
-                <view class="orderDetail-item-label">订单详情</view>
-                <view class="orderDetail-item-value">印尼 xxxx 运营商 100K</view>
-            </view>
-            <view class="orderDetail-item">
-                <view class="orderDetail-item-label">手机号码</view>
-                <view class="orderDetail-item-value">15915165156</view>
-            </view>
-            <view class="orderDetail-item">
-                <view class="orderDetail-item-label">商品价格</view>
-                <view class="orderDetail-item-value">106 CNY</view>
-            </view>
-            <view class="orderDetail-item radio">
-                <view class="orderDetail-item-label">积分<text class="pointDiscount">可用<text class="count">152积分</text>抵扣<text class="price">￥120元</text></text>
+    <view>
+        <at-float-layout compid="{{$compid__223}}">
+            <view class="orderDetail">
+                <view class="orderDetail-item">
+                    <view class="orderDetail-item-label">订单详情</view>
+                    <view class="orderDetail-item-value">印尼 xxxx 运营商 100K</view>
                 </view>
-                <view class="orderDetail-item-radio">
-                    <at-icon compid="{{$compid__168}}"></at-icon>
+                <view class="orderDetail-item">
+                    <view class="orderDetail-item-label">手机号码</view>
+                    <view class="orderDetail-item-value">15915165156</view>
+                </view>
+                <view class="orderDetail-item">
+                    <view class="orderDetail-item-label">商品价格</view>
+                    <view class="orderDetail-item-value">106 CNY</view>
+                </view>
+                <view class="orderDetail-item radio">
+                    <view class="orderDetail-item-label">积分<text class="pointDiscount">可用<text class="count">152积分</text>抵扣<text class="price">￥120元</text></text>
+                    </view>
+                    <view class="orderDetail-item-radio">
+                        <at-icon compid="{{$compid__224}}"></at-icon>
+                    </view>
+                </view>
+                <view class="orderDetail-item radio selected" bindtap="anonymousFunc0">
+                    <view class="orderDetail-item-label">优惠券<text class="couponDiscount">满10-5</text>
+                    </view>
+                    <view class="orderDetail-item-radio selected">
+                        <at-icon compid="{{$compid__225}}"></at-icon>
+                    </view>
+                </view>
+                <view class="orderDetail-item radio selected">
+                    <view class="orderDetail-item-label">不使用优惠</view>
+                    <view class="orderDetail-item-radio selected">
+                        <at-icon compid="{{$compid__226}}"></at-icon>
+                    </view>
                 </view>
             </view>
-            <view class="orderDetail-item radio selected" bindtap="anonymousFunc0">
-                <view class="orderDetail-item-label">优惠券<text class="couponDiscount">满10-5</text>
-                </view>
-                <view class="orderDetail-item-radio selected">
-                    <at-icon compid="{{$compid__169}}"></at-icon>
-                </view>
+            <view class="orderDiscountTips">*积分优惠券二选一</view>
+            <view class="orderButton">
+                <view class="totalPrice">应付金额<text class="mark">￥</text><text class="price">152</text>
+                </view><text class="discountPrice">已优惠￥125</text><text class="buyButton">立即付款</text>
             </view>
-            <view class="orderDetail-item radio selected">
-                <view class="orderDetail-item-label">不使用优惠</view>
-                <view class="orderDetail-item-radio selected">
-                    <at-icon compid="{{$compid__170}}"></at-icon>
-                </view>
-            </view>
-        </view>
-        <view class="orderDiscountTips">*积分优惠券二选一</view>
-        <view class="orderButton">
-            <view class="totalPrice">应付金额<text class="mark">￥</text><text class="price">152</text>
-            </view><text class="discountPrice">已优惠￥125</text><text class="buyButton">立即付款</text>
-        </view>
-        <coupon-list compid="{{$compid__171}}"></coupon-list>
-    </at-float-layout>
+        </at-float-layout>
+        <coupon-list compid="{{$compid__227}}"></coupon-list>
+    </view>
 </block>
