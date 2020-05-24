@@ -22,7 +22,7 @@
   width: 60%;
   left: 20%;
 }
-.at-float-layout.myOrder .layout-header .layout-header__title, .at-float-layout.myCountryList .layout-header .layout-header__title, .at-float-layout.myCouponList .layout-header .layout-header__title {
+.at-float-layout.myOrder .layout-header .layout-header__title, .at-float-layout.myCountryList .layout-header .layout-header__title, .at-float-layout.myCouponList .layout-header .layout-header__title, .at-float-layout.myCarrierList .layout-header .layout-header__title {
   text-align: center;
   padding: 0;
   color: #060606;

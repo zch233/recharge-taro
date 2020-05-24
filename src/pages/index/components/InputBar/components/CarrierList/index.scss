@@ -1,0 +1,32 @@
+.view-image {
+  .image {
+    width: 100%;
+  }
+}
+.carrierList {
+  &-item {
+    display: flex;
+    align-items: center;
+    .view-image {
+      width: 94px;
+      margin-right: 26px;
+    }
+    .name {
+      flex: 1;
+    }
+    .check {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1PX solid #C7C7C7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 140px;
+      &.selected {
+        background-color: #FC6E50;
+        border-color: #FC6E50;
+      }
+    }
+  }
+}

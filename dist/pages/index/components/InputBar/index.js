@@ -43,6 +43,7 @@ var initialState = {
   carrierName: '',
   currentCountry: {},
   countryListVisible: false,
+  carrierListVisible: true,
   phoneInputHighLight: false
 };
 var reducer = function reducer(state, _ref) {
@@ -61,6 +62,9 @@ var reducer = function reducer(state, _ref) {
     },
     setCountryListVisible: function setCountryListVisible() {
       return _extends({}, state, { countryListVisible: payload });
+    },
+    setCarrierListVisible: function setCarrierListVisible() {
+      return _extends({}, state, { carrierListVisible: payload });
     },
     setPhoneInputHighLight: function setPhoneInputHighLight() {
       return _extends({}, state, { phoneInputHighLight: payload });
@@ -106,7 +110,7 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__66", "$compid__67", "state"], _this.customComponents = ["AtInput", "CountryList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__97", "$compid__98", "$compid__99", "state"], _this.customComponents = ["AtInput", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(OverHeader, [{
@@ -125,15 +129,20 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__66"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__97"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__66 = _genCompid2[0],
-          $compid__66 = _genCompid2[1];
+          $prevCompid__97 = _genCompid2[0],
+          $compid__97 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__67"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__98"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__67 = _genCompid4[0],
-          $compid__67 = _genCompid4[1];
+          $prevCompid__98 = _genCompid4[0],
+          $compid__98 = _genCompid4[1];
+
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__99"),
+          _genCompid6 = _slicedToArray(_genCompid5, 2),
+          $prevCompid__99 = _genCompid6[0],
+          $compid__99 = _genCompid6[1];
 
       var _useReducer = (0, _taroWeapp.useReducer)(reducer, initialState),
           _useReducer2 = _slicedToArray(_useReducer, 2),
@@ -155,6 +164,9 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         if (country.id === state.currentCountry.id) {
           return;
         }setState({ type: 'setRechargePhone', payload: '' });
+      };
+      var selectCarrier = function selectCarrier(carrier) {
+        console.log(carrier);
       };
 
       this.anonymousFunc0 = function () {
@@ -178,6 +190,12 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         return setState({ type: 'setCountryListVisible', payload: false });
       };
 
+      this.anonymousFunc7 = selectCarrier;
+
+      this.anonymousFunc8 = function () {
+        return setState({ type: 'setCarrierListVisible', payload: false });
+      };
+
       _taroWeapp.propsManager.set({
         "className": "myPhoneInput",
         "name": "value",
@@ -190,15 +208,21 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         "onConfirm": this.anonymousFunc2,
         "onFocus": this.anonymousFunc3,
         "onBlur": this.anonymousFunc4
-      }, $compid__66, $prevCompid__66);
+      }, $compid__97, $prevCompid__97);
       _taroWeapp.propsManager.set({
         "listVisible": state.countryListVisible,
         "onConfirm": this.anonymousFunc5,
         "onClose": this.anonymousFunc6
-      }, $compid__67, $prevCompid__67);
+      }, $compid__98, $prevCompid__98);
+      _taroWeapp.propsManager.set({
+        "listVisible": state.carrierListVisible,
+        "onConfirm": this.anonymousFunc7,
+        "onClose": this.anonymousFunc8
+      }, $compid__99, $prevCompid__99);
       Object.assign(this.__state, {
-        $compid__66: $compid__66,
-        $compid__67: $compid__67,
+        $compid__97: $compid__97,
+        $compid__98: $compid__98,
+        $compid__99: $compid__99,
         state: state
       });
       return this.__state;
@@ -236,6 +260,16 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
   }, {
     key: 'anonymousFunc6',
     value: function anonymousFunc6(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc7',
+    value: function anonymousFunc7(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc8',
+    value: function anonymousFunc8(e) {
       ;
     }
   }]);

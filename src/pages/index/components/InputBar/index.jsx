@@ -3,12 +3,14 @@ import { View, Image } from '@tarojs/components'
 import './index.scss'
 import { AtInput } from 'taro-ui'
 import CountryList from './components/CountryList/index'
+import CarrierList from './components/CarrierList/index'
 
 const initialState = {
   rechargePhone: '',
   carrierName: '',
   currentCountry: {},
   countryListVisible: false,
+  carrierListVisible: true,
   phoneInputHighLight: false,
 };
 const reducer = (state, { type, payload }) => {
@@ -17,6 +19,7 @@ const reducer = (state, { type, payload }) => {
     setCurrentCountry: () => ({ ...state, currentCountry: payload }),
     setCarrierName: () => ({ ...state, carrierName: payload }),
     setCountryListVisible: () => ({ ...state, countryListVisible: payload }),
+    setCarrierListVisible: () => ({ ...state, carrierListVisible: payload }),
     setPhoneInputHighLight: () => ({ ...state, phoneInputHighLight: payload }),
   };
   return typeMap[type]() || state;
@@ -59,6 +62,9 @@ export default function OverHeader ()  {
     if (country.id === state.currentCountry.id) return
     setState({ type: 'setRechargePhone', payload: '' })
   }
+  const selectCarrier = carrier => {
+    console.log(carrier)
+  }
 
   return (
     <View className="InputBar">
@@ -92,6 +98,11 @@ export default function OverHeader ()  {
         listVisible={state.countryListVisible}
         onConfirm={selectCountry}
         onClose={() => setState({ type: 'setCountryListVisible', payload: false })}
+      />
+      <CarrierList
+        listVisible={state.carrierListVisible}
+        onConfirm={selectCarrier}
+        onClose={() => setState({ type: 'setCarrierListVisible', payload: false })}
       />
     </View>
   )

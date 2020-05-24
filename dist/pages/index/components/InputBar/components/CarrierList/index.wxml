@@ -1,0 +1,15 @@
+<block wx:if="{{$taroCompReady}}">
+    <at-float-layout compid="{{$compid__101}}">
+        <view class="carrierList">
+            <view wx:key="$original" class="carrierList-item" wx:for="{{loopArray9}}" wx:for-item="v" wx:for-index="_anonIdx2">
+                <view class="view-image">
+                    <image class="image" mode="widthFix" src="https://globalcharge.oss-cn-hongkong.aliyuncs.com/prod/rechargeBack/product/carrier/CN/Telecom1586244795945.jpeg"></image>
+                </view>
+                <view class="name">Tass</view>
+                <view class="check">
+                    <at-icon compid="{{v.$compid__100}}"></at-icon>
+                </view>
+            </view>
+        </view>
+    </at-float-layout>
+</block>
