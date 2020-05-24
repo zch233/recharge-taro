@@ -7,7 +7,7 @@
             <view class="phoneInputBar">
                 <view class="areaNumber">+{{state.currentCountry.areaNumber}}</view>
                 <view class="phoneInput">
-                    <at-input compid="{{$compid__97}}"></at-input>
+                    <at-input compid="{{$compid__113}}"></at-input>
                 </view>
             </view>
         </view>
@@ -16,7 +16,7 @@
             <view class="countryName">{{state.currentCountry.cname}}</view>
             <view class="carrierName">{{state.carrierName}}</view>
         </view>
-        <country-list compid="{{$compid__98}}"></country-list>
-        <carrier-list compid="{{$compid__99}}"></carrier-list>
+        <country-list compid="{{$compid__114}}"></country-list>
+        <carrier-list compid="{{$compid__115}}"></carrier-list>
     </view>
 </block>

@@ -50,7 +50,7 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CountryList.__proto__ || Object.getPrototypeOf(CountryList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray9", "$compid__101", "$anonymousCallee__7", "listVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CountryList.__proto__ || Object.getPrototypeOf(CountryList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray23", "$compid__109", "carrierList", "currentCarrier", "listVisible", "onClose", "onConfirm"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CountryList, [{
@@ -63,40 +63,51 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
   }, {
     key: "_createData",
     value: function _createData() {
+      var _this2 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__101"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__109"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__101 = _genCompid2[0],
-          $compid__101 = _genCompid2[1];
+          $prevCompid__109 = _genCompid2[0],
+          $compid__109 = _genCompid2[1];
 
       var _props = this.__props,
           listVisible = _props.listVisible,
-          onClose = _props.onClose;
+          onClose = _props.onClose,
+          onConfirm = _props.onConfirm,
+          carrierList = _props.carrierList,
+          currentCarrier = _props.currentCarrier;
 
-      var $anonymousCallee__7 = '123456789'.split('');
-      var loopArray9 = '123456789'.split('').map(function (v, _anonIdx) {
-        v = {
-          $original: (0, _taroWeapp.internal_get_original)(v)
+      var loopArray23 = carrierList.map(function (carrier, __index0) {
+        carrier = {
+          $original: (0, _taroWeapp.internal_get_original)(carrier)
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bdzzzzzzzz" + _anonIdx, true),
+        var _$indexKey = "eezzz" + __index0;
+
+        _this2.anonymousFunc0Map[_$indexKey] = function () {
+          return _this2.__props.onConfirm(carrier.$original);
+        };
+
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "efzzzzzzzz" + __index0, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__100 = _genCompid4[0],
-            $compid__100 = _genCompid4[1];
+            $prevCompid__108 = _genCompid4[0],
+            $compid__108 = _genCompid4[1];
 
         _taroWeapp.propsManager.set({
           "value": "check",
           "size": "18",
           "color": "#fff"
-        }, $compid__100, $prevCompid__100);
+        }, $compid__108, $prevCompid__108);
         return {
-          $compid__100: $compid__100,
-          $original: v.$original
+          _$indexKey: _$indexKey,
+          $compid__108: $compid__108,
+          $original: carrier.$original
         };
       });
       _taroWeapp.propsManager.set({
@@ -104,18 +115,32 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": listVisible,
         "title": "\u8BF7\u9009\u62E9\u8FD0\u8425\u5546",
         "onClose": this.__props.onClose
-      }, $compid__101, $prevCompid__101);
+      }, $compid__109, $prevCompid__109);
       Object.assign(this.__state, {
-        loopArray9: loopArray9,
-        $compid__101: $compid__101,
-        $anonymousCallee__7: $anonymousCallee__7
+        loopArray23: loopArray23,
+        $compid__109: $compid__109,
+        carrierList: carrierList,
+        currentCarrier: currentCarrier
       });
       return this.__state;
+    }
+  }, {
+    key: "anonymousFunc0",
+    value: function anonymousFunc0(_$indexKey) {
+      var _anonymousFunc0Map;
+
+      ;
+
+      for (var _len2 = arguments.length, e = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        e[_key2 - 1] = arguments[_key2];
+      }
+
+      return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
     }
   }]);
 
   return CountryList;
-}(_taroWeapp2.default.Component), _class.$$events = [], _class.$$componentPath = "pages/index/components/InputBar/components/CarrierList/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/index/components/InputBar/components/CarrierList/index", _temp2);
 exports.default = CountryList;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(CountryList));

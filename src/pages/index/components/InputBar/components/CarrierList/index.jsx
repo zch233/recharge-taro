@@ -1,19 +1,19 @@
-import Taro, { useState } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import './index.scss'
 import { AtFloatLayout, AtIcon } from "taro-ui"
 
-export default function CountryList ({ listVisible, onClose })  {
+export default function CountryList ({ listVisible, onClose, onConfirm, carrierList, currentCarrier })  {
 
   return (
     <AtFloatLayout className='myCarrierList' isOpened={listVisible} title='请选择运营商' onClose={onClose}>
       <View className='carrierList'>
         {
-          '123456789'.split('').map(v => (
-            <View key={v} className='carrierList-item'>
-              <View className='view-image'><Image className='image' mode='widthFix' src='https://globalcharge.oss-cn-hongkong.aliyuncs.com/prod/rechargeBack/product/carrier/CN/Telecom1586244795945.jpeg' /></View>
-              <View className='name'>Tass</View>
-              <View className='check'><AtIcon value='check' size='18' color='#fff'></AtIcon></View>
+          carrierList.map(carrier => (
+            <View key={carrier.id} className='carrierList-item' onClick={() => onConfirm(carrier)}>
+              <View className='view-image'><Image className='image' mode='widthFix' src={carrier.carrierImgUrl + '?x-oss-process=image/resize,w_100'} /></View>
+              <View className='name'>{carrier.carrierName}</View>
+              <View className={`check ${carrier.carrierName === currentCarrier.carrierName && 'selected'}`}><AtIcon value='check' size='18' color='#fff'></AtIcon></View>
             </View>
           ))
         }

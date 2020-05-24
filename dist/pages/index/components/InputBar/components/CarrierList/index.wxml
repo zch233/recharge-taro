@@ -1,13 +1,13 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__101}}">
+    <at-float-layout compid="{{$compid__109}}">
         <view class="carrierList">
-            <view wx:key="$original" class="carrierList-item" wx:for="{{loopArray9}}" wx:for-item="v" wx:for-index="_anonIdx2">
+            <view wx:key="id" class="carrierList-item" bindtap="anonymousFunc0" wx:for="{{loopArray23}}" wx:for-item="carrier" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{carrier._$indexKey}}">
                 <view class="view-image">
-                    <image class="image" mode="widthFix" src="https://globalcharge.oss-cn-hongkong.aliyuncs.com/prod/rechargeBack/product/carrier/CN/Telecom1586244795945.jpeg"></image>
+                    <image class="image" mode="widthFix" src="{{carrier.$original.carrierImgUrl + '?x-oss-process=image/resize,w_100'}}"></image>
                 </view>
-                <view class="name">Tass</view>
-                <view class="check">
-                    <at-icon compid="{{v.$compid__100}}"></at-icon>
+                <view class="name">{{carrier.$original.carrierName}}</view>
+                <view class="{{'check ' + (carrier.$original.carrierName === currentCarrier.carrierName && 'selected')}}">
+                    <at-icon compid="{{carrier.$compid__108}}"></at-icon>
                 </view>
             </view>
         </view>

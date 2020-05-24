@@ -1,13 +1,13 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__71}}">
+    <at-float-layout compid="{{$compid__30}}">
         <view class="searchBar">
-            <at-icon compid="{{$compid__72}}"></at-icon>
+            <at-icon compid="{{$compid__31}}"></at-icon>
             <view class="searchInput">
-                <at-input compid="{{$compid__73}}"></at-input>
+                <at-input compid="{{$compid__32}}"></at-input>
             </view>
         </view>
         <scroll-view class="countryList" scroll-y="{{true}}">
-            <view wx:key="v" class="countryList-item" wx:for="{{$anonymousCallee__5}}" wx:for-item="v" wx:for-index="_anonIdx2">
+            <view wx:key="v" class="countryList-item" wx:for="{{$anonymousCallee__3}}" wx:for-item="v" wx:for-index="_anonIdx2">
                 <view class="view-image">
                     <image class="image" mode="widthFix" src="https://oss.globalcharge.cn/prod/wechat/countryFlags/China.svg"></image>
                 </view>

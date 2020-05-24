@@ -41,7 +41,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var initialState = {
   rechargePhone: '',
   carrierName: '',
+  carrierList: [],
   currentCountry: {},
+  currentCarrier: {},
   countryListVisible: false,
   carrierListVisible: true,
   phoneInputHighLight: false
@@ -54,11 +56,17 @@ var reducer = function reducer(state, _ref) {
     setRechargePhone: function setRechargePhone() {
       return _extends({}, state, { rechargePhone: payload });
     },
+    setCarrierName: function setCarrierName() {
+      return _extends({}, state, { carrierName: payload });
+    },
+    setCarrierList: function setCarrierList() {
+      return _extends({}, state, { carrierList: payload });
+    },
     setCurrentCountry: function setCurrentCountry() {
       return _extends({}, state, { currentCountry: payload });
     },
-    setCarrierName: function setCarrierName() {
-      return _extends({}, state, { carrierName: payload });
+    setCurrentCarrier: function setCurrentCarrier() {
+      return _extends({}, state, { currentCarrier: payload });
     },
     setCountryListVisible: function setCountryListVisible() {
       return _extends({}, state, { countryListVisible: payload });
@@ -96,27 +104,27 @@ var checkPhoneNumber = function checkPhoneNumber(phone) {
   }
 };
 
-var OverHeader = (_temp2 = _class = function (_Taro$Component) {
-  _inherits(OverHeader, _Taro$Component);
+var InputBar = (_temp2 = _class = function (_Taro$Component) {
+  _inherits(InputBar, _Taro$Component);
 
-  function OverHeader() {
+  function InputBar() {
     var _ref2;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, OverHeader);
+    _classCallCheck(this, InputBar);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OverHeader.__proto__ || Object.getPrototypeOf(OverHeader)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__97", "$compid__98", "$compid__99", "state"], _this.customComponents = ["AtInput", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__113", "$compid__114", "$compid__115", "state"], _this.customComponents = ["AtInput", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(OverHeader, [{
+  _createClass(InputBar, [{
     key: '_constructor',
     value: function _constructor(props) {
-      _get(OverHeader.prototype.__proto__ || Object.getPrototypeOf(OverHeader.prototype), '_constructor', this).call(this, props);
+      _get(InputBar.prototype.__proto__ || Object.getPrototypeOf(InputBar.prototype), '_constructor', this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
@@ -129,20 +137,20 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__97"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__113"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__97 = _genCompid2[0],
-          $compid__97 = _genCompid2[1];
+          $prevCompid__113 = _genCompid2[0],
+          $compid__113 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__98"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__114"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__98 = _genCompid4[0],
-          $compid__98 = _genCompid4[1];
+          $prevCompid__114 = _genCompid4[0],
+          $compid__114 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__99"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__115"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__99 = _genCompid6[0],
-          $compid__99 = _genCompid6[1];
+          $prevCompid__115 = _genCompid6[0],
+          $compid__115 = _genCompid6[1];
 
       var _useReducer = (0, _taroWeapp.useReducer)(reducer, initialState),
           _useReducer2 = _slicedToArray(_useReducer, 2),
@@ -166,7 +174,7 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         }setState({ type: 'setRechargePhone', payload: '' });
       };
       var selectCarrier = function selectCarrier(carrier) {
-        console.log(carrier);
+        setState({ type: 'setCurrentCarrier', payload: carrier });
       };
 
       this.anonymousFunc0 = function () {
@@ -208,21 +216,23 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
         "onConfirm": this.anonymousFunc2,
         "onFocus": this.anonymousFunc3,
         "onBlur": this.anonymousFunc4
-      }, $compid__97, $prevCompid__97);
+      }, $compid__113, $prevCompid__113);
       _taroWeapp.propsManager.set({
         "listVisible": state.countryListVisible,
         "onConfirm": this.anonymousFunc5,
         "onClose": this.anonymousFunc6
-      }, $compid__98, $prevCompid__98);
+      }, $compid__114, $prevCompid__114);
       _taroWeapp.propsManager.set({
+        "currentCarrier": state.currentCarrier,
         "listVisible": state.carrierListVisible,
+        "carrierList": state.carrierList || [1, 2, 3, 4, 5, 6, 7, 8, 9],
         "onConfirm": this.anonymousFunc7,
         "onClose": this.anonymousFunc8
-      }, $compid__99, $prevCompid__99);
+      }, $compid__115, $prevCompid__115);
       Object.assign(this.__state, {
-        $compid__97: $compid__97,
-        $compid__98: $compid__98,
-        $compid__99: $compid__99,
+        $compid__113: $compid__113,
+        $compid__114: $compid__114,
+        $compid__115: $compid__115,
         state: state
       });
       return this.__state;
@@ -274,11 +284,11 @@ var OverHeader = (_temp2 = _class = function (_Taro$Component) {
     }
   }]);
 
-  return OverHeader;
+  return InputBar;
 }(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/index/components/InputBar/index", _temp2);
-exports.default = OverHeader;
+exports.default = InputBar;
 
-Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(OverHeader));
+Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(InputBar));
 
 /***/ }),
 

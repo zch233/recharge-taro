@@ -8,7 +8,9 @@ import CarrierList from './components/CarrierList/index'
 const initialState = {
   rechargePhone: '',
   carrierName: '',
+  carrierList: [],
   currentCountry: {},
+  currentCarrier: {},
   countryListVisible: false,
   carrierListVisible: true,
   phoneInputHighLight: false,
@@ -16,8 +18,10 @@ const initialState = {
 const reducer = (state, { type, payload }) => {
   const typeMap = {
     setRechargePhone: () => ({ ...state, rechargePhone: payload }),
-    setCurrentCountry: () => ({ ...state, currentCountry: payload }),
     setCarrierName: () => ({ ...state, carrierName: payload }),
+    setCarrierList: () => ({ ...state, carrierList: payload }),
+    setCurrentCountry: () => ({ ...state, currentCountry: payload }),
+    setCurrentCarrier: () => ({ ...state, currentCarrier: payload }),
     setCountryListVisible: () => ({ ...state, countryListVisible: payload }),
     setCarrierListVisible: () => ({ ...state, carrierListVisible: payload }),
     setPhoneInputHighLight: () => ({ ...state, phoneInputHighLight: payload }),
@@ -47,7 +51,7 @@ const checkPhoneNumber = phone => {
     return true
   }
 }
-export default function OverHeader ()  {
+export default function InputBar ()  {
   const [state, setState] = useReducer(reducer, initialState);
   const phoneInputChange = value => {
     setState({ type: 'setRechargePhone', payload: value })
@@ -63,7 +67,7 @@ export default function OverHeader ()  {
     setState({ type: 'setRechargePhone', payload: '' })
   }
   const selectCarrier = carrier => {
-    console.log(carrier)
+    setState({ type: 'setCurrentCarrier', payload: carrier })
   }
 
   return (
@@ -100,7 +104,9 @@ export default function OverHeader ()  {
         onClose={() => setState({ type: 'setCountryListVisible', payload: false })}
       />
       <CarrierList
+        currentCarrier={state.currentCarrier}
         listVisible={state.carrierListVisible}
+        carrierList={state.carrierList || [1,2,3,4,5,6,7,8,9]}
         onConfirm={selectCarrier}
         onClose={() => setState({ type: 'setCarrierListVisible', payload: false })}
       />
