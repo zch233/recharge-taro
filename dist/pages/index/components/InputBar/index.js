@@ -24,9 +24,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _class, _temp2;
 
-var _initialState, _class, _temp2;
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _taroWeapp = __webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js");
 
@@ -58,23 +58,30 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var userInfo = _jsonwebtoken2.default.decode(_taroWeapp2.default.getStorageSync('token'));
-var initialState = (_initialState = {
+var initialState = {
   rechargePhone: '',
-  carrierName: ''
-}, _defineProperty(_initialState, 'carrierName', ''), _defineProperty(_initialState, 'countryList', []), _defineProperty(_initialState, 'carrierList', []), _defineProperty(_initialState, 'usedPhoneList', []), _defineProperty(_initialState, 'currentCountry', {}), _defineProperty(_initialState, 'currentCarrier', {}), _defineProperty(_initialState, 'countryListVisible', false), _defineProperty(_initialState, 'carrierListVisible', false), _defineProperty(_initialState, 'phoneInputHighLight', false), _initialState);
+  emptyTips: '请选择国家输入号码',
+  countryList: [],
+  carrierList: [],
+  usedPhoneList: [],
+  currentCountry: {},
+  currentCarrier: {},
+  countryListVisible: false,
+  carrierListVisible: false,
+  phoneInputHighLight: false
+};
 var reducer = function reducer(state, _ref) {
   var type = _ref.type,
       payload = _ref.payload;
 
   var typeMap = {
     setRechargePhone: function setRechargePhone() {
+      console.log(payload);
       return _extends({}, state, { rechargePhone: payload });
     },
-    setCarrierName: function setCarrierName() {
-      return _extends({}, state, { carrierName: payload });
+    setEmptyTips: function setEmptyTips() {
+      return _extends({}, state, { emptyTips: payload });
     },
     setCarrierList: function setCarrierList() {
       return _extends({}, state, { carrierList: payload });
@@ -141,7 +148,7 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__246", "$compid__247", "$compid__248", "$compid__249", "state"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__434", "$compid__435", "$compid__436", "$compid__437", "state", "setRequestProductData"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(InputBar, [{
@@ -162,25 +169,27 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__246"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__434"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__246 = _genCompid2[0],
-          $compid__246 = _genCompid2[1];
+          $prevCompid__434 = _genCompid2[0],
+          $compid__434 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__247"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__435"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__247 = _genCompid4[0],
-          $compid__247 = _genCompid4[1];
+          $prevCompid__435 = _genCompid4[0],
+          $compid__435 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__248"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__436"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__248 = _genCompid6[0],
-          $compid__248 = _genCompid6[1];
+          $prevCompid__436 = _genCompid6[0],
+          $compid__436 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__249"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__437"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__249 = _genCompid8[0],
-          $compid__249 = _genCompid8[1];
+          $prevCompid__437 = _genCompid8[0],
+          $compid__437 = _genCompid8[1];
+
+      var setRequestProductData = this.__props.setRequestProductData;
 
       var _useReducer = (0, _taroWeapp.useReducer)(reducer, initialState),
           _useReducer2 = _slicedToArray(_useReducer, 2),
@@ -188,13 +197,9 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
           setState = _useReducer2[1];
 
       var phoneInputChange = function phoneInputChange(value) {
-        setState({ type: 'setRechargePhone', payload: value });
-      };
-      var handleInputBlur = function handleInputBlur() {
-        setState({ type: 'setPhoneInputHighLight', payload: false });
-        if (!checkPhoneNumber(state.rechargePhone)) {
-          return;
-        }
+        var phone = value.replace(/[^0-9]+/g, '');
+        setState({ type: 'setRechargePhone', payload: phone });
+        return phone;
       };
       var selectCountry = function selectCountry(country) {
         console.log(country);
@@ -233,32 +238,24 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
           return _ref3.apply(this, arguments);
         };
       }();
-      var selectCarrier = function selectCarrier(carrier) {
-        setState({ type: 'setCurrentCarrier', payload: carrier });
-      };
-      var getProductListOrCarrierListWithCarrierInfo = function () {
-        var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(carrierInfo) {
+      var showCarrierList = function () {
+        var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
           return _regenerator2.default.wrap(function _callee2$(_context2) {
             while (1) {
               switch (_context2.prev = _context2.next) {
                 case 0:
-                  if (!carrierInfo) {
-                    _context2.next = 4;
+                  if (!(state.carrierList.length === 0)) {
+                    _context2.next = 3;
                     break;
                   }
 
-                  setState({ type: 'setCurrentCarrier', payload: carrierInfo });
-                  _context2.next = 7;
-                  break;
+                  _context2.next = 3;
+                  return getCarrierList(state.currentCountry.countryCode);
+
+                case 3:
+                  setState({ type: 'setCarrierListVisible', payload: true });
 
                 case 4:
-                  _context2.next = 6;
-                  return getCarrierList(_this2.displayCountryCode);
-
-                case 6:
-                  setState({ type: 'setCarrierVisible', payload: true });
-
-                case 7:
                 case 'end':
                   return _context2.stop();
               }
@@ -266,40 +263,38 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
           }, _callee2, _this2);
         }));
 
-        return function getProductListOrCarrierListWithCarrierInfo(_x2) {
+        return function showCarrierList() {
           return _ref5.apply(this, arguments);
         };
       }();
-      var getCarrierInfo = function () {
-        var _ref6 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee3(countryCode, account) {
-          var _ref7, carrierInfo;
-
+      var selectCarrier = function selectCarrier(carrier) {
+        setState({ type: 'setCurrentCarrier', payload: carrier });
+        setState({ type: 'setCarrierListVisible', payload: false });
+      };
+      var getProductListOrCarrierListWithCarrierInfo = function () {
+        var _ref6 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee3(carrierName) {
           return _regenerator2.default.wrap(function _callee3$(_context3) {
             while (1) {
               switch (_context3.prev = _context3.next) {
                 case 0:
-                  if (_this2.checkPhoneNumber()) {
-                    _context3.next = 5;
+                  if (!carrierName) {
+                    _context3.next = 4;
                     break;
                   }
 
-                  _this2.emptyTips = '请选择国家输入号码';
-                  return _context3.abrupt('return');
-
-                case 5:
-                  _this2.emptyTips = '请选择运营商';
-
-                case 6:
+                  setState({ type: 'setCurrentCarrier', payload: { carrierName: carrierName } });
                   _context3.next = 8;
-                  return api.getCarrierInfo({ countryCode: countryCode, account: account });
+                  break;
+
+                case 4:
+                  setState({ type: 'setCurrentCarrier', payload: { carrierName: '请选择运营商' } });
+                  _context3.next = 7;
+                  return getCarrierList(state.currentCountry.countryCode);
+
+                case 7:
+                  setState({ type: 'setCarrierListVisible', payload: true });
 
                 case 8:
-                  _ref7 = _context3.sent;
-                  carrierInfo = _ref7.result;
-
-                  getProductListOrCarrierListWithCarrierInfo(carrierInfo);
-
-                case 11:
                 case 'end':
                   return _context3.stop();
               }
@@ -307,8 +302,62 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
           }, _callee3, _this2);
         }));
 
-        return function getCarrierInfo(_x3, _x4) {
+        return function getProductListOrCarrierListWithCarrierInfo(_x2) {
           return _ref6.apply(this, arguments);
+        };
+      }();
+      var getCarrierInfo = function () {
+        var _ref7 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
+          return _regenerator2.default.wrap(function _callee5$(_context5) {
+            while (1) {
+              switch (_context5.prev = _context5.next) {
+                case 0:
+                  if (checkPhoneNumber(state.rechargePhone)) {
+                    _context5.next = 5;
+                    break;
+                  }
+
+                  setState({ type: 'setEmptyTips', payload: '请选择国家输入号码' });
+                  return _context5.abrupt('return');
+
+                case 5:
+                  setState({ type: 'setEmptyTips', payload: '请选择运营商' });
+
+                case 6:
+                  setTimeout(_asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
+                    var _ref9, carrierName;
+
+                    return _regenerator2.default.wrap(function _callee4$(_context4) {
+                      while (1) {
+                        switch (_context4.prev = _context4.next) {
+                          case 0:
+                            _context4.next = 2;
+                            return api.getCarrierInfo({ countryCode: state.currentCountry.countryCode, account: state.rechargePhone });
+
+                          case 2:
+                            _ref9 = _context4.sent;
+                            carrierName = _ref9.result;
+
+                            getProductListOrCarrierListWithCarrierInfo(carrierName);
+
+                          case 5:
+                          case 'end':
+                            return _context4.stop();
+                        }
+                      }
+                    }, _callee4, _this2);
+                  })));
+
+                case 7:
+                case 'end':
+                  return _context5.stop();
+              }
+            }
+          }, _callee5, _this2);
+        }));
+
+        return function getCarrierInfo() {
+          return _ref7.apply(this, arguments);
         };
       }();
       var getSelectedCountryFromCountryMap = function getSelectedCountryFromCountryMap(countryCode, countryList) {
@@ -321,19 +370,19 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         return Object.keys(selectedCountry).length === 0 ? countryList[0] : selectedCountry;
       };
       var getUsedPhoneList = function () {
-        var _ref8 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
-          var _ref9, result;
+        var _ref10 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee6() {
+          var _ref11, result;
 
-          return _regenerator2.default.wrap(function _callee4$(_context4) {
+          return _regenerator2.default.wrap(function _callee6$(_context6) {
             while (1) {
-              switch (_context4.prev = _context4.next) {
+              switch (_context6.prev = _context6.next) {
                 case 0:
-                  _context4.next = 2;
+                  _context6.next = 2;
                   return api.getUsedPhoneList();
 
                 case 2:
-                  _ref9 = _context4.sent;
-                  result = _ref9.result;
+                  _ref11 = _context6.sent;
+                  result = _ref11.result;
 
                   result.map(function (v) {
                     _countryMap2.default.map(function (v2) {
@@ -347,34 +396,41 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
 
                 case 6:
                 case 'end':
-                  return _context4.stop();
+                  return _context6.stop();
               }
             }
-          }, _callee4, _this2);
+          }, _callee6, _this2);
         }));
 
         return function getUsedPhoneList() {
-          return _ref8.apply(this, arguments);
+          return _ref10.apply(this, arguments);
         };
       }();
       var chooseUsedPhoneNumber = function chooseUsedPhoneNumber(data) {
         console.log(data);
         setState({ type: 'setPhoneInputHighLight', payload: false });
       };
+      var handleInputBlur = function handleInputBlur() {
+        console.log(state.rechargePhone);
+        setState({ type: 'setPhoneInputHighLight', payload: false });
+        if (!checkPhoneNumber(state.rechargePhone)) {
+          return;
+        }getCarrierInfo();
+      };
       var getPageData = function () {
-        var _ref10 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
-          var _ref11, result, countryList, currentCountry;
+        var _ref12 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee7() {
+          var _ref13, result, countryList, currentCountry;
 
-          return _regenerator2.default.wrap(function _callee5$(_context5) {
+          return _regenerator2.default.wrap(function _callee7$(_context7) {
             while (1) {
-              switch (_context5.prev = _context5.next) {
+              switch (_context7.prev = _context7.next) {
                 case 0:
-                  _context5.next = 2;
+                  _context7.next = 2;
                   return api.getPageData();
 
                 case 2:
-                  _ref11 = _context5.sent;
-                  result = _ref11.result;
+                  _ref13 = _context7.sent;
+                  result = _ref13.result;
                   countryList = result.countryList.map(function (v) {
                     return (v.searchKeyword = ('+' + v.areaNumber + v.cname + v.countryCode + v.currencyCode + v.ename).toLowerCase()) && v;
                   });
@@ -390,14 +446,14 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
 
                 case 9:
                 case 'end':
-                  return _context5.stop();
+                  return _context7.stop();
               }
             }
-          }, _callee5, _this2);
+          }, _callee7, _this2);
         }));
 
         return function getPageData() {
-          return _ref10.apply(this, arguments);
+          return _ref12.apply(this, arguments);
         };
       }();
 
@@ -411,10 +467,7 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       };
 
       this.anonymousFunc1 = phoneInputChange;
-
-      this.anonymousFunc2 = function () {
-        return setState({ type: 'setPhoneInputHighLight', payload: true });
-      };
+      this.anonymousFunc2 = handleInputBlur;
 
       this.anonymousFunc3 = function () {
         return setState({ type: 'setPhoneInputHighLight', payload: true });
@@ -422,22 +475,23 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
 
       this.anonymousFunc4 = handleInputBlur;
       this.anonymousFunc5 = chooseUsedPhoneNumber;
-      this.anonymousFunc6 = selectCountry;
+      this.anonymousFunc6 = showCarrierList;
+      this.anonymousFunc7 = selectCountry;
 
-      this.anonymousFunc7 = function () {
+      this.anonymousFunc8 = function () {
         return setState({ type: 'setCountryListVisible', payload: false });
       };
 
-      this.anonymousFunc8 = selectCarrier;
+      this.anonymousFunc9 = selectCarrier;
 
-      this.anonymousFunc9 = function () {
+      this.anonymousFunc10 = function () {
         return setState({ type: 'setCarrierListVisible', payload: false });
       };
 
       _taroWeapp.propsManager.set({
         "className": "myPhoneInput",
         "name": "value",
-        "type": "phone",
+        "type": "number",
         "border": false,
         "placeholder": '\u8BF7\u8F93\u5165\u624B\u673A\u53F7',
         "maxLength": 15,
@@ -446,30 +500,30 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         "onConfirm": this.anonymousFunc2,
         "onFocus": this.anonymousFunc3,
         "onBlur": this.anonymousFunc4
-      }, $compid__246, $prevCompid__246);
+      }, $compid__434, $prevCompid__434);
       _taroWeapp.propsManager.set({
         "usedPhoneList": state.usedPhoneList,
         "onConfirm": this.anonymousFunc5,
         "visible": state.phoneInputHighLight
-      }, $compid__247, $prevCompid__247);
+      }, $compid__435, $prevCompid__435);
       _taroWeapp.propsManager.set({
         "countryList": state.countryList,
         "listVisible": state.countryListVisible,
-        "onConfirm": this.anonymousFunc6,
-        "onClose": this.anonymousFunc7
-      }, $compid__248, $prevCompid__248);
+        "onConfirm": this.anonymousFunc7,
+        "onClose": this.anonymousFunc8
+      }, $compid__436, $prevCompid__436);
       _taroWeapp.propsManager.set({
         "currentCarrier": state.currentCarrier,
         "listVisible": state.carrierListVisible,
         "carrierList": state.carrierList,
-        "onConfirm": this.anonymousFunc8,
-        "onClose": this.anonymousFunc9
-      }, $compid__249, $prevCompid__249);
+        "onConfirm": this.anonymousFunc9,
+        "onClose": this.anonymousFunc10
+      }, $compid__437, $prevCompid__437);
       Object.assign(this.__state, {
-        $compid__246: $compid__246,
-        $compid__247: $compid__247,
-        $compid__248: $compid__248,
-        $compid__249: $compid__249,
+        $compid__434: $compid__434,
+        $compid__435: $compid__435,
+        $compid__436: $compid__436,
+        $compid__437: $compid__437,
         state: state
       });
       return this.__state;
@@ -524,10 +578,15 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
     value: function anonymousFunc9(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc10',
+    value: function anonymousFunc10(e) {
+      ;
+    }
   }]);
 
   return InputBar;
-}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/index/components/InputBar/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc6"], _class.$$componentPath = "pages/index/components/InputBar/index", _temp2);
 exports.default = InputBar;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(InputBar));

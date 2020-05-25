@@ -12,8 +12,7 @@ import JWT from 'jsonwebtoken'
 const userInfo = JWT.decode(Taro.getStorageSync('token'))
 const initialState = {
   rechargePhone: '',
-  carrierName: '',
-  carrierName: '',
+  emptyTips: '请选择国家输入号码',
   countryList: [],
   carrierList: [],
   usedPhoneList: [],
@@ -25,8 +24,11 @@ const initialState = {
 };
 const reducer = (state, { type, payload }) => {
   const typeMap = {
-    setRechargePhone: () => ({ ...state, rechargePhone: payload }),
-    setCarrierName: () => ({ ...state, carrierName: payload }),
+    setRechargePhone: () => {
+      console.log(payload)
+      return ({ ...state, rechargePhone: payload })
+    },
+    setEmptyTips: () => ({ ...state, emptyTips: payload }),
     setCarrierList: () => ({ ...state, carrierList: payload }),
     setCountryList: () => ({ ...state, countryList: payload }),
     setUsedPhoneList: () => ({ ...state, usedPhoneList: payload }),
@@ -61,14 +63,12 @@ const checkPhoneNumber = phone => {
     return true
   }
 }
-export default function InputBar ()  {
+export default function InputBar ({ setRequestProductData })  {
   const [state, setState] = useReducer(reducer, initialState);
   const phoneInputChange = value => {
-    setState({ type: 'setRechargePhone', payload: value })
-  }
-  const handleInputBlur = () => {
-    setState({ type: 'setPhoneInputHighLight', payload: false })
-    if (!checkPhoneNumber(state.rechargePhone)) return
+    const phone = value.replace(/[^0-9]+/g, '')
+    setState({ type: 'setRechargePhone', payload: phone })
+    return phone
   }
   const selectCountry = country => {
     console.log(country)
@@ -81,26 +81,36 @@ export default function InputBar ()  {
     const { result } = await api.getCarrierList(countryCode)
       setState({ type: 'setCarrierList', payload: result || [] })
   }
+  const showCarrierList = async () => {
+    if (state.carrierList.length === 0) {
+      await getCarrierList(state.currentCountry.countryCode)
+    }
+    setState({ type: 'setCarrierListVisible', payload: true })
+  }
   const selectCarrier = carrier => {
     setState({ type: 'setCurrentCarrier', payload: carrier })
+    setState({ type: 'setCarrierListVisible', payload: false })
   }
-  const getProductListOrCarrierListWithCarrierInfo = async carrierInfo => {
-    if (carrierInfo) {
-      setState({ type: 'setCurrentCarrier', payload: carrierInfo })
+  const getProductListOrCarrierListWithCarrierInfo = async carrierName => {
+    if (carrierName) {
+      setState({ type: 'setCurrentCarrier', payload: { carrierName } })
     } else {
-      await getCarrierList(this.displayCountryCode)
-      setState({ type: 'setCarrierVisible', payload: true })
+      setState({ type: 'setCurrentCarrier', payload: { carrierName: '请选择运营商' } })
+      await getCarrierList(state.currentCountry.countryCode)
+      setState({ type: 'setCarrierListVisible', payload: true })
     }
   }
-  const getCarrierInfo = async (countryCode, account) => {
-    if (!this.checkPhoneNumber()) {
-      this.emptyTips = '请选择国家输入号码'
+  const getCarrierInfo = async () => {
+    if (!checkPhoneNumber(state.rechargePhone)) {
+      setState({ type: 'setEmptyTips', payload: '请选择国家输入号码' })
       return
     } else {
-      this.emptyTips = '请选择运营商'
+      setState({ type: 'setEmptyTips', payload: '请选择运营商' })
     }
-    const { result: carrierInfo } = await api.getCarrierInfo({ countryCode, account })
-    getProductListOrCarrierListWithCarrierInfo(carrierInfo)
+    setTimeout(async () => {
+      const { result: carrierName } = await api.getCarrierInfo({ countryCode: state.currentCountry.countryCode, account: state.rechargePhone })
+      getProductListOrCarrierListWithCarrierInfo(carrierName)
+    })
   }
   const getSelectedCountryFromCountryMap = (countryCode, countryList) => {
     let selectedCountry = {}
@@ -126,6 +136,12 @@ export default function InputBar ()  {
   const chooseUsedPhoneNumber = data => {
     console.log(data)
     setState({ type: 'setPhoneInputHighLight', payload: false })
+  }
+  const handleInputBlur = () => {
+    console.log(state.rechargePhone)
+    setState({ type: 'setPhoneInputHighLight', payload: false })
+    if (!checkPhoneNumber(state.rechargePhone)) return
+    getCarrierInfo()
   }
   const getPageData = async () => {
     const { result } = await api.getPageData()
@@ -154,13 +170,13 @@ export default function InputBar ()  {
             <AtInput
               className='myPhoneInput'
               name='value'
-              type='phone'
+              type='number'
               border={false}
               placeholder='请输入手机号'
               maxLength={15}
               value={state.rechargePhone}
               onChange={phoneInputChange}
-              onConfirm={() => setState({ type: 'setPhoneInputHighLight', payload: true })}
+              onConfirm={handleInputBlur}
               onFocus={() => setState({ type: 'setPhoneInputHighLight', payload: true })}
               onBlur={handleInputBlur}
             />
@@ -171,7 +187,7 @@ export default function InputBar ()  {
       <View className={`${state.phoneInputHighLight && 'active'} phoneInputBg`} />
       <View className='InputBar-bottom'>
         <View className={`countryName ${state.currentCountry.cname.length > 4 && 'long'}`}>{state.currentCountry.cname}</View>
-        <View className='carrierName'>{state.carrierName}</View>
+        <View className='carrierName' onClick={showCarrierList}>{state.currentCarrier.carrierName}</View>
       </View>
       <CountryList
         countryList={state.countryList}

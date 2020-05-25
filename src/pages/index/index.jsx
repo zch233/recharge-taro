@@ -1,4 +1,4 @@
-import Taro, { useEffect, useRouter } from '@tarojs/taro'
+import Taro, { useState, useEffect, useRouter } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import './index.scss'
 import OverHeader from './components/OverHeader/index'
@@ -7,6 +7,7 @@ import ProductBar from './components/ProductBar/index'
 import * as api from './api.js'
 
 export default function Index ()  {
+  const [requestProductData, setRequestProductData] = useState({})
   const router = useRouter()
   useEffect(() => {
     router.params.login && Taro.login({
@@ -22,8 +23,8 @@ export default function Index ()  {
   return (
     <View>
       <OverHeader />
-      <InputBar />
-      <ProductBar />
+      <InputBar setRequestProductData={data => setRequestProductData(data)} />
+      <ProductBar requestProductData={requestProductData} />
     </View>
   )
 }
