@@ -1,18 +1,26 @@
-import Taro, { useReducer } from '@tarojs/taro'
+import Taro, { useReducer, useEffect } from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import './index.scss'
 import { AtInput } from 'taro-ui'
 import CountryList from './components/CountryList/index'
 import CarrierList from './components/CarrierList/index'
+import UsedPhoneList from './components/UsedPhoneList/index'
+import * as api from './api'
+import countryMap from '@/utils/countryMap'
+import JWT from 'jsonwebtoken'
 
+const userInfo = JWT.decode(Taro.getStorageSync('token'))
 const initialState = {
   rechargePhone: '',
   carrierName: '',
+  carrierName: '',
+  countryList: [],
   carrierList: [],
+  usedPhoneList: [],
   currentCountry: {},
   currentCarrier: {},
   countryListVisible: false,
-  carrierListVisible: true,
+  carrierListVisible: false,
   phoneInputHighLight: false,
 };
 const reducer = (state, { type, payload }) => {
@@ -20,6 +28,8 @@ const reducer = (state, { type, payload }) => {
     setRechargePhone: () => ({ ...state, rechargePhone: payload }),
     setCarrierName: () => ({ ...state, carrierName: payload }),
     setCarrierList: () => ({ ...state, carrierList: payload }),
+    setCountryList: () => ({ ...state, countryList: payload }),
+    setUsedPhoneList: () => ({ ...state, usedPhoneList: payload }),
     setCurrentCountry: () => ({ ...state, currentCountry: payload }),
     setCurrentCarrier: () => ({ ...state, currentCarrier: payload }),
     setCountryListVisible: () => ({ ...state, countryListVisible: payload }),
@@ -63,17 +73,81 @@ export default function InputBar ()  {
   const selectCountry = country => {
     console.log(country)
     setState({ type: 'setCountryListVisible', payload: false })
-    if (country.id === state.currentCountry.id) return
+    if (country.countryCode === state.currentCountry.countryCode) return
+    setState({ type: 'setCurrentCountry', payload: country })
     setState({ type: 'setRechargePhone', payload: '' })
+  }
+  const getCarrierList = async countryCode => {
+    const { result } = await api.getCarrierList(countryCode)
+      setState({ type: 'setCarrierList', payload: result || [] })
   }
   const selectCarrier = carrier => {
     setState({ type: 'setCurrentCarrier', payload: carrier })
   }
+  const getProductListOrCarrierListWithCarrierInfo = async carrierInfo => {
+    if (carrierInfo) {
+      setState({ type: 'setCurrentCarrier', payload: carrierInfo })
+    } else {
+      await getCarrierList(this.displayCountryCode)
+      setState({ type: 'setCarrierVisible', payload: true })
+    }
+  }
+  const getCarrierInfo = async (countryCode, account) => {
+    if (!this.checkPhoneNumber()) {
+      this.emptyTips = '请选择国家输入号码'
+      return
+    } else {
+      this.emptyTips = '请选择运营商'
+    }
+    const { result: carrierInfo } = await api.getCarrierInfo({ countryCode, account })
+    getProductListOrCarrierListWithCarrierInfo(carrierInfo)
+  }
+  const getSelectedCountryFromCountryMap = (countryCode, countryList) => {
+    let selectedCountry = {}
+    countryList.map(v => {
+      if (v.countryCode === countryCode) {
+        selectedCountry = v
+      }
+    })
+    return Object.keys(selectedCountry).length === 0 ? countryList[0] : selectedCountry
+  }
+  const getUsedPhoneList = async () => {
+    const { result } = await api.getUsedPhoneList()
+    result.map(v => {
+      countryMap.map(v2 => {
+        if (v.countryCode === v2.ab) {
+          v.cname = v2.country_name_cn
+          v.areaNumber = v2.country_code
+        }
+      })
+    })
+    setState({ type: 'setUsedPhoneList', payload: result })
+  }
+  const chooseUsedPhoneNumber = data => {
+    console.log(data)
+    setState({ type: 'setPhoneInputHighLight', payload: false })
+  }
+  const getPageData = async () => {
+    const { result } = await api.getPageData()
+    const countryList = result.countryList.map(v => (v.searchKeyword = ('+' + v.areaNumber + v.cname + v.countryCode + v.currencyCode + v.ename).toLowerCase()) && v)
+    setState({ type: 'setCountryList', payload: countryList })
+    const currentCountry = getSelectedCountryFromCountryMap(result.nowCountry, countryList)
+    setState({ type: 'setCurrentCountry', payload: currentCountry })
+    if (result.lastMsisdn && result.nowCountry === result.lastMsisdn.countryCode && Object.keys(currentCountry).length >= 0) {
+      setState({ type: 'setRechargePhone', payload: result.lastMsisdn.msisdn })
+      getCarrierInfo()
+    }
+  }
+
+  useEffect(() => {
+    getPageData()
+    userInfo.role !== 'BASE' && getUsedPhoneList()
+  }, [])
 
   return (
     <View className="InputBar">
       <View className="InputBar-top">
-        <View className='view-image'><Image className='image' onClick={() => setState({ type: 'setCountryListVisible', payload: true })} mode='widthFix' src='https://oss.globalcharge.cn/prod/wechat/countryFlags/China.svg' /></View>
+        <View className='view-image'><Image className='image' onClick={() => setState({ type: 'setCountryListVisible', payload: true })} mode='widthFix' src={`${IMAGE_URL}countryFlags/${state.currentCountry.ename || 'China'}.svg`} /></View>
         <View className='phoneInputBar'>
           <View className='areaNumber'>+{state.currentCountry.areaNumber}</View>
           <View className='phoneInput'>
@@ -92,13 +166,15 @@ export default function InputBar ()  {
             />
           </View>
         </View>
+        <UsedPhoneList usedPhoneList={state.usedPhoneList} onConfirm={chooseUsedPhoneNumber} visible={state.phoneInputHighLight} />
       </View>
       <View className={`${state.phoneInputHighLight && 'active'} phoneInputBg`} />
       <View className='InputBar-bottom'>
-        <View className='countryName'>{state.currentCountry.cname}</View>
+        <View className={`countryName ${state.currentCountry.cname.length > 4 && 'long'}`}>{state.currentCountry.cname}</View>
         <View className='carrierName'>{state.carrierName}</View>
       </View>
       <CountryList
+        countryList={state.countryList}
         listVisible={state.countryListVisible}
         onConfirm={selectCountry}
         onClose={() => setState({ type: 'setCountryListVisible', payload: false })}
@@ -106,7 +182,7 @@ export default function InputBar ()  {
       <CarrierList
         currentCarrier={state.currentCarrier}
         listVisible={state.carrierListVisible}
-        carrierList={state.carrierList || [1,2,3,4,5,6,7,8,9]}
+        carrierList={state.carrierList}
         onConfirm={selectCarrier}
         onClose={() => setState({ type: 'setCarrierListVisible', payload: false })}
       />

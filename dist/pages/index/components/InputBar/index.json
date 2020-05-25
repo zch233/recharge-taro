@@ -1,1 +1,1 @@
-{"component":true,"usingComponents":{"at-input":"../../../../npm/taro-ui/dist/weapp/components/input/index","country-list":"./components/CountryList/index","carrier-list":"./components/CarrierList/index"}}
+{"component":true,"usingComponents":{"at-input":"../../../../npm/taro-ui/dist/weapp/components/input/index","used-phone-list":"./components/UsedPhoneList/index","country-list":"./components/CountryList/index","carrier-list":"./components/CarrierList/index"}}

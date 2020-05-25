@@ -1,4 +1,5 @@
 require("./runtime");
+require("./common");
 require("./vendors");
 
 (wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["app"],{

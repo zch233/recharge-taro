@@ -1,3 +1,4 @@
+import path from 'path'
 const config = {
   projectName: 'myApp',
   date: '2020-5-22',
@@ -30,6 +31,9 @@ const config = {
   },
   plugins: [],
   defineConstants: {
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
   },
   mini: {
     postcss: {

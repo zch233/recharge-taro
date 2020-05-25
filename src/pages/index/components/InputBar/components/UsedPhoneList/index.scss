@@ -1,0 +1,33 @@
+.phoneList {
+  top: 140px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: none;
+  padding: 0 24px 24px;
+  &.active {
+    display: block;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #2A2A2A;
+    padding: 20px 0;
+    border-bottom: 1PX solid #F2F2F2;
+    font-weight: bold;
+    .areaNumber {
+      padding: 0 .7em 0 .5em;
+    }
+    .phone {
+      flex: 1;
+    }
+    .name {
+      color: #888888;
+      font-size: 24px;
+      font-weight: normal;
+    }
+  }
+}

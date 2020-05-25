@@ -3,7 +3,7 @@ import { View } from '@tarojs/components'
 import './index.scss'
 import { AtFloatLayout, AtIcon } from "taro-ui"
 
-export default function CountryList ({ listVisible, onClose, onConfirm, carrierList, currentCarrier })  {
+export default function CountryList ({ listVisible, onClose, onConfirm, carrierList = [], currentCarrier = {} })  {
 
   return (
     <AtFloatLayout className='myCarrierList' isOpened={listVisible} title='请选择运营商' onClose={onClose}>
