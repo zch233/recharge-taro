@@ -7,37 +7,23 @@ import Order from './components/Order/index'
 import ProductTab from './components/ProductTab/index'
 import * as api from './api'
 
-export default function ProductBar ({ requestProductData })  {
+export default function ProductBar ({ requestProductData = {} })  {
   const tabList = [{ title: '充话费' }, { title: '充流量' }, { title: '余额查询' }]
   const [activeTab, setActiveTab] = useState(0)
   const [orderVisible, setOrderVisible] = useState(false)
-  const clickTab = (index) => {
-    setActiveTab(index)
-  }
-  const getProductList = async () => {
-    const { result } = await api.getProductList(requestProductData)
+  const handleProductClick = () => {
+    setOrderVisible(true)
   }
   useEffect(() => {
     if (Object.keys(requestProductData).length > 0) {
       setActiveTab(0)
-      getProductList()
     }
-    console.log(requestProductData, 12121)
   }, [requestProductData])
   return (
     <View>
-      <AtTabs className="myProductTab" current={activeTab} tabList={tabList} onClick={clickTab}>
-        <ProductTab current={activeTab} index={0} />
-        <ProductTab current={activeTab} index={1} />
-        {/* <AtTabsPane current={activeTab} index={0} >
-          <View className='productList'>
-            <ProductItem onClick={() => setOrderVisible(true)} />
-          </View>
-        </AtTabsPane>
-        <AtTabsPane current={activeTab} index={1}>
-          <View className='productList'>
-          </View>
-        </AtTabsPane> */}
+      <AtTabs className="myProductTab" current={activeTab} tabList={tabList} onClick={index => setActiveTab(index)}>
+        <ProductTab onClick={handleProductClick} requestProductData={requestProductData} current={activeTab} index={0} />
+        <ProductTab onClick={handleProductClick} requestProductData={requestProductData} current={activeTab} index={1} />
         <AtTabsPane current={activeTab} index={2}>
           <View className='productList'>请选择国家或地区再输入号码</View>
         </AtTabsPane>

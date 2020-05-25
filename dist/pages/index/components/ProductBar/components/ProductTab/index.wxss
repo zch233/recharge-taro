@@ -5,3 +5,50 @@
   padding: 38rpx 2vw;
   position: relative;
 }
+.flowProductDetail {
+  border-bottom: 1PX solid #f2f2f2;
+  border-top: 1PX solid #f2f2f2;
+  padding: 30rpx 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.flowProductDetail-info {
+  padding-right: .4em;
+}
+.flowProductDetail-info .title {
+  font-size: 36rpx;
+  color: #0E0E0E;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.flowProductDetail-info .title .tips {
+  font-size: 24rpx;
+  color: #108EE8;
+  border: 1PX solid;
+  padding: 6rpx 12rpx;
+  font-weight: normal;
+  vertical-align: .2em;
+  border-radius: 6rpx;
+}
+.flowProductDetail-info .info {
+  color: #737373;
+  font-size: 24rpx;
+}
+.flowProductDetail-buy .price {
+  color: #FF4E47;
+  font-weight: bold;
+  font-size: 30rpx;
+  text-align: center;
+}
+.flowProductDetail-buy .button {
+  color: #FFFFFF;
+  font-size: 32rpx;
+  display: inline-block;
+  background-color: #108EE8;
+  border-radius: 10rpx;
+  padding: 10rpx 26rpx;
+  margin-top: 18rpx;
+  white-space: nowrap;
+}

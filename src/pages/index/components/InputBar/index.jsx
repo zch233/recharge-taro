@@ -90,7 +90,6 @@ export default function InputBar ({ setRequestProductData })  {
     setRequestProductData({
       carrier: carrier.carrierName,
       countryCode: state.currentCountry.countryCode,
-      type: 'HF',
     })
   }
   const getProductListOrCarrierListWithCarrierInfo = async carrierName => {
@@ -99,7 +98,6 @@ export default function InputBar ({ setRequestProductData })  {
       setRequestProductData({
         carrier: carrierName,
         countryCode: state.currentCountry.countryCode,
-        type: 'HF',
       })
     } else {
       setState({ type: 'setCurrentCarrier', payload: { carrierName: '请选择运营商' } })

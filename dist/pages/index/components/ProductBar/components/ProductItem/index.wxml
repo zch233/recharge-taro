@@ -1,7 +1,11 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="ProductItem" bindtap="funPrivatebezzz">
-        <view class="name">10K IDR<text class="days">（10天）</text>
+    <view class="ProductItem" bindtap="anonymousFunc0" data-hotTips="{{productInfo.hotTips}}">
+        <view class="name">{{productInfo.name}}
+            <block wx:if="{{index === 1 && productInfo.tips}}"><text class="days">（{{productInfo.tips}}）</text>
+            </block>
         </view>
-        <view class="price">售价10.00元</view>
+        <block wx:if="{{productInfo.price}}">
+            <view class="price">售价{{anonymousState__temp}}元</view>
+        </block>
     </view>
 </block>

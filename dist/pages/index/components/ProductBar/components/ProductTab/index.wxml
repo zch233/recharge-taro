@@ -1,7 +1,21 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-tabs-pane compid="{{$compid__166}}">
+    <at-tabs-pane compid="{{$compid__203}}">
         <view class="productList">
-            <product-item compid="{{$compid__167}}"></product-item>
+            <product-item wx:key="code" wx:for="{{loopArray47}}" wx:for-item="product" wx:for-index="__index0" compid="{{product.$compid__202}}"></product-item>
         </view>
+        <block wx:if="{{anonymousState__temp}}">
+            <view class="flowProductDetail">
+                <view class="flowProductDetail-info">
+                    <view class="title">{{productDetail.name}}
+                        <block wx:if="{{productDetail.tips}}"><text class="tips">{{productDetail.tips}}</text>
+                        </block>
+                    </view><text class="info">{{productDetail.info}}</text>
+                </view>
+                <view class="flowProductDetail-buy">
+                    <view class="price">￥{{productDetail.price}}</view>
+                    <view class="button" bindclick="anonymousFunc1">购买</view>
+                </view>
+            </view>
+        </block>
     </at-tabs-pane>
 </block>

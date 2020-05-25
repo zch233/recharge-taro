@@ -14,10 +14,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "./node_modules/babel-runtime/regenerator/index.js");
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
-
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -32,15 +28,7 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 __webpack_require__(/*! ./index.scss */ "./src/pages/index/components/ProductBar/index.scss");
 
-var _api = __webpack_require__(/*! ./api */ "./src/pages/index/components/ProductBar/api.js");
-
-var api = _interopRequireWildcard(_api);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -62,53 +50,52 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__145", "$compid__146", "$compid__147", "$compid__148", "$compid__149", "requestProductData"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__183", "$compid__184", "$compid__185", "$compid__186", "$compid__187", "requestProductData"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductBar, [{
-    key: '_constructor',
+    key: "_constructor",
     value: function _constructor(props) {
-      _get(ProductBar.prototype.__proto__ || Object.getPrototypeOf(ProductBar.prototype), '_constructor', this).call(this, props);
+      _get(ProductBar.prototype.__proto__ || Object.getPrototypeOf(ProductBar.prototype), "_constructor", this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: '_createData',
+    key: "_createData",
     value: function _createData() {
-      var _this2 = this;
-
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__145"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__183"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__145 = _genCompid2[0],
-          $compid__145 = _genCompid2[1];
+          $prevCompid__183 = _genCompid2[0],
+          $compid__183 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__146"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__184"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__146 = _genCompid4[0],
-          $compid__146 = _genCompid4[1];
+          $prevCompid__184 = _genCompid4[0],
+          $compid__184 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__147"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__185"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__147 = _genCompid6[0],
-          $compid__147 = _genCompid6[1];
+          $prevCompid__185 = _genCompid6[0],
+          $compid__185 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__148"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__186"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__148 = _genCompid8[0],
-          $compid__148 = _genCompid8[1];
+          $prevCompid__186 = _genCompid8[0],
+          $compid__186 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__149"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__187"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__149 = _genCompid10[0],
-          $compid__149 = _genCompid10[1];
+          $prevCompid__187 = _genCompid10[0],
+          $compid__187 = _genCompid10[1];
 
-      var requestProductData = this.__props.requestProductData;
+      var _props$requestProduc = this.__props.requestProductData,
+          requestProductData = _props$requestProduc === undefined ? {} : _props$requestProduc;
 
 
       var tabList = [{ title: '充话费' }, { title: '充流量' }, { title: '余额查询' }];
@@ -123,46 +110,23 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
           orderVisible = _useState4[0],
           setOrderVisible = _useState4[1];
 
-      var clickTab = function clickTab(index) {
-        setActiveTab(index);
+      var handleProductClick = function handleProductClick() {
+        setOrderVisible(true);
       };
-      var getProductList = function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-          var _ref3, result;
-
-          return _regenerator2.default.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.next = 2;
-                  return api.getProductList(requestProductData);
-
-                case 2:
-                  _ref3 = _context.sent;
-                  result = _ref3.result;
-
-                case 4:
-                case 'end':
-                  return _context.stop();
-              }
-            }
-          }, _callee, _this2);
-        }));
-
-        return function getProductList() {
-          return _ref2.apply(this, arguments);
-        };
-      }();
       (0, _taroWeapp.useEffect)(function () {
         if (Object.keys(requestProductData).length > 0) {
           setActiveTab(0);
-          getProductList();
         }
-        console.log(requestProductData, 12121);
       }, [requestProductData]);
-      this.anonymousFunc0 = clickTab;
 
-      this.anonymousFunc1 = function () {
+      this.anonymousFunc0 = function (index) {
+        return setActiveTab(index);
+      };
+
+      this.anonymousFunc1 = handleProductClick;
+      this.anonymousFunc2 = handleProductClick;
+
+      this.anonymousFunc3 = function () {
         return setOrderVisible(false);
       };
 
@@ -171,40 +135,54 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "current": activeTab,
         "tabList": tabList,
         "onClick": this.anonymousFunc0
-      }, $compid__145, $prevCompid__145);
+      }, $compid__183, $prevCompid__183);
       _taroWeapp.propsManager.set({
+        "onClick": this.anonymousFunc1,
+        "requestProductData": requestProductData,
         "current": activeTab,
         "index": 0
-      }, $compid__146, $prevCompid__146);
+      }, $compid__184, $prevCompid__184);
       _taroWeapp.propsManager.set({
+        "onClick": this.anonymousFunc2,
+        "requestProductData": requestProductData,
         "current": activeTab,
         "index": 1
-      }, $compid__147, $prevCompid__147);
+      }, $compid__185, $prevCompid__185);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 2
-      }, $compid__148, $prevCompid__148);
+      }, $compid__186, $prevCompid__186);
       _taroWeapp.propsManager.set({
         "orderVisible": orderVisible,
-        "onClose": this.anonymousFunc1
-      }, $compid__149, $prevCompid__149);
+        "onClose": this.anonymousFunc3
+      }, $compid__187, $prevCompid__187);
       Object.assign(this.__state, {
-        $compid__145: $compid__145,
-        $compid__146: $compid__146,
-        $compid__147: $compid__147,
-        $compid__148: $compid__148,
-        $compid__149: $compid__149
+        $compid__183: $compid__183,
+        $compid__184: $compid__184,
+        $compid__185: $compid__185,
+        $compid__186: $compid__186,
+        $compid__187: $compid__187
       });
       return this.__state;
     }
   }, {
-    key: 'anonymousFunc0',
+    key: "anonymousFunc0",
     value: function anonymousFunc0(e) {
       ;
     }
   }, {
-    key: 'anonymousFunc1',
+    key: "anonymousFunc1",
     value: function anonymousFunc1(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc2",
+    value: function anonymousFunc2(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc3",
+    value: function anonymousFunc3(e) {
       ;
     }
   }]);
@@ -217,46 +195,14 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 
 /***/ }),
 
-/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "pages/index/components/ProductBar/index.wxml";
-
-/***/ }),
-
-/***/ "./src/pages/index/components/ProductBar/api.js":
-/*!******************************************************!*\
-  !*** ./src/pages/index/components/ProductBar/api.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getProductList = getProductList;
-exports.getPreOrderInfo = getPreOrderInfo;
-
-var _request = __webpack_require__(/*! ../../../../utils/request */ "./src/utils/request.js");
-
-var _request2 = _interopRequireDefault(_request);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getProductList(data) {
-  return (0, _request2.default)('/wx/product/getProduct', data);
-}
-
-function getPreOrderInfo(data) {
-  return (0, _request2.default)('/wx/charge/preOrder', data);
-}
 
 /***/ }),
 
@@ -303,9 +249,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&");
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&");
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -321,4 +267,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/pages/index/components/ProductBar/index.jsx","runtime","vendors","common"]]]);
+},[["./src/pages/index/components/ProductBar/index.jsx","runtime","vendors"]]]);

@@ -1,6 +1,6 @@
 .view-image .image {
   width: 100%;
-  height: 40rpx;
+  height: 60rpx;
 }
 .countryList {
   height: 60vh;

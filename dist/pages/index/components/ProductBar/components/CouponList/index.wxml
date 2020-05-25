@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__41}}">
+    <at-float-layout compid="{{$compid__45}}">
         <view class="couponList">
             <view wx:key="$original" class="couponList-item" wx:for="{{loopArray8}}" wx:for-item="v" wx:for-index="_anonIdx2">
                 <view class="popup-coupon HF">
@@ -9,7 +9,7 @@
                     </view>
                 </view>
                 <view class="popup-radio">
-                    <at-icon compid="{{v.$compid__40}}"></at-icon>
+                    <at-icon compid="{{v.$compid__44}}"></at-icon>
                 </view>
             </view>
         </view>

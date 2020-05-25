@@ -1,6 +1,6 @@
 .view-image .image {
   width: 100%;
-  height: 40rpx;
+  height: 106rpx;
 }
 .InputBar {
   box-shadow: 0 0 12rpx 3rpx rgba(0, 0, 0, 0.05);
@@ -68,7 +68,8 @@
   text-align: center;
 }
 .InputBar-bottom .countryName.long {
-  width: 200rpx;
+  width: auto;
+  max-width: 200rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
