@@ -50,7 +50,7 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CountryList.__proto__ || Object.getPrototypeOf(CountryList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray17", "$compid__67", "$compid__68", "$compid__69", "$anonymousCallee__11", "listVisible", "onClose", "countryList", "onConfirm"], _this.anonymousFunc1Map = {}, _this.customComponents = ["AtFloatLayout", "AtIcon", "AtInput"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CountryList.__proto__ || Object.getPrototypeOf(CountryList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray6", "$compid__30", "$compid__31", "$compid__32", "$anonymousCallee__2", "listVisible", "onClose", "countryList", "onConfirm"], _this.anonymousFunc1Map = {}, _this.customComponents = ["AtFloatLayout", "AtIcon", "AtInput"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CountryList, [{
@@ -71,20 +71,20 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__67"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__30"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__67 = _genCompid2[0],
-          $compid__67 = _genCompid2[1];
+          $prevCompid__30 = _genCompid2[0],
+          $compid__30 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__68"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__31"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__68 = _genCompid4[0],
-          $compid__68 = _genCompid4[1];
+          $prevCompid__31 = _genCompid4[0],
+          $compid__31 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__69"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__32"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__69 = _genCompid6[0],
-          $compid__69 = _genCompid6[1];
+          $prevCompid__32 = _genCompid6[0],
+          $compid__32 = _genCompid6[1];
 
       var _props = this.__props,
           listVisible = _props.listVisible,
@@ -103,17 +103,17 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
       };
 
       this.anonymousFunc0 = handleSearch;
-      var $anonymousCallee__11 = countryList.filter(function (v) {
+      var $anonymousCallee__2 = countryList.filter(function (v) {
         return v.searchKeyword.indexOf(searchValue.toLowerCase()) >= 0;
       });
-      var loopArray17 = countryList.filter(function (v) {
+      var loopArray6 = countryList.filter(function (v) {
         return v.searchKeyword.indexOf(searchValue.toLowerCase()) >= 0;
       }).map(function (country, __index1) {
         country = {
           $original: (0, _taroWeapp.internal_get_original)(country)
         };
 
-        var _$indexKey = "cdzzz" + __index1;
+        var _$indexKey = "bbzzz" + __index1;
 
         _this2.anonymousFunc1Map[_$indexKey] = function () {
           return _this2.__props.onConfirm(country.$original);
@@ -129,12 +129,12 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": listVisible,
         "title": "\u8BF7\u9009\u62E9\u60A8\u8981\u5145\u503C\u7684\u56FD\u5BB6\u6216\u5730\u533A",
         "onClose": this.__props.onClose
-      }, $compid__67, $prevCompid__67);
+      }, $compid__30, $prevCompid__30);
       _taroWeapp.propsManager.set({
         "value": "search",
         "size": "23",
         "color": "rgb(150, 150, 150)"
-      }, $compid__68, $prevCompid__68);
+      }, $compid__31, $prevCompid__31);
       _taroWeapp.propsManager.set({
         "className": "mySearchInput",
         "name": "value",
@@ -143,13 +143,13 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
         "placeholder": "\u8BF7\u8F93\u5165\u4F60\u60F3\u8981\u5145\u503C\u7684\u56FD\u5BB6\u6216\u5730\u533A",
         "value": searchValue,
         "onChange": this.anonymousFunc0
-      }, $compid__69, $prevCompid__69);
+      }, $compid__32, $prevCompid__32);
       Object.assign(this.__state, {
-        loopArray17: loopArray17,
-        $compid__67: $compid__67,
-        $compid__68: $compid__68,
-        $compid__69: $compid__69,
-        $anonymousCallee__11: $anonymousCallee__11
+        loopArray6: loopArray6,
+        $compid__30: $compid__30,
+        $compid__31: $compid__31,
+        $compid__32: $compid__32,
+        $anonymousCallee__2: $anonymousCallee__2
       });
       return this.__state;
     }

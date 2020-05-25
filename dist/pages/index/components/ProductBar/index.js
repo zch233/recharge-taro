@@ -14,6 +14,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "./node_modules/babel-runtime/regenerator/index.js");
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28,7 +32,15 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 __webpack_require__(/*! ./index.scss */ "./src/pages/index/components/ProductBar/index.scss");
 
+var _api = __webpack_require__(/*! ./api */ "./src/pages/index/components/ProductBar/api.js");
+
+var api = _interopRequireWildcard(_api);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -50,54 +62,51 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__472", "$compid__473", "$compid__474", "$compid__475", "$compid__476", "$compid__477", "requestProductData"], _this.customComponents = ["AtTabs", "AtTabsPane", "ProductItem", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__145", "$compid__146", "$compid__147", "$compid__148", "$compid__149", "requestProductData"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductBar, [{
-    key: "_constructor",
+    key: '_constructor',
     value: function _constructor(props) {
-      _get(ProductBar.prototype.__proto__ || Object.getPrototypeOf(ProductBar.prototype), "_constructor", this).call(this, props);
+      _get(ProductBar.prototype.__proto__ || Object.getPrototypeOf(ProductBar.prototype), '_constructor', this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: "_createData",
+    key: '_createData',
     value: function _createData() {
+      var _this2 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__472"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__145"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__472 = _genCompid2[0],
-          $compid__472 = _genCompid2[1];
+          $prevCompid__145 = _genCompid2[0],
+          $compid__145 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__473"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__146"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__473 = _genCompid4[0],
-          $compid__473 = _genCompid4[1];
+          $prevCompid__146 = _genCompid4[0],
+          $compid__146 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__474"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__147"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__474 = _genCompid6[0],
-          $compid__474 = _genCompid6[1];
+          $prevCompid__147 = _genCompid6[0],
+          $compid__147 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__475"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__148"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__475 = _genCompid8[0],
-          $compid__475 = _genCompid8[1];
+          $prevCompid__148 = _genCompid8[0],
+          $compid__148 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__476"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__149"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__476 = _genCompid10[0],
-          $compid__476 = _genCompid10[1];
-
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__477"),
-          _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__477 = _genCompid12[0],
-          $compid__477 = _genCompid12[1];
+          $prevCompid__149 = _genCompid10[0],
+          $compid__149 = _genCompid10[1];
 
       var requestProductData = this.__props.requestProductData;
 
@@ -117,17 +126,43 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       var clickTab = function clickTab(index) {
         setActiveTab(index);
       };
+      var getProductList = function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+          var _ref3, result;
+
+          return _regenerator2.default.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return api.getProductList(requestProductData);
+
+                case 2:
+                  _ref3 = _context.sent;
+                  result = _ref3.result;
+
+                case 4:
+                case 'end':
+                  return _context.stop();
+              }
+            }
+          }, _callee, _this2);
+        }));
+
+        return function getProductList() {
+          return _ref2.apply(this, arguments);
+        };
+      }();
       (0, _taroWeapp.useEffect)(function () {
-        setActiveTab(0);
+        if (Object.keys(requestProductData).length > 0) {
+          setActiveTab(0);
+          getProductList();
+        }
         console.log(requestProductData, 12121);
       }, [requestProductData]);
       this.anonymousFunc0 = clickTab;
 
       this.anonymousFunc1 = function () {
-        return setOrderVisible(true);
-      };
-
-      this.anonymousFunc2 = function () {
         return setOrderVisible(false);
       };
 
@@ -136,49 +171,40 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "current": activeTab,
         "tabList": tabList,
         "onClick": this.anonymousFunc0
-      }, $compid__472, $prevCompid__472);
+      }, $compid__145, $prevCompid__145);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 0
-      }, $compid__473, $prevCompid__473);
-      _taroWeapp.propsManager.set({
-        "onClick": this.anonymousFunc1
-      }, $compid__474, $prevCompid__474);
+      }, $compid__146, $prevCompid__146);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 1
-      }, $compid__475, $prevCompid__475);
+      }, $compid__147, $prevCompid__147);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 2
-      }, $compid__476, $prevCompid__476);
+      }, $compid__148, $prevCompid__148);
       _taroWeapp.propsManager.set({
         "orderVisible": orderVisible,
-        "onClose": this.anonymousFunc2
-      }, $compid__477, $prevCompid__477);
+        "onClose": this.anonymousFunc1
+      }, $compid__149, $prevCompid__149);
       Object.assign(this.__state, {
-        $compid__472: $compid__472,
-        $compid__473: $compid__473,
-        $compid__474: $compid__474,
-        $compid__475: $compid__475,
-        $compid__476: $compid__476,
-        $compid__477: $compid__477
+        $compid__145: $compid__145,
+        $compid__146: $compid__146,
+        $compid__147: $compid__147,
+        $compid__148: $compid__148,
+        $compid__149: $compid__149
       });
       return this.__state;
     }
   }, {
-    key: "anonymousFunc0",
+    key: 'anonymousFunc0',
     value: function anonymousFunc0(e) {
       ;
     }
   }, {
-    key: "anonymousFunc1",
+    key: 'anonymousFunc1',
     value: function anonymousFunc1(e) {
-      ;
-    }
-  }, {
-    key: "anonymousFunc2",
-    value: function anonymousFunc2(e) {
       ;
     }
   }]);
@@ -199,6 +225,38 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "pages/index/components/ProductBar/index.wxml";
+
+/***/ }),
+
+/***/ "./src/pages/index/components/ProductBar/api.js":
+/*!******************************************************!*\
+  !*** ./src/pages/index/components/ProductBar/api.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getProductList = getProductList;
+exports.getPreOrderInfo = getPreOrderInfo;
+
+var _request = __webpack_require__(/*! ../../../../utils/request */ "./src/utils/request.js");
+
+var _request2 = _interopRequireDefault(_request);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getProductList(data) {
+  return (0, _request2.default)('/wx/product/getProduct', data);
+}
+
+function getPreOrderInfo(data) {
+  return (0, _request2.default)('/wx/charge/preOrder', data);
+}
 
 /***/ }),
 
@@ -263,4 +321,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/pages/index/components/ProductBar/index.jsx","runtime","vendors"]]]);
+},[["./src/pages/index/components/ProductBar/index.jsx","runtime","vendors","common"]]]);

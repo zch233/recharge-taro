@@ -1,0 +1,7 @@
+<block wx:if="{{$taroCompReady}}">
+    <at-tabs-pane compid="{{$compid__166}}">
+        <view class="productList">
+            <product-item compid="{{$compid__167}}"></product-item>
+        </view>
+    </at-tabs-pane>
+</block>

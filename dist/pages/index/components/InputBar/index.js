@@ -147,7 +147,7 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__494", "$compid__495", "$compid__496", "$compid__497", "state", "setRequestProductData"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__44", "$compid__45", "$compid__46", "$compid__47", "state", "setRequestProductData"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(InputBar, [{
@@ -168,25 +168,25 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__494"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__44"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__494 = _genCompid2[0],
-          $compid__494 = _genCompid2[1];
+          $prevCompid__44 = _genCompid2[0],
+          $compid__44 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__495"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__45"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__495 = _genCompid4[0],
-          $compid__495 = _genCompid4[1];
+          $prevCompid__45 = _genCompid4[0],
+          $compid__45 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__496"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__46"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__496 = _genCompid6[0],
-          $compid__496 = _genCompid6[1];
+          $prevCompid__46 = _genCompid6[0],
+          $compid__46 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__497"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__47"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__497 = _genCompid8[0],
-          $compid__497 = _genCompid8[1];
+          $prevCompid__47 = _genCompid8[0],
+          $compid__47 = _genCompid8[1];
 
       var setRequestProductData = this.__props.setRequestProductData;
 
@@ -506,30 +506,30 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         "onChange": this.anonymousFunc1,
         "onFocus": this.anonymousFunc2,
         "onBlur": this.anonymousFunc3
-      }, $compid__494, $prevCompid__494);
+      }, $compid__44, $prevCompid__44);
       _taroWeapp.propsManager.set({
         "usedPhoneList": state.usedPhoneList,
         "onConfirm": this.anonymousFunc4,
         "visible": state.phoneInputHighLight
-      }, $compid__495, $prevCompid__495);
+      }, $compid__45, $prevCompid__45);
       _taroWeapp.propsManager.set({
         "countryList": state.countryList,
         "listVisible": state.countryListVisible,
         "onConfirm": this.anonymousFunc6,
         "onClose": this.anonymousFunc7
-      }, $compid__496, $prevCompid__496);
+      }, $compid__46, $prevCompid__46);
       _taroWeapp.propsManager.set({
         "currentCarrier": state.currentCarrier,
         "listVisible": state.carrierListVisible,
         "carrierList": state.carrierList,
         "onConfirm": this.anonymousFunc8,
         "onClose": this.anonymousFunc9
-      }, $compid__497, $prevCompid__497);
+      }, $compid__47, $prevCompid__47);
       Object.assign(this.__state, {
-        $compid__494: $compid__494,
-        $compid__495: $compid__495,
-        $compid__496: $compid__496,
-        $compid__497: $compid__497,
+        $compid__44: $compid__44,
+        $compid__45: $compid__45,
+        $compid__46: $compid__46,
+        $compid__47: $compid__47,
         state: state
       });
       return this.__state;
@@ -2437,7 +2437,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(/*! buffer */ 13).Buffer;
+    Buffer = __webpack_require__(/*! buffer */ 2).Buffer;
   } catch (e) {}
 
   BN.isBN = function isBN(num) {
@@ -5818,7 +5818,7 @@ if ((typeof self === 'undefined' ? 'undefined' : _typeof(self)) === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(/*! crypto */ 14);
+    var crypto = __webpack_require__(/*! crypto */ 3);
     if (typeof crypto.randomBytes !== 'function') throw new Error('Not supported');
 
     Rand.prototype._rand = function _rand(n) {
@@ -21196,7 +21196,7 @@ util.inherits = __webpack_require__(/*! inherits */ "./node_modules/inherits/inh
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(/*! util */ 11);
+var debugUtil = __webpack_require__(/*! util */ 0);
 var debug = undefined;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -23089,7 +23089,7 @@ function _classCallCheck(instance, Constructor) {
 }
 
 var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var util = __webpack_require__(/*! util */ 12);
+var util = __webpack_require__(/*! util */ 1);
 
 function copyBuffer(src, target, offset) {
   src.copy(target, offset);
@@ -28748,7 +28748,7 @@ exports.default = [{
 
 /***/ }),
 
-/***/ 11:
+/***/ 0:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
@@ -28759,7 +28759,7 @@ exports.default = [{
 
 /***/ }),
 
-/***/ 12:
+/***/ 1:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
@@ -28770,7 +28770,7 @@ exports.default = [{
 
 /***/ }),
 
-/***/ 13:
+/***/ 2:
 /*!************************!*\
   !*** buffer (ignored) ***!
   \************************/
@@ -28781,7 +28781,7 @@ exports.default = [{
 
 /***/ }),
 
-/***/ 14:
+/***/ 3:
 /*!************************!*\
   !*** crypto (ignored) ***!
   \************************/

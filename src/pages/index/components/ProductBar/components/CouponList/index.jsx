@@ -8,7 +8,7 @@ export default function CouponList ({ couponListVisible, onClose })  {
     <AtFloatLayout className='myCouponList' isOpened={couponListVisible} title="优惠券" onClose={onClose}>
       <View className='couponList'>
         {
-          '1236456789'.split('').map(v => (
+          '123456789'.split('').map(v => (
             <View key={v} className='couponList-item'>
               <View class="popup-coupon HF">
                 <View class="popup-coupon-price"><Text className='discount'>2</Text>元</View>
