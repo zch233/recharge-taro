@@ -24,10 +24,7 @@ const initialState = {
 };
 const reducer = (state, { type, payload }) => {
   const typeMap = {
-    setRechargePhone: () => {
-      console.log(payload)
-      return ({ ...state, rechargePhone: payload })
-    },
+    setRechargePhone: () => ({ ...state, rechargePhone: payload }),
     setEmptyTips: () => ({ ...state, emptyTips: payload }),
     setCarrierList: () => ({ ...state, carrierList: payload }),
     setCountryList: () => ({ ...state, countryList: payload }),
@@ -90,10 +87,20 @@ export default function InputBar ({ setRequestProductData })  {
   const selectCarrier = carrier => {
     setState({ type: 'setCurrentCarrier', payload: carrier })
     setState({ type: 'setCarrierListVisible', payload: false })
+    setRequestProductData({
+      carrier: carrier.carrierName,
+      countryCode: state.currentCountry.countryCode,
+      type: 'HF',
+    })
   }
   const getProductListOrCarrierListWithCarrierInfo = async carrierName => {
     if (carrierName) {
       setState({ type: 'setCurrentCarrier', payload: { carrierName } })
+      setRequestProductData({
+        carrier: carrierName,
+        countryCode: state.currentCountry.countryCode,
+        type: 'HF',
+      })
     } else {
       setState({ type: 'setCurrentCarrier', payload: { carrierName: '请选择运营商' } })
       await getCarrierList(state.currentCountry.countryCode)
@@ -138,7 +145,6 @@ export default function InputBar ({ setRequestProductData })  {
     setState({ type: 'setPhoneInputHighLight', payload: false })
   }
   const handleInputBlur = () => {
-    console.log(state.rechargePhone)
     setState({ type: 'setPhoneInputHighLight', payload: false })
     if (!checkPhoneNumber(state.rechargePhone)) return
     getCarrierInfo()
@@ -176,7 +182,6 @@ export default function InputBar ({ setRequestProductData })  {
               maxLength={15}
               value={state.rechargePhone}
               onChange={phoneInputChange}
-              onConfirm={handleInputBlur}
               onFocus={() => setState({ type: 'setPhoneInputHighLight', payload: true })}
               onBlur={handleInputBlur}
             />

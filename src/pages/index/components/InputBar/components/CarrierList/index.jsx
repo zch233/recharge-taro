@@ -10,7 +10,7 @@ export default function CountryList ({ listVisible, onClose, onConfirm, carrierL
       <View className='carrierList'>
         {
           carrierList.map(carrier => (
-            <View key={carrier.id} className='carrierList-item' onClick={() => onConfirm(carrier)}>
+            <View key={carrier.carrierName} className='carrierList-item' onClick={() => onConfirm(carrier)}>
               <View className='view-image'><Image className='image' mode='widthFix' src={carrier.carrierImgUrl + '?x-oss-process=image/resize,w_100'} /></View>
               <View className='name'>{carrier.carrierName}</View>
               <View className={`check ${carrier.carrierName === currentCarrier.carrierName && 'selected'}`}><AtIcon value='check' size='18' color='#fff'></AtIcon></View>

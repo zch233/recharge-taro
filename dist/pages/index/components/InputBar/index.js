@@ -77,7 +77,6 @@ var reducer = function reducer(state, _ref) {
 
   var typeMap = {
     setRechargePhone: function setRechargePhone() {
-      console.log(payload);
       return _extends({}, state, { rechargePhone: payload });
     },
     setEmptyTips: function setEmptyTips() {
@@ -148,7 +147,7 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__434", "$compid__435", "$compid__436", "$compid__437", "state", "setRequestProductData"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__494", "$compid__495", "$compid__496", "$compid__497", "state", "setRequestProductData"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(InputBar, [{
@@ -169,25 +168,25 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__434"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__494"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__434 = _genCompid2[0],
-          $compid__434 = _genCompid2[1];
+          $prevCompid__494 = _genCompid2[0],
+          $compid__494 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__435"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__495"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__435 = _genCompid4[0],
-          $compid__435 = _genCompid4[1];
+          $prevCompid__495 = _genCompid4[0],
+          $compid__495 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__436"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__496"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__436 = _genCompid6[0],
-          $compid__436 = _genCompid6[1];
+          $prevCompid__496 = _genCompid6[0],
+          $compid__496 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__437"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__497"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__437 = _genCompid8[0],
-          $compid__437 = _genCompid8[1];
+          $prevCompid__497 = _genCompid8[0],
+          $compid__497 = _genCompid8[1];
 
       var setRequestProductData = this.__props.setRequestProductData;
 
@@ -270,6 +269,11 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       var selectCarrier = function selectCarrier(carrier) {
         setState({ type: 'setCurrentCarrier', payload: carrier });
         setState({ type: 'setCarrierListVisible', payload: false });
+        setRequestProductData({
+          carrier: carrier.carrierName,
+          countryCode: state.currentCountry.countryCode,
+          type: 'HF'
+        });
       };
       var getProductListOrCarrierListWithCarrierInfo = function () {
         var _ref6 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee3(carrierName) {
@@ -278,23 +282,28 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
               switch (_context3.prev = _context3.next) {
                 case 0:
                   if (!carrierName) {
-                    _context3.next = 4;
+                    _context3.next = 5;
                     break;
                   }
 
                   setState({ type: 'setCurrentCarrier', payload: { carrierName: carrierName } });
-                  _context3.next = 8;
+                  setRequestProductData({
+                    carrier: carrierName,
+                    countryCode: state.currentCountry.countryCode,
+                    type: 'HF'
+                  });
+                  _context3.next = 9;
                   break;
 
-                case 4:
+                case 5:
                   setState({ type: 'setCurrentCarrier', payload: { carrierName: '请选择运营商' } });
-                  _context3.next = 7;
+                  _context3.next = 8;
                   return getCarrierList(state.currentCountry.countryCode);
 
-                case 7:
+                case 8:
                   setState({ type: 'setCarrierListVisible', payload: true });
 
-                case 8:
+                case 9:
                 case 'end':
                   return _context3.stop();
               }
@@ -411,7 +420,6 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         setState({ type: 'setPhoneInputHighLight', payload: false });
       };
       var handleInputBlur = function handleInputBlur() {
-        console.log(state.rechargePhone);
         setState({ type: 'setPhoneInputHighLight', payload: false });
         if (!checkPhoneNumber(state.rechargePhone)) {
           return;
@@ -467,24 +475,23 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       };
 
       this.anonymousFunc1 = phoneInputChange;
-      this.anonymousFunc2 = handleInputBlur;
 
-      this.anonymousFunc3 = function () {
+      this.anonymousFunc2 = function () {
         return setState({ type: 'setPhoneInputHighLight', payload: true });
       };
 
-      this.anonymousFunc4 = handleInputBlur;
-      this.anonymousFunc5 = chooseUsedPhoneNumber;
-      this.anonymousFunc6 = showCarrierList;
-      this.anonymousFunc7 = selectCountry;
+      this.anonymousFunc3 = handleInputBlur;
+      this.anonymousFunc4 = chooseUsedPhoneNumber;
+      this.anonymousFunc5 = showCarrierList;
+      this.anonymousFunc6 = selectCountry;
 
-      this.anonymousFunc8 = function () {
+      this.anonymousFunc7 = function () {
         return setState({ type: 'setCountryListVisible', payload: false });
       };
 
-      this.anonymousFunc9 = selectCarrier;
+      this.anonymousFunc8 = selectCarrier;
 
-      this.anonymousFunc10 = function () {
+      this.anonymousFunc9 = function () {
         return setState({ type: 'setCarrierListVisible', payload: false });
       };
 
@@ -497,33 +504,32 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         "maxLength": 15,
         "value": state.rechargePhone,
         "onChange": this.anonymousFunc1,
-        "onConfirm": this.anonymousFunc2,
-        "onFocus": this.anonymousFunc3,
-        "onBlur": this.anonymousFunc4
-      }, $compid__434, $prevCompid__434);
+        "onFocus": this.anonymousFunc2,
+        "onBlur": this.anonymousFunc3
+      }, $compid__494, $prevCompid__494);
       _taroWeapp.propsManager.set({
         "usedPhoneList": state.usedPhoneList,
-        "onConfirm": this.anonymousFunc5,
+        "onConfirm": this.anonymousFunc4,
         "visible": state.phoneInputHighLight
-      }, $compid__435, $prevCompid__435);
+      }, $compid__495, $prevCompid__495);
       _taroWeapp.propsManager.set({
         "countryList": state.countryList,
         "listVisible": state.countryListVisible,
-        "onConfirm": this.anonymousFunc7,
-        "onClose": this.anonymousFunc8
-      }, $compid__436, $prevCompid__436);
+        "onConfirm": this.anonymousFunc6,
+        "onClose": this.anonymousFunc7
+      }, $compid__496, $prevCompid__496);
       _taroWeapp.propsManager.set({
         "currentCarrier": state.currentCarrier,
         "listVisible": state.carrierListVisible,
         "carrierList": state.carrierList,
-        "onConfirm": this.anonymousFunc9,
-        "onClose": this.anonymousFunc10
-      }, $compid__437, $prevCompid__437);
+        "onConfirm": this.anonymousFunc8,
+        "onClose": this.anonymousFunc9
+      }, $compid__497, $prevCompid__497);
       Object.assign(this.__state, {
-        $compid__434: $compid__434,
-        $compid__435: $compid__435,
-        $compid__436: $compid__436,
-        $compid__437: $compid__437,
+        $compid__494: $compid__494,
+        $compid__495: $compid__495,
+        $compid__496: $compid__496,
+        $compid__497: $compid__497,
         state: state
       });
       return this.__state;
@@ -578,15 +584,10 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
     value: function anonymousFunc9(e) {
       ;
     }
-  }, {
-    key: 'anonymousFunc10',
-    value: function anonymousFunc10(e) {
-      ;
-    }
   }]);
 
   return InputBar;
-}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc6"], _class.$$componentPath = "pages/index/components/InputBar/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc5"], _class.$$componentPath = "pages/index/components/InputBar/index", _temp2);
 exports.default = InputBar;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(InputBar));
