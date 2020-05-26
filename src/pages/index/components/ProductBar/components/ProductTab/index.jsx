@@ -7,7 +7,7 @@ import * as api from './api'
 
 export default function ProductTab ({ requestProductData = {}, current, index, handleBuyClick, initTips })  {
   const [list, setList] = useState([])
-  const [productDetail, setProductDetail] = useState({})
+  const [currentProduct, setCurrentProduct] = useState({})
   const requested = useRef()
   const getProductList = async (requestProductData) => {
     const { result } = await api.getProductList(requestProductData)
@@ -15,14 +15,16 @@ export default function ProductTab ({ requestProductData = {}, current, index, h
     setList(result || [])
   }
   const handleProductClick = product => {
+    setCurrentProduct(product)
     if (index === 0) {
       handleBuyClick(product)
     } else if (index === 1) {
-      Taro.pageScrollTo({
-        duration: 300,
-        selector: '.flowProductDetail',
+      setTimeout(() => {
+        Taro.pageScrollTo({
+          duration: 300,
+          scrollTop: 300,
+        })
       })
-      setProductDetail(product)
     }
   }
   useEffect(() => {
@@ -55,15 +57,15 @@ export default function ProductTab ({ requestProductData = {}, current, index, h
         )
       }
       {
-        Object.keys(productDetail).length && (
+        index === 1 && Object.keys(currentProduct).length && (
           <View class="flowProductDetail">
             <View class="flowProductDetail-info">
-              <View className='title'>{ productDetail.name } {productDetail.tips && <Text className='tips'>{ productDetail.tips}</Text>}</View>
-              <Text className='info'>{ productDetail.info }</Text>
+              <View className='title'>{ currentProduct.name } {currentProduct.tips && <Text className='tips'>{ currentProduct.tips}</Text>}</View>
+              <Text className='info'>{ currentProduct.info }</Text>
             </View>
             <View class="flowProductDetail-buy">
-              <View className='price'>￥{ productDetail.price }</View>
-              <View className='button' onclick={() => handleBuyClick(productDetail)}>购买</View>
+              <View className='price'>￥{ currentProduct.price }</View>
+              <View className='button' onClick={() => handleBuyClick(currentProduct)}>购买</View>
             </View>
           </View>
         )
