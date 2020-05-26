@@ -84,7 +84,7 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
           $original: (0, _taroWeapp.internal_get_original)(v)
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bizzzzzzzz" + _anonIdx, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bgzzzzzzzz" + _anonIdx, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
             $prevCompid__48 = _genCompid4[0],
             $compid__48 = _genCompid4[1];
@@ -113,14 +113,14 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
       return this.__state;
     }
   }, {
-    key: "funPrivatebhzzz",
-    value: function funPrivatebhzzz() {
+    key: "funPrivatebfzzz",
+    value: function funPrivatebfzzz() {
       return this.props.onClose.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }]);
 
   return CouponList;
-}(_taroWeapp2.default.Component), _class.$$events = ["funPrivatebhzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/CouponList/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["funPrivatebfzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/CouponList/index", _temp2);
 exports.default = CouponList;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(CouponList));

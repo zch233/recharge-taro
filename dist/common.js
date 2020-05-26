@@ -34,15 +34,15 @@ exports.default = function (url, data) {
         var result = res.data;
         if (result.code !== '00') {
           if (error[result.code]) {
-            _taroWeapp2.default.showToast({ title: error[result.code].message, icon: 'none', duration: 2000 }).then(function () {
+            _taroWeapp2.default.showToast({ title: error[result.code].message, icon: 'none', duration: 2000, mask: true }).then(function () {
               _taroWeapp2.default.reLaunch({ url: "/pages/frame/frame?href=" + error[result.code].href });
             });
             return;
           }
           if (result.message) {
-            _taroWeapp2.default.showToast({ title: result.message, icon: 'none', duration: 2000 });
+            _taroWeapp2.default.showToast({ title: result.message, icon: 'none', duration: 2000, mask: true });
           } else {
-            _taroWeapp2.default.showToast({ title: '网络异常', icon: 'none', duration: 2000 });
+            _taroWeapp2.default.showToast({ title: '网络异常', icon: 'none', duration: 2000, mask: true });
           }
           throw Error(result.message);
         } else {
@@ -75,7 +75,7 @@ var error = {
   'JU302': { message: '对不起，服务器正在维护！', href: 'serveDead' },
   'JU430': { message: '网络异常，请稍候再试！', href: 'networkError' }
 };
-_taroWeapp2.default.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvR1BUaXYtTzVETEZlaC1MRG1EajRfSE1GblNVIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ2NDI4MiwiaWF0IjoxNTkwNDYwNjgyLCJqdGkiOiI5NzMifQ.ghb-BeKDUILcrI1rmzvI25FYJqmcTtsXu2_Kv686QW0');
+_taroWeapp2.default.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvSzlOQnYxUDBvMHhIZU5CVEs4QXVKTUZFdllZIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ4MTAzNCwiaWF0IjoxNTkwNDc3NDM0LCJqdGkiOiIyNjI2OCJ9.SnWskZ8j09pfmE9RM39YWTDdIdJelyhQD2oE4YtMfzk');
 
 /***/ })
 

@@ -7,17 +7,17 @@
             <view class="phoneInputBar">
                 <view class="areaNumber">+{{state.currentCountry.areaNumber}}</view>
                 <view class="phoneInput">
-                    <at-input compid="{{$compid__226}}"></at-input>
+                    <at-input compid="{{$compid__32}}"></at-input>
                 </view>
             </view>
-            <used-phone-list compid="{{$compid__227}}"></used-phone-list>
+            <used-phone-list compid="{{$compid__33}}"></used-phone-list>
         </view>
         <view class="{{(state.phoneInputHighLight && 'active') + ' phoneInputBg'}}"></view>
         <view class="InputBar-bottom">
             <view class="{{'countryName ' + (state.currentCountry.cname.length > 4 && 'long')}}">{{state.currentCountry.cname}}</view>
             <view class="carrierName" bindtap="anonymousFunc5">{{state.currentCarrier.carrierName}}</view>
         </view>
-        <country-list compid="{{$compid__228}}"></country-list>
-        <carrier-list compid="{{$compid__229}}"></carrier-list>
+        <country-list compid="{{$compid__34}}"></country-list>
+        <carrier-list compid="{{$compid__35}}"></carrier-list>
     </view>
 </block>

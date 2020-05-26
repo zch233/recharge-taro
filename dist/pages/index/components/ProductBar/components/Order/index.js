@@ -14,6 +14,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "./node_modules/babel-runtime/regenerator/index.js");
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28,7 +34,15 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 __webpack_require__(/*! ./index.scss */ "./src/pages/index/components/ProductBar/components/Order/index.scss");
 
+var _api = __webpack_require__(/*! ./api */ "./src/pages/index/components/ProductBar/components/Order/api.js");
+
+var api = _interopRequireWildcard(_api);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -50,49 +64,51 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "$compid__305", "$compid__306", "$compid__307", "$compid__308", "$compid__309", "discountRadio", "displayOrderData", "orderData", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon", "CouponList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "$compid__235", "$compid__236", "$compid__237", "$compid__238", "$compid__239", "discountVisible", "discountRadio", "displayOrderData", "orderData", "discountPrice", "payAmount", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon", "CouponList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Order, [{
-    key: "_constructor",
+    key: '_constructor',
     value: function _constructor(props) {
-      _get(Order.prototype.__proto__ || Object.getPrototypeOf(Order.prototype), "_constructor", this).call(this, props);
+      _get(Order.prototype.__proto__ || Object.getPrototypeOf(Order.prototype), '_constructor', this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: "_createData",
+    key: '_createData',
     value: function _createData() {
+      var _this2 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__305"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__235"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__305 = _genCompid2[0],
-          $compid__305 = _genCompid2[1];
+          $prevCompid__235 = _genCompid2[0],
+          $compid__235 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__306"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__236"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__306 = _genCompid4[0],
-          $compid__306 = _genCompid4[1];
+          $prevCompid__236 = _genCompid4[0],
+          $compid__236 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__307"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__237"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__307 = _genCompid6[0],
-          $compid__307 = _genCompid6[1];
+          $prevCompid__237 = _genCompid6[0],
+          $compid__237 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__308"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__238"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__308 = _genCompid8[0],
-          $compid__308 = _genCompid8[1];
+          $prevCompid__238 = _genCompid8[0],
+          $compid__238 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__309"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__239"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__309 = _genCompid10[0],
-          $compid__309 = _genCompid10[1];
+          $prevCompid__239 = _genCompid10[0],
+          $compid__239 = _genCompid10[1];
 
       var _props = this.__props,
           orderVisible = _props.orderVisible,
@@ -105,10 +121,15 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
           couponListVisible = _useState2[0],
           setCouponListVisible = _useState2[1];
 
-      var _useState3 = (0, _taroWeapp.useState)(orderData.selection),
+      var _useState3 = (0, _taroWeapp.useState)(null),
           _useState4 = _slicedToArray(_useState3, 2),
           discountRadio = _useState4[0],
           setDiscountRadio = _useState4[1];
+
+      var _useState5 = (0, _taroWeapp.useState)(true),
+          _useState6 = _slicedToArray(_useState5, 2),
+          discountVisible = _useState6[0],
+          setDiscountVisible = _useState6[1];
 
       var displayOrderData = (0, _taroWeapp.useMemo)(function () {
         var cname = orderData.cname,
@@ -117,80 +138,162 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
             point = orderData.point,
             price = orderData.price,
             couponList = orderData.couponList,
-            uuid = orderData.uuid;
+            uuid = orderData.uuid,
+            selection = orderData.selection;
 
         return {
-          name: cname + " " + carrier + " \u8FD0\u8425\u5546 " + name,
+          selection: selection,
+          name: cname + " " + carrier + ' \u8FD0\u8425\u5546 ' + name,
           point: point >= price * 100 ? price * 100 - 1 : point,
           coupon: couponList && (couponList.filter(function (v) {
             return v.uuid === uuid;
-          })[0] || (couponList.length === 0 ? {} : { name: couponList.length + "\u5F20\u53EF\u7528" }))
+          })[0] || (couponList.length === 0 ? {} : { name: couponList.length + '\u5F20\u53EF\u7528' }))
         };
       }, [orderData]);
-      var anonymousState__temp = orderData.price && orderData.price.toFixed(2);
-      var anonymousState__temp2 = displayOrderData.point && (displayOrderData.point / 100).toFixed(2);
+      var choosePointRadio = function choosePointRadio() {
+        if (displayOrderData.point === 0) {
+          _taroWeapp2.default.showToast({ title: '暂无积分可用', icon: 'none', duration: 2000, mask: true });
+          return;
+        }
+        setDiscountRadio('point');
+      };
+      var chooseCouponRadio = function chooseCouponRadio() {
+        if (orderData.couponList && orderData.couponList.length === 0) {
+          _taroWeapp2.default.showToast({ title: '暂无优惠券可用', icon: 'none', duration: 2000, mask: true });
+          return;
+        }
+        setDiscountRadio('coupon');
+        setCouponListVisible(true);
+      };
+      (0, _taroWeapp.useEffect)(function () {
+        setDiscountRadio(orderData.selection);
+      }, [orderData]);
+      var discountPrice = (0, _taroWeapp.useMemo)(function () {
+        if (discountRadio === 'point' && displayOrderData.point) {
+          return (displayOrderData.point / 100).toFixed(2) * 1;
+        } else if (discountRadio === 'coupon' && displayOrderData.coupon.value) {
+          return displayOrderData.coupon.value.toFixed(2) * 1;
+        } else {
+          return 0;
+        }
+      }, [discountRadio]);
+      var payAmount = (0, _taroWeapp.useMemo)(function () {
+        var payAmount = (orderData.price - discountPrice).toFixed(2) * 1;
+        return payAmount > 0 ? payAmount : 0.01;
+      }, [discountPrice]);
+      var payNow = function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+          var _ref3, result;
 
-      this.anonymousFunc0 = function () {
-        return setCouponListVisible(true);
+          return _regenerator2.default.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return api.orderPay(_extends({}, orderData, { pageUrl: encodeURIComponent('https://wechat.globalcharge.cn/home'), payment: 'wc_pay', tradeType: 'JSAPI', originalPayAmount: orderData.price, payAmount: payAmount, uuid: displayOrderData.coupon.uuid, point: displayOrderData.point, selection: discountVisible ? discountRadio : null }));
+
+                case 2:
+                  _ref3 = _context.sent;
+                  result = _ref3.result;
+
+                case 4:
+                case 'end':
+                  return _context.stop();
+              }
+            }
+          }, _callee, _this2);
+        }));
+
+        return function payNow() {
+          return _ref2.apply(this, arguments);
+        };
+      }();
+      var anonymousState__temp = orderData.price && orderData.price.toFixed(2);
+      this.anonymousFunc0 = choosePointRadio;
+      var anonymousState__temp2 = discountVisible ? displayOrderData.point && (displayOrderData.point / 100).toFixed(2) : null;
+      this.anonymousFunc1 = chooseCouponRadio;
+
+      this.anonymousFunc2 = function () {
+        return setDiscountRadio(null);
       };
 
-      this.anonymousFunc1 = function () {
+      this.anonymousFunc3 = payNow;
+
+      this.anonymousFunc4 = function () {
         return setCouponListVisible(false);
       };
 
       _taroWeapp.propsManager.set({
         "className": "myOrder",
         "isOpened": orderVisible,
-        "title": "\u786E\u8BA4\u4ED8\u6B3E",
+        "title": '\u786E\u8BA4\u4ED8\u6B3E',
         "onClose": this.__props.onClose
-      }, $compid__305, $prevCompid__305);
-      _taroWeapp.propsManager.set({
+      }, $compid__235, $prevCompid__235);
+      discountVisible && _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__306, $prevCompid__306);
-      _taroWeapp.propsManager.set({
+      }, $compid__236, $prevCompid__236);
+      discountVisible && _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__307, $prevCompid__307);
-      _taroWeapp.propsManager.set({
+      }, $compid__237, $prevCompid__237);
+      discountVisible && _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__308, $prevCompid__308);
+      }, $compid__238, $prevCompid__238);
       _taroWeapp.propsManager.set({
         "couponListVisible": couponListVisible,
-        "onClose": this.anonymousFunc1
-      }, $compid__309, $prevCompid__309);
+        "onClose": this.anonymousFunc4
+      }, $compid__239, $prevCompid__239);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
-        $compid__305: $compid__305,
-        $compid__306: $compid__306,
-        $compid__307: $compid__307,
-        $compid__308: $compid__308,
-        $compid__309: $compid__309,
+        $compid__235: $compid__235,
+        $compid__236: $compid__236,
+        $compid__237: $compid__237,
+        $compid__238: $compid__238,
+        $compid__239: $compid__239,
+        discountVisible: discountVisible,
         discountRadio: discountRadio,
         displayOrderData: displayOrderData,
-        orderData: orderData
+        orderData: orderData,
+        discountPrice: discountPrice,
+        payAmount: payAmount
       });
       return this.__state;
     }
   }, {
-    key: "anonymousFunc0",
+    key: 'anonymousFunc0',
     value: function anonymousFunc0(e) {
       ;
     }
   }, {
-    key: "anonymousFunc1",
+    key: 'anonymousFunc1',
     value: function anonymousFunc1(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc2',
+    value: function anonymousFunc2(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc3',
+    value: function anonymousFunc3(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc4',
+    value: function anonymousFunc4(e) {
       ;
     }
   }]);
 
   return Order;
-}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/index/components/ProductBar/components/Order/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3"], _class.$$componentPath = "pages/index/components/ProductBar/components/Order/index", _temp2);
 exports.default = Order;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(Order));
@@ -205,6 +308,33 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "pages/index/components/ProductBar/components/Order/index.wxml";
+
+/***/ }),
+
+/***/ "./src/pages/index/components/ProductBar/components/Order/api.js":
+/*!***********************************************************************!*\
+  !*** ./src/pages/index/components/ProductBar/components/Order/api.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.orderPay = orderPay;
+
+var _request = __webpack_require__(/*! ../../../../../../utils/request */ "./src/utils/request.js");
+
+var _request2 = _interopRequireDefault(_request);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function orderPay(data) {
+  return (0, _request2.default)('/wx/charge/order', data);
+}
 
 /***/ }),
 
@@ -269,4 +399,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/pages/index/components/ProductBar/components/Order/index.jsx","runtime","vendors"]]]);
+},[["./src/pages/index/components/ProductBar/components/Order/index.jsx","runtime","vendors","common"]]]);

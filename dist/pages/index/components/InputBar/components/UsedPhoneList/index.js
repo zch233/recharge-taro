@@ -48,7 +48,7 @@ var UsedPhoneList = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UsedPhoneList.__proto__ || Object.getPrototypeOf(UsedPhoneList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray7", "visible", "usedPhoneList", "onConfirm"], _this.anonymousFunc0Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UsedPhoneList.__proto__ || Object.getPrototypeOf(UsedPhoneList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray8", "visible", "usedPhoneList", "onConfirm"], _this.anonymousFunc0Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(UsedPhoneList, [{
@@ -74,12 +74,12 @@ var UsedPhoneList = (_temp2 = _class = function (_Taro$Component) {
           _props$usedPhoneList = _props.usedPhoneList,
           usedPhoneList = _props$usedPhoneList === undefined ? [] : _props$usedPhoneList;
 
-      var loopArray7 = usedPhoneList.map(function (phone, __index0) {
+      var loopArray8 = usedPhoneList.map(function (phone, __index0) {
         phone = {
           $original: (0, _taroWeapp.internal_get_original)(phone)
         };
 
-        var _$indexKey = "bczzz" + __index0;
+        var _$indexKey = "bdzzz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return _this2.__props.onConfirm(phone.$original);
@@ -91,7 +91,7 @@ var UsedPhoneList = (_temp2 = _class = function (_Taro$Component) {
         };
       });
       Object.assign(this.__state, {
-        loopArray7: loopArray7,
+        loopArray8: loopArray8,
         visible: visible,
         usedPhoneList: usedPhoneList
       });

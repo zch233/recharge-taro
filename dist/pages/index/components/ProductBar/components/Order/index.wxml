@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
-        <at-float-layout compid="{{$compid__305}}">
+        <at-float-layout compid="{{$compid__235}}">
             <view class="orderDetail">
                 <view class="orderDetail-item">
                     <view class="orderDetail-item-label">订单详情</view>
@@ -14,35 +14,43 @@
                     <view class="orderDetail-item-label">商品价格</view>
                     <view class="orderDetail-item-value">{{anonymousState__temp}}元</view>
                 </view>
-                <view class="{{'orderDetail-item radio ' + (discountRadio === 'point' && 'selected')}}">
-                    <view class="orderDetail-item-label">积分<text class="pointDiscount">可用<text class="count">{{displayOrderData.point}}积分</text>抵扣<text class="price">￥{{anonymousState__temp2}}元</text></text>
+                <block wx:if="{{discountVisible}}">
+                    <view>
+                        <view class="{{'orderDetail-item radio ' + (discountRadio === 'point' && 'selected') + ' ' + (displayOrderData.point === 0 && 'disabled')}}" bindtap="anonymousFunc0">
+                            <view class="orderDetail-item-label">积分<text class="pointDiscount">可用<text class="count">{{displayOrderData.point}}积分</text>抵扣<text class="price">￥{{anonymousState__temp2}}元</text></text>
+                            </view>
+                            <view class="orderDetail-item-radio">
+                                <at-icon compid="{{$compid__236}}"></at-icon>
+                            </view>
+                        </view>
+                        <view class="{{'orderDetail-item radio ' + (discountRadio === 'coupon' && 'selected') + ' ' + (orderData.couponList && orderData.couponList.length === 0 && 'disabled')}}" bindtap="anonymousFunc1">
+                            <view class="orderDetail-item-label">优惠券
+                                <block wx:if="{{displayOrderData.coupon && displayOrderData.coupon.name}}"><text class="couponDiscount">{{displayOrderData.coupon && displayOrderData.coupon.name}}</text>
+                                </block>
+                            </view>
+                            <view class="orderDetail-item-radio">
+                                <at-icon compid="{{$compid__237}}"></at-icon>
+                            </view>
+                        </view>
+                        <view class="{{'orderDetail-item radio  ' + (!discountRadio && 'selected')}}" bindtap="anonymousFunc2">
+                            <view class="orderDetail-item-label">不使用优惠</view>
+                            <view class="orderDetail-item-radio">
+                                <at-icon compid="{{$compid__238}}"></at-icon>
+                            </view>
+                        </view>
                     </view>
-                    <view class="orderDetail-item-radio">
-                        <at-icon compid="{{$compid__306}}"></at-icon>
-                    </view>
-                </view>
-                <view class="{{'orderDetail-item radio ' + (discountRadio === 'coupon' && 'selected')}}" bindtap="anonymousFunc0">
-                    <view class="orderDetail-item-label">优惠券
-                        <block wx:if="{{displayOrderData.coupon && displayOrderData.coupon.name}}"><text class="couponDiscount">{{displayOrderData.coupon && displayOrderData.coupon.name}}</text>
-                        </block>
-                    </view>
-                    <view class="orderDetail-item-radio">
-                        <at-icon compid="{{$compid__307}}"></at-icon>
-                    </view>
-                </view>
-                <view class="{{'orderDetail-item radio  ' + (!discountRadio && 'selected')}}">
-                    <view class="orderDetail-item-label">不使用优惠</view>
-                    <view class="orderDetail-item-radio">
-                        <at-icon compid="{{$compid__308}}"></at-icon>
-                    </view>
-                </view>
+                </block>
             </view>
-            <view class="orderDiscountTips">*积分优惠券二选一</view>
+            <block wx:if="{{discountVisible}}">
+                <view class="orderDiscountTips">*积分优惠券二选一</view>
+            </block>
             <view class="orderButton">
-                <view class="totalPrice">应付金额<text class="mark">￥</text><text class="price">152</text>
-                </view><text class="discountPrice">已优惠￥125</text><text class="buyButton">立即付款</text>
+                <view class="totalPrice">应付金额<text class="mark">￥</text><text class="price">{{payAmount}}</text>
+                </view>
+                <block wx:if="{{discountVisible && discountPrice !== 0}}"><text class="discountPrice">已优惠￥{{discountPrice}}</text>
+                </block><text class="buyButton" bindtap="anonymousFunc3">立即付款</text>
             </view>
         </at-float-layout>
-        <coupon-list compid="{{$compid__309}}"></coupon-list>
+        <coupon-list compid="{{$compid__239}}"></coupon-list>
     </view>
 </block>

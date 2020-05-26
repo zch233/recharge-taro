@@ -13,6 +13,6 @@
                 </view>
             </view>
         </view>
-        <view class="notUseCoupon" bindtap="funPrivatebhzzz">不使用优惠券</view>
+        <view class="notUseCoupon" bindtap="funPrivatebfzzz">不使用优惠券</view>
     </at-float-layout>
 </block>

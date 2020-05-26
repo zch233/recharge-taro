@@ -113,7 +113,7 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
           $original: (0, _taroWeapp.internal_get_original)(country)
         };
 
-        var _$indexKey = "bbzzz" + __index1;
+        var _$indexKey = "bazzz" + __index1;
 
         _this2.anonymousFunc1Map[_$indexKey] = function () {
           return _this2.__props.onConfirm(country.$original);
