@@ -8,6 +8,7 @@ import * as api from './api.js'
 
 export default function Index ()  {
   const [requestProductData, setRequestProductData] = useState({})
+  const [initTips, setInitTips] = useState('请选择国家输入号码')
   const router = useRouter()
   useEffect(() => {
     router.params.login && Taro.login({
@@ -23,8 +24,8 @@ export default function Index ()  {
   return (
     <View>
       <OverHeader />
-      <InputBar setRequestProductData={data => setRequestProductData(data)} />
-      <ProductBar requestProductData={requestProductData} />
+      <InputBar setRequestProductData={data => setRequestProductData(data)} setInitTips={data => setInitTips(data)} />
+      <ProductBar requestProductData={requestProductData} initTips={initTips} />
     </View>
   )
 }

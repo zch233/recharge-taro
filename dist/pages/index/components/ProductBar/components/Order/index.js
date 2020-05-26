@@ -50,7 +50,7 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__39", "$compid__40", "$compid__41", "$compid__42", "$compid__43", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon", "CouponList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__43", "$compid__44", "$compid__45", "$compid__46", "$compid__47", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon", "CouponList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Order, [{
@@ -69,30 +69,30 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__39"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__43"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__39 = _genCompid2[0],
-          $compid__39 = _genCompid2[1];
+          $prevCompid__43 = _genCompid2[0],
+          $compid__43 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__40"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__44"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__40 = _genCompid4[0],
-          $compid__40 = _genCompid4[1];
+          $prevCompid__44 = _genCompid4[0],
+          $compid__44 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__41"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__45"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__41 = _genCompid6[0],
-          $compid__41 = _genCompid6[1];
+          $prevCompid__45 = _genCompid6[0],
+          $compid__45 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__42"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__46"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__42 = _genCompid8[0],
-          $compid__42 = _genCompid8[1];
+          $prevCompid__46 = _genCompid8[0],
+          $compid__46 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__43"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__47"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__43 = _genCompid10[0],
-          $compid__43 = _genCompid10[1];
+          $prevCompid__47 = _genCompid10[0],
+          $compid__47 = _genCompid10[1];
 
       var _props = this.__props,
           orderVisible = _props.orderVisible,
@@ -116,32 +116,32 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": orderVisible,
         "title": "\u786E\u8BA4\u4ED8\u6B3E",
         "onClose": this.__props.onClose
-      }, $compid__39, $prevCompid__39);
+      }, $compid__43, $prevCompid__43);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__40, $prevCompid__40);
+      }, $compid__44, $prevCompid__44);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__41, $prevCompid__41);
+      }, $compid__45, $prevCompid__45);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__42, $prevCompid__42);
+      }, $compid__46, $prevCompid__46);
       _taroWeapp.propsManager.set({
         "couponListVisible": couponListVisible,
         "onClose": this.anonymousFunc1
-      }, $compid__43, $prevCompid__43);
+      }, $compid__47, $prevCompid__47);
       Object.assign(this.__state, {
-        $compid__39: $compid__39,
-        $compid__40: $compid__40,
-        $compid__41: $compid__41,
-        $compid__42: $compid__42,
-        $compid__43: $compid__43
+        $compid__43: $compid__43,
+        $compid__44: $compid__44,
+        $compid__45: $compid__45,
+        $compid__46: $compid__46,
+        $compid__47: $compid__47
       });
       return this.__state;
     }
@@ -165,10 +165,10 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 
 /***/ }),
 
-/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/Order/index.jsx?taro&type=template&parse=COMPONENT&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/components/Order/index.jsx?taro&type=template&parse=COMPONENT& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/Order/index.jsx?taro&type=template&parse=COMPONENT&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/components/Order/index.jsx?taro&type=template&parse=COMPONENT& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -219,9 +219,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/Order/index.jsx?taro&type=template&parse=COMPONENT&");
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/Order/index.jsx?taro&type=template&parse=COMPONENT&");
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),

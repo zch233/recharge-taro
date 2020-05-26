@@ -50,7 +50,7 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CouponList.__proto__ || Object.getPrototypeOf(CouponList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray8", "$compid__45", "$anonymousCallee__3", "couponListVisible", "__fn_onClick"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CouponList.__proto__ || Object.getPrototypeOf(CouponList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray10", "$compid__49", "$anonymousCallee__3", "couponListVisible", "__fn_onClick"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CouponList, [{
@@ -69,33 +69,33 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__45"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__49"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__45 = _genCompid2[0],
-          $compid__45 = _genCompid2[1];
+          $prevCompid__49 = _genCompid2[0],
+          $compid__49 = _genCompid2[1];
 
       var _props = this.__props,
           couponListVisible = _props.couponListVisible,
           onClose = _props.onClose;
 
       var $anonymousCallee__3 = '123456789'.split('');
-      var loopArray8 = '123456789'.split('').map(function (v, _anonIdx) {
+      var loopArray10 = '123456789'.split('').map(function (v, _anonIdx) {
         v = {
           $original: (0, _taroWeapp.internal_get_original)(v)
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bgzzzzzzzz" + _anonIdx, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bizzzzzzzz" + _anonIdx, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__44 = _genCompid4[0],
-            $compid__44 = _genCompid4[1];
+            $prevCompid__48 = _genCompid4[0],
+            $compid__48 = _genCompid4[1];
 
         _taroWeapp.propsManager.set({
           "value": "check",
           "size": "18",
           "color": "#fff"
-        }, $compid__44, $prevCompid__44);
+        }, $compid__48, $prevCompid__48);
         return {
-          $compid__44: $compid__44,
+          $compid__48: $compid__48,
           $original: v.$original
         };
       });
@@ -104,33 +104,33 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": couponListVisible,
         "title": "\u4F18\u60E0\u5238",
         "onClose": this.__props.onClose
-      }, $compid__45, $prevCompid__45);
+      }, $compid__49, $prevCompid__49);
       Object.assign(this.__state, {
-        loopArray8: loopArray8,
-        $compid__45: $compid__45,
+        loopArray10: loopArray10,
+        $compid__49: $compid__49,
         $anonymousCallee__3: $anonymousCallee__3
       });
       return this.__state;
     }
   }, {
-    key: "funPrivatebfzzz",
-    value: function funPrivatebfzzz() {
+    key: "funPrivatebhzzz",
+    value: function funPrivatebhzzz() {
       return this.props.onClose.apply(undefined, Array.prototype.slice.call(arguments, 1));
     }
   }]);
 
   return CouponList;
-}(_taroWeapp2.default.Component), _class.$$events = ["funPrivatebfzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/CouponList/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["funPrivatebhzzz"], _class.$$componentPath = "pages/index/components/ProductBar/components/CouponList/index", _temp2);
 exports.default = CouponList;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(CouponList));
 
 /***/ }),
 
-/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/CouponList/index.jsx?taro&type=template&parse=COMPONENT&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/components/CouponList/index.jsx?taro&type=template&parse=COMPONENT& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/CouponList/index.jsx?taro&type=template&parse=COMPONENT&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/components/CouponList/index.jsx?taro&type=template&parse=COMPONENT& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -181,9 +181,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/CouponList/index.jsx?taro&type=template&parse=COMPONENT&");
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/CouponList/index.jsx?taro&type=template&parse=COMPONENT&");
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),

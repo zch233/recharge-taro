@@ -12,7 +12,6 @@ import JWT from 'jsonwebtoken'
 const userInfo = JWT.decode(Taro.getStorageSync('token'))
 const initialState = {
   rechargePhone: '',
-  emptyTips: '请选择国家输入号码',
   countryList: [],
   carrierList: [],
   usedPhoneList: [],
@@ -25,7 +24,6 @@ const initialState = {
 const reducer = (state, { type, payload }) => {
   const typeMap = {
     setRechargePhone: () => ({ ...state, rechargePhone: payload }),
-    setEmptyTips: () => ({ ...state, emptyTips: payload }),
     setCarrierList: () => ({ ...state, carrierList: payload }),
     setCountryList: () => ({ ...state, countryList: payload }),
     setUsedPhoneList: () => ({ ...state, usedPhoneList: payload }),
@@ -60,7 +58,7 @@ const checkPhoneNumber = phone => {
     return true
   }
 }
-export default function InputBar ({ setRequestProductData })  {
+export default function InputBar ({ setRequestProductData, setInitTips })  {
   const [state, setState] = useReducer(reducer, initialState);
   const phoneInputChange = value => {
     const phone = value.replace(/[^0-9]+/g, '')
@@ -107,10 +105,10 @@ export default function InputBar ({ setRequestProductData })  {
   }
   const getCarrierInfo = async () => {
     if (!checkPhoneNumber(state.rechargePhone)) {
-      setState({ type: 'setEmptyTips', payload: '请选择国家输入号码' })
+      setInitTips('请选择国家输入号码')
       return
     } else {
-      setState({ type: 'setEmptyTips', payload: '请选择运营商' })
+      setInitTips('请选择运营商')
     }
     setTimeout(async () => {
       const { result: carrierName } = await api.getCarrierInfo({ countryCode: state.currentCountry.countryCode, account: state.rechargePhone })

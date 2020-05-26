@@ -1,9 +1,30 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-tabs-pane compid="{{$compid__203}}">
-        <view class="productList">
-            <product-item wx:key="code" wx:for="{{loopArray47}}" wx:for-item="product" wx:for-index="__index0" compid="{{product.$compid__202}}"></product-item>
-        </view>
-        <block wx:if="{{anonymousState__temp}}">
+    <at-tabs-pane compid="{{$compid__135}}">
+        <block>
+            <block wx:if="{{anonymousState__temp2}}">
+                <block>
+                    <block wx:if="{{list.length}}">
+                        <view class="productList">
+                            <product-item wx:key="code" wx:for="{{loopArray37}}" wx:for-item="product" wx:for-index="__index0" compid="{{product.$compid__134}}"></product-item>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="product-empty">
+                            <view class="view-image">
+                                <image class="image" mode="widthFix" lazy-load="{{true}}" src="{{anonymousState__temp}}"></image>
+                            </view>
+                            <view class="tips">产品维护中，如需充值请联系客服</view>
+                        </view>
+                    </block>
+                </block>
+            </block>
+            <block wx:else>
+                <block wx:if="{{anonymousState__temp3}}">
+                    <view class="initTips">{{initTips}}</view>
+                </block>
+            </block>
+        </block>
+        <block wx:if="{{anonymousState__temp4}}">
             <view class="flowProductDetail">
                 <view class="flowProductDetail-info">
                     <view class="title">{{productDetail.name}}

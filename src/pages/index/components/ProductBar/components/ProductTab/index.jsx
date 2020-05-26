@@ -5,7 +5,7 @@ import ProductItem from '../ProductItem/index'
 import './index.scss'
 import * as api from './api'
 
-export default function ProductTab ({ requestProductData, current, index, onClick })  {
+export default function ProductTab ({ requestProductData = {}, current, index, onClick, initTips })  {
   const [list, setList] = useState([])
   const [productDetail, setProductDetail] = useState({})
   const requested = useRef()
@@ -18,6 +18,10 @@ export default function ProductTab ({ requestProductData, current, index, onClic
     if (index === 0) {
       onClick(product)
     } else if (index === 1) {
+      Taro.pageScrollTo({
+        duration: 300,
+        selector: '.flowProductDetail',
+      })
       setProductDetail(product)
     }
   }
@@ -35,9 +39,22 @@ export default function ProductTab ({ requestProductData, current, index, onClic
   }, [requestProductData])
   return (
     <AtTabsPane current={current} index={index} >
-      <View className='productList'>
-        { list.map(product => <ProductItem key={product.code} index={index} productInfo={product} onClick={handleProductClick} />) }
-      </View>
+      {
+        Object.keys(requestProductData).length > 0 ? (
+          list.length ? (
+            <View className='productList'>
+              { list.map(product => <ProductItem key={product.code} index={index} productInfo={product} onClick={handleProductClick} />) }
+            </View>
+          ) : (
+            <View class="product-empty">
+              <View className='view-image'><Image className='image' mode='widthFix' lazyLoad src={require('@/static/qrcode.jpg')} /></View>
+              <View className='tips'>产品维护中，如需充值请联系客服</View>
+            </View>
+          )
+        ) : (
+          Object.keys(requestProductData).length === 0 && <View className='initTips'>{ initTips }</View>
+        )
+      }
       {
         Object.keys(productDetail).length && (
           <View class="flowProductDetail">

@@ -50,7 +50,7 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__183", "$compid__184", "$compid__185", "$compid__186", "$compid__187", "requestProductData"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__107", "$compid__108", "$compid__109", "$compid__110", "$compid__111", "requestProductData", "initTips"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductBar, [{
@@ -69,33 +69,35 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__183"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__107"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__183 = _genCompid2[0],
-          $compid__183 = _genCompid2[1];
+          $prevCompid__107 = _genCompid2[0],
+          $compid__107 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__184"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__108"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__184 = _genCompid4[0],
-          $compid__184 = _genCompid4[1];
+          $prevCompid__108 = _genCompid4[0],
+          $compid__108 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__185"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__109"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__185 = _genCompid6[0],
-          $compid__185 = _genCompid6[1];
+          $prevCompid__109 = _genCompid6[0],
+          $compid__109 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__186"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__110"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__186 = _genCompid8[0],
-          $compid__186 = _genCompid8[1];
+          $prevCompid__110 = _genCompid8[0],
+          $compid__110 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__187"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__111"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__187 = _genCompid10[0],
-          $compid__187 = _genCompid10[1];
+          $prevCompid__111 = _genCompid10[0],
+          $compid__111 = _genCompid10[1];
 
-      var _props$requestProduc = this.__props.requestProductData,
-          requestProductData = _props$requestProduc === undefined ? {} : _props$requestProduc;
+      var _props = this.__props,
+          _props$requestProduct = _props.requestProductData,
+          requestProductData = _props$requestProduct === undefined ? {} : _props$requestProduct,
+          initTips = _props.initTips;
 
 
       var tabList = [{ title: '充话费' }, { title: '充流量' }, { title: '余额查询' }];
@@ -135,33 +137,35 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "current": activeTab,
         "tabList": tabList,
         "onClick": this.anonymousFunc0
-      }, $compid__183, $prevCompid__183);
+      }, $compid__107, $prevCompid__107);
       _taroWeapp.propsManager.set({
         "onClick": this.anonymousFunc1,
+        "initTips": initTips,
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 0
-      }, $compid__184, $prevCompid__184);
+      }, $compid__108, $prevCompid__108);
       _taroWeapp.propsManager.set({
         "onClick": this.anonymousFunc2,
+        "initTips": initTips,
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 1
-      }, $compid__185, $prevCompid__185);
+      }, $compid__109, $prevCompid__109);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 2
-      }, $compid__186, $prevCompid__186);
+      }, $compid__110, $prevCompid__110);
       _taroWeapp.propsManager.set({
         "orderVisible": orderVisible,
         "onClose": this.anonymousFunc3
-      }, $compid__187, $prevCompid__187);
+      }, $compid__111, $prevCompid__111);
       Object.assign(this.__state, {
-        $compid__183: $compid__183,
-        $compid__184: $compid__184,
-        $compid__185: $compid__185,
-        $compid__186: $compid__186,
-        $compid__187: $compid__187
+        $compid__107: $compid__107,
+        $compid__108: $compid__108,
+        $compid__109: $compid__109,
+        $compid__110: $compid__110,
+        $compid__111: $compid__111
       });
       return this.__state;
     }
@@ -195,10 +199,10 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 
 /***/ }),
 
-/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -249,9 +253,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&");
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/index.jsx?taro&type=template&parse=COMPONENT&");
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),

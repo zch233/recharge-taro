@@ -64,7 +64,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "loopArray47", "$compid__203", "list", "productDetail", "requestProductData", "current", "index", "onClick"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtTabsPane", "ProductItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "loopArray37", "$compid__135", "list", "productDetail", "initTips", "requestProductData", "current", "index", "onClick"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtTabsPane", "ProductItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductTab, [{
@@ -85,16 +85,18 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__203"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__135"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__203 = _genCompid2[0],
-          $compid__203 = _genCompid2[1];
+          $prevCompid__135 = _genCompid2[0],
+          $compid__135 = _genCompid2[1];
 
       var _props = this.__props,
-          requestProductData = _props.requestProductData,
+          _props$requestProduct = _props.requestProductData,
+          requestProductData = _props$requestProduct === undefined ? {} : _props$requestProduct,
           current = _props.current,
           index = _props.index,
-          onClick = _props.onClick;
+          onClick = _props.onClick,
+          initTips = _props.initTips;
 
       var _useState = (0, _taroWeapp.useState)([]),
           _useState2 = _slicedToArray(_useState, 2),
@@ -141,6 +143,10 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
         if (index === 0) {
           _this2.__props.onClick(product);
         } else if (index === 1) {
+          _taroWeapp2.default.pageScrollTo({
+            duration: 300,
+            selector: '.flowProductDetail'
+          });
           setProductDetail(product);
         }
       };
@@ -157,46 +163,54 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
         }
       }, [requestProductData]);
 
+      var anonymousState__temp = __webpack_require__(/*! ../../../../../../static/qrcode.jpg */ "./src/static/qrcode.jpg");
+
       this.anonymousFunc1 = function () {
         return _this2.__props.onClick(productDetail);
       };
 
-      var anonymousState__temp = Object.keys(productDetail).length;
-      var loopArray47 = list.map(function (product, __index0) {
+      var anonymousState__temp2 = Object.keys(requestProductData).length > 0;
+      var anonymousState__temp3 = Object.keys(requestProductData).length === 0;
+      var anonymousState__temp4 = Object.keys(productDetail).length;
+      var loopArray37 = list.length ? list.map(function (product, __index0) {
         product = {
           $original: (0, _taroWeapp.internal_get_original)(product)
         };
 
-        var _$indexKey = "bbazz" + __index0;
+        var _$indexKey = "hczzz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = handleProductClick;
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'bbbzzzzzzz' + __index0, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'hdzzzzzzzz' + __index0, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__202 = _genCompid4[0],
-            $compid__202 = _genCompid4[1];
+            $prevCompid__134 = _genCompid4[0],
+            $compid__134 = _genCompid4[1];
 
-        _taroWeapp.propsManager.set({
+        anonymousState__temp2 && list.length && _taroWeapp.propsManager.set({
           "index": index,
           "productInfo": product.$original,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
-        }, $compid__202, $prevCompid__202);
+        }, $compid__134, $prevCompid__134);
         return {
           _$indexKey: _$indexKey,
-          $compid__202: $compid__202,
+          $compid__134: $compid__134,
           $original: product.$original
         };
-      });
+      }) : [];
       _taroWeapp.propsManager.set({
         "current": current,
         "index": index
-      }, $compid__203, $prevCompid__203);
+      }, $compid__135, $prevCompid__135);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
-        loopArray47: loopArray47,
-        $compid__203: $compid__203,
+        anonymousState__temp2: anonymousState__temp2,
+        anonymousState__temp3: anonymousState__temp3,
+        anonymousState__temp4: anonymousState__temp4,
+        loopArray37: loopArray37,
+        $compid__135: $compid__135,
         list: list,
-        productDetail: productDetail
+        productDetail: productDetail,
+        initTips: initTips
       });
       return this.__state;
     }
@@ -228,10 +242,10 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 
 /***/ }),
 
-/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/ProductTab/index.jsx?taro&type=template&parse=COMPONENT&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/components/ProductTab/index.jsx?taro&type=template&parse=COMPONENT& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/ProductTab/index.jsx?taro&type=template&parse=COMPONENT&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/components/ProductBar/components/ProductTab/index.jsx?taro&type=template&parse=COMPONENT& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -309,9 +323,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/52974/Desktop/recharge-taro/src!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\52974\\Desktop\\recharge-taro\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/ProductTab/index.jsx?taro&type=template&parse=COMPONENT&");
-/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_52974_Desktop_recharge_taro_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=E:/Users/小胖友/Desktop/company-coding/myApp/src!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../../../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=COMPONENT& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=E:\\Users\\小胖友\\Desktop\\company-coding\\myApp\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/components/ProductBar/components/ProductTab/index.jsx?taro&type=template&parse=COMPONENT&");
+/* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -324,6 +338,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/static/qrcode.jpg":
+/*!*******************************!*\
+  !*** ./src/static/qrcode.jpg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/qrcode.jpg";
 
 /***/ })
 
