@@ -5,7 +5,7 @@ import ProductItem from '../ProductItem/index'
 import './index.scss'
 import * as api from './api'
 
-export default function ProductTab ({ requestProductData = {}, current, index, onClick, initTips })  {
+export default function ProductTab ({ requestProductData = {}, current, index, handleBuyClick, initTips })  {
   const [list, setList] = useState([])
   const [productDetail, setProductDetail] = useState({})
   const requested = useRef()
@@ -16,7 +16,7 @@ export default function ProductTab ({ requestProductData = {}, current, index, o
   }
   const handleProductClick = product => {
     if (index === 0) {
-      onClick(product)
+      handleBuyClick(product)
     } else if (index === 1) {
       Taro.pageScrollTo({
         duration: 300,
@@ -26,7 +26,6 @@ export default function ProductTab ({ requestProductData = {}, current, index, o
     }
   }
   useEffect(() => {
-    console.log(current === index && !requested.current && Object.keys(requestProductData).length > 0, 2222222)
     if (current === index && !requested.current && Object.keys(requestProductData).length > 0) {
       console.log('请求数据')
       getProductList({ ...requestProductData, type: index === 0 ? 'HF' : 'LL' })
@@ -43,7 +42,7 @@ export default function ProductTab ({ requestProductData = {}, current, index, o
         Object.keys(requestProductData).length > 0 ? (
           list.length ? (
             <View className='productList'>
-              { list.map(product => <ProductItem key={product.code} index={index} productInfo={product} onClick={handleProductClick} />) }
+              { list.map(product => <ProductItem key={product.code} index={index} productInfo={product} handleProductClick={handleProductClick} />) }
             </View>
           ) : (
             <View class="product-empty">
@@ -64,7 +63,7 @@ export default function ProductTab ({ requestProductData = {}, current, index, o
             </View>
             <View class="flowProductDetail-buy">
               <View className='price'>￥{ productDetail.price }</View>
-              <View className='button' onclick={() => onClick(productDetail)}>购买</View>
+              <View className='button' onclick={() => handleBuyClick(productDetail)}>购买</View>
             </View>
           </View>
         )

@@ -86,6 +86,8 @@ export default function InputBar ({ setRequestProductData, setInitTips })  {
     setState({ type: 'setCurrentCarrier', payload: carrier })
     setState({ type: 'setCarrierListVisible', payload: false })
     setRequestProductData({
+      cname: state.currentCountry.cname,
+      account: state.rechargePhone,
       carrier: carrier.carrierName,
       countryCode: state.currentCountry.countryCode,
     })
@@ -94,6 +96,8 @@ export default function InputBar ({ setRequestProductData, setInitTips })  {
     if (carrierName) {
       setState({ type: 'setCurrentCarrier', payload: { carrierName } })
       setRequestProductData({
+        cname: state.currentCountry.cname,
+        account: state.rechargePhone,
         carrier: carrierName,
         countryCode: state.currentCountry.countryCode,
       })

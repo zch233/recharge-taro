@@ -75,7 +75,7 @@ var error = {
   'JU302': { message: '对不起，服务器正在维护！', href: 'serveDead' },
   'JU430': { message: '网络异常，请稍候再试！', href: 'networkError' }
 };
-_taroWeapp2.default.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLorr_lrqLnlKjmiLciLCJhdWQiOiJrdW1xdWF0IiwidW5pb25JZCI6Imt1bXF1YXRfdW5pb25faWQiLCJyb2xlIjoiQkFTRSIsIm9wZW5JZCI6Imt1bXF1YXRfb3BlbmlkIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ1OTUyMSwiaWF0IjoxNTkwNDU1OTIxLCJqdGkiOiIyMTQ3NDgzNjQ3In0.X-_Tai5TUbAQDuN-XnH5jXnQcoNERkKCc8B3t5Byo90');
+_taroWeapp2.default.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvR1BUaXYtTzVETEZlaC1MRG1EajRfSE1GblNVIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ2NDI4MiwiaWF0IjoxNTkwNDYwNjgyLCJqdGkiOiI5NzMifQ.ghb-BeKDUILcrI1rmzvI25FYJqmcTtsXu2_Kv686QW0');
 
 /***/ })
 

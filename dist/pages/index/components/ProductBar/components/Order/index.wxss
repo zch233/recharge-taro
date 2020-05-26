@@ -36,6 +36,10 @@
 .orderDetail-item.selected {
   color: #808080;
 }
+.orderDetail-item.selected .orderDetail-item-radio {
+  background-color: #FC6E50;
+  border-color: #FC6E50;
+}
 .orderDetail-item.disabled {
   color: #DFDFDF;
 }
@@ -59,10 +63,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.orderDetail-item-radio.selected {
-  background-color: #FC6E50;
-  border-color: #FC6E50;
 }
 .orderDiscountTips {
   display: inline-block;

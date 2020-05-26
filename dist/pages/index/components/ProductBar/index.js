@@ -14,6 +14,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "./node_modules/babel-runtime/regenerator/index.js");
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28,7 +34,17 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 __webpack_require__(/*! ./index.scss */ "./src/pages/index/components/ProductBar/index.scss");
 
+var _api = __webpack_require__(/*! ./api */ "./src/pages/index/components/ProductBar/api.js");
+
+var api = _interopRequireWildcard(_api);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -50,49 +66,51 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__107", "$compid__108", "$compid__109", "$compid__110", "$compid__111", "requestProductData", "initTips"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__217", "$compid__218", "$compid__219", "$compid__220", "$compid__221", "requestProductData", "initTips"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductBar, [{
-    key: "_constructor",
+    key: '_constructor',
     value: function _constructor(props) {
-      _get(ProductBar.prototype.__proto__ || Object.getPrototypeOf(ProductBar.prototype), "_constructor", this).call(this, props);
+      _get(ProductBar.prototype.__proto__ || Object.getPrototypeOf(ProductBar.prototype), '_constructor', this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: "_createData",
+    key: '_createData',
     value: function _createData() {
+      var _this2 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__107"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__217"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__107 = _genCompid2[0],
-          $compid__107 = _genCompid2[1];
+          $prevCompid__217 = _genCompid2[0],
+          $compid__217 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__108"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__218"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__108 = _genCompid4[0],
-          $compid__108 = _genCompid4[1];
+          $prevCompid__218 = _genCompid4[0],
+          $compid__218 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__109"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__219"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__109 = _genCompid6[0],
-          $compid__109 = _genCompid6[1];
+          $prevCompid__219 = _genCompid6[0],
+          $compid__219 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__110"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__220"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__110 = _genCompid8[0],
-          $compid__110 = _genCompid8[1];
+          $prevCompid__220 = _genCompid8[0],
+          $compid__220 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__111"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__221"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__111 = _genCompid10[0],
-          $compid__111 = _genCompid10[1];
+          $prevCompid__221 = _genCompid10[0],
+          $compid__221 = _genCompid10[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
@@ -112,9 +130,90 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
           orderVisible = _useState4[0],
           setOrderVisible = _useState4[1];
 
-      var handleProductClick = function handleProductClick() {
-        setOrderVisible(true);
-      };
+      var _useState5 = (0, _taroWeapp.useState)(false),
+          _useState6 = _slicedToArray(_useState5, 2),
+          waitOrderVisible = _useState6[0],
+          setWaitOrderVisible = _useState6[1];
+
+      var _useState7 = (0, _taroWeapp.useState)({}),
+          _useState8 = _slicedToArray(_useState7, 2),
+          orderData = _useState8[0],
+          setOrderData = _useState8[1];
+
+      var _useState9 = (0, _taroWeapp.useState)({}),
+          _useState10 = _slicedToArray(_useState9, 2),
+          waitOrderData = _useState10[0],
+          setWaitOrderData = _useState10[1];
+
+      var getPreOrderInfo = function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee(product) {
+          var _ref3, result, _ref4, userWaitOrder, orderInfo, waitOrderInfo;
+
+          return _regenerator2.default.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return api.getPreOrderInfo(product.code);
+
+                case 2:
+                  _ref3 = _context.sent;
+                  result = _ref3.result;
+                  _ref4 = result || {}, userWaitOrder = _ref4.userWaitOrder, orderInfo = _objectWithoutProperties(_ref4, ['userWaitOrder']);
+                  waitOrderInfo = (userWaitOrder || []).filter(function (v) {
+                    return requestProductData.account.indexOf(v.account) >= 0;
+                  })[0];
+                  return _context.abrupt('return', { waitOrderInfo: waitOrderInfo, orderInfo: orderInfo });
+
+                case 7:
+                case 'end':
+                  return _context.stop();
+              }
+            }
+          }, _callee, _this2);
+        }));
+
+        return function getPreOrderInfo(_x) {
+          return _ref2.apply(this, arguments);
+        };
+      }();
+      var handleBuyClick = function () {
+        var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(product) {
+          var _ref6, waitOrderInfo, orderInfo;
+
+          return _regenerator2.default.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return getPreOrderInfo(product);
+
+                case 2:
+                  _ref6 = _context2.sent;
+                  waitOrderInfo = _ref6.waitOrderInfo;
+                  orderInfo = _ref6.orderInfo;
+
+                  if (waitOrderInfo) {
+                    setWaitOrderData(waitOrderInfo);
+                    setWaitOrderVisible(true);
+                  } else {
+                    setOrderData(_extends({}, orderInfo, product, requestProductData));
+                    console.log(_extends({}, orderInfo, product, requestProductData));
+                    setOrderVisible(true);
+                  }
+
+                case 6:
+                case 'end':
+                  return _context2.stop();
+              }
+            }
+          }, _callee2, _this2);
+        }));
+
+        return function handleBuyClick(_x2) {
+          return _ref5.apply(this, arguments);
+        };
+      }();
       (0, _taroWeapp.useEffect)(function () {
         if (Object.keys(requestProductData).length > 0) {
           setActiveTab(0);
@@ -125,10 +224,7 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         return setActiveTab(index);
       };
 
-      this.anonymousFunc1 = handleProductClick;
-      this.anonymousFunc2 = handleProductClick;
-
-      this.anonymousFunc3 = function () {
+      this.anonymousFunc1 = function () {
         return setOrderVisible(false);
       };
 
@@ -137,56 +233,47 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "current": activeTab,
         "tabList": tabList,
         "onClick": this.anonymousFunc0
-      }, $compid__107, $prevCompid__107);
+      }, $compid__217, $prevCompid__217);
       _taroWeapp.propsManager.set({
-        "onClick": this.anonymousFunc1,
+        "handleBuyClick": handleBuyClick,
         "initTips": initTips,
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 0
-      }, $compid__108, $prevCompid__108);
+      }, $compid__218, $prevCompid__218);
       _taroWeapp.propsManager.set({
-        "onClick": this.anonymousFunc2,
+        "handleBuyClick": handleBuyClick,
         "initTips": initTips,
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 1
-      }, $compid__109, $prevCompid__109);
+      }, $compid__219, $prevCompid__219);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 2
-      }, $compid__110, $prevCompid__110);
+      }, $compid__220, $prevCompid__220);
       _taroWeapp.propsManager.set({
+        "orderData": orderData,
         "orderVisible": orderVisible,
-        "onClose": this.anonymousFunc3
-      }, $compid__111, $prevCompid__111);
+        "onClose": this.anonymousFunc1
+      }, $compid__221, $prevCompid__221);
       Object.assign(this.__state, {
-        $compid__107: $compid__107,
-        $compid__108: $compid__108,
-        $compid__109: $compid__109,
-        $compid__110: $compid__110,
-        $compid__111: $compid__111
+        $compid__217: $compid__217,
+        $compid__218: $compid__218,
+        $compid__219: $compid__219,
+        $compid__220: $compid__220,
+        $compid__221: $compid__221
       });
       return this.__state;
     }
   }, {
-    key: "anonymousFunc0",
+    key: 'anonymousFunc0',
     value: function anonymousFunc0(e) {
       ;
     }
   }, {
-    key: "anonymousFunc1",
+    key: 'anonymousFunc1',
     value: function anonymousFunc1(e) {
-      ;
-    }
-  }, {
-    key: "anonymousFunc2",
-    value: function anonymousFunc2(e) {
-      ;
-    }
-  }, {
-    key: "anonymousFunc3",
-    value: function anonymousFunc3(e) {
       ;
     }
   }]);
@@ -207,6 +294,33 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "pages/index/components/ProductBar/index.wxml";
+
+/***/ }),
+
+/***/ "./src/pages/index/components/ProductBar/api.js":
+/*!******************************************************!*\
+  !*** ./src/pages/index/components/ProductBar/api.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getPreOrderInfo = getPreOrderInfo;
+
+var _request = __webpack_require__(/*! ../../../../utils/request */ "./src/utils/request.js");
+
+var _request2 = _interopRequireDefault(_request);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getPreOrderInfo(data) {
+  return (0, _request2.default)('/wx/charge/preOrder', data);
+}
 
 /***/ }),
 
@@ -271,4 +385,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/pages/index/components/ProductBar/index.jsx","runtime","vendors"]]]);
+},[["./src/pages/index/components/ProductBar/index.jsx","runtime","vendors","common"]]]);

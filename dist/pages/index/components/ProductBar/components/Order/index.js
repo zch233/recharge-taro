@@ -50,7 +50,7 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__43", "$compid__44", "$compid__45", "$compid__46", "$compid__47", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon", "CouponList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Order.__proto__ || Object.getPrototypeOf(Order)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "$compid__305", "$compid__306", "$compid__307", "$compid__308", "$compid__309", "discountRadio", "displayOrderData", "orderData", "orderVisible", "onClose"], _this.customComponents = ["AtFloatLayout", "AtIcon", "CouponList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Order, [{
@@ -69,39 +69,66 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__43"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__305"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__43 = _genCompid2[0],
-          $compid__43 = _genCompid2[1];
+          $prevCompid__305 = _genCompid2[0],
+          $compid__305 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__44"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__306"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__44 = _genCompid4[0],
-          $compid__44 = _genCompid4[1];
+          $prevCompid__306 = _genCompid4[0],
+          $compid__306 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__45"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__307"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__45 = _genCompid6[0],
-          $compid__45 = _genCompid6[1];
+          $prevCompid__307 = _genCompid6[0],
+          $compid__307 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__46"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__308"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__46 = _genCompid8[0],
-          $compid__46 = _genCompid8[1];
+          $prevCompid__308 = _genCompid8[0],
+          $compid__308 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__47"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__309"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__47 = _genCompid10[0],
-          $compid__47 = _genCompid10[1];
+          $prevCompid__309 = _genCompid10[0],
+          $compid__309 = _genCompid10[1];
 
       var _props = this.__props,
           orderVisible = _props.orderVisible,
-          onClose = _props.onClose;
+          onClose = _props.onClose,
+          _props$orderData = _props.orderData,
+          orderData = _props$orderData === undefined ? {} : _props$orderData;
 
       var _useState = (0, _taroWeapp.useState)(false),
           _useState2 = _slicedToArray(_useState, 2),
           couponListVisible = _useState2[0],
           setCouponListVisible = _useState2[1];
+
+      var _useState3 = (0, _taroWeapp.useState)(orderData.selection),
+          _useState4 = _slicedToArray(_useState3, 2),
+          discountRadio = _useState4[0],
+          setDiscountRadio = _useState4[1];
+
+      var displayOrderData = (0, _taroWeapp.useMemo)(function () {
+        var cname = orderData.cname,
+            carrier = orderData.carrier,
+            name = orderData.name,
+            point = orderData.point,
+            price = orderData.price,
+            couponList = orderData.couponList,
+            uuid = orderData.uuid;
+
+        return {
+          name: cname + " " + carrier + " \u8FD0\u8425\u5546 " + name,
+          point: point >= price * 100 ? price * 100 - 1 : point,
+          coupon: couponList && (couponList.filter(function (v) {
+            return v.uuid === uuid;
+          })[0] || (couponList.length === 0 ? {} : { name: couponList.length + "\u5F20\u53EF\u7528" }))
+        };
+      }, [orderData]);
+      var anonymousState__temp = orderData.price && orderData.price.toFixed(2);
+      var anonymousState__temp2 = displayOrderData.point && (displayOrderData.point / 100).toFixed(2);
 
       this.anonymousFunc0 = function () {
         return setCouponListVisible(true);
@@ -116,32 +143,37 @@ var Order = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": orderVisible,
         "title": "\u786E\u8BA4\u4ED8\u6B3E",
         "onClose": this.__props.onClose
-      }, $compid__43, $prevCompid__43);
+      }, $compid__305, $prevCompid__305);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__44, $prevCompid__44);
+      }, $compid__306, $prevCompid__306);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__45, $prevCompid__45);
+      }, $compid__307, $prevCompid__307);
       _taroWeapp.propsManager.set({
         "value": "check",
         "size": "18",
         "color": "#fff"
-      }, $compid__46, $prevCompid__46);
+      }, $compid__308, $prevCompid__308);
       _taroWeapp.propsManager.set({
         "couponListVisible": couponListVisible,
         "onClose": this.anonymousFunc1
-      }, $compid__47, $prevCompid__47);
+      }, $compid__309, $prevCompid__309);
       Object.assign(this.__state, {
-        $compid__43: $compid__43,
-        $compid__44: $compid__44,
-        $compid__45: $compid__45,
-        $compid__46: $compid__46,
-        $compid__47: $compid__47
+        anonymousState__temp: anonymousState__temp,
+        anonymousState__temp2: anonymousState__temp2,
+        $compid__305: $compid__305,
+        $compid__306: $compid__306,
+        $compid__307: $compid__307,
+        $compid__308: $compid__308,
+        $compid__309: $compid__309,
+        discountRadio: discountRadio,
+        displayOrderData: displayOrderData,
+        orderData: orderData
       });
       return this.__state;
     }

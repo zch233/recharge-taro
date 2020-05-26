@@ -37,6 +37,10 @@
     }
     &.selected {
       color: #808080;
+      .orderDetail-item-radio {
+        background-color: #FC6E50;
+        border-color: #FC6E50;
+      }
     }
     &.disabled {
       color: #DFDFDF;
@@ -61,10 +65,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      &.selected {
-        background-color: #FC6E50;
-        border-color: #FC6E50;
-      }
     }
   }
 }

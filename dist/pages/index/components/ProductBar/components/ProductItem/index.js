@@ -48,7 +48,7 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductItem.__proto__ || Object.getPrototypeOf(ProductItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "productInfo", "index"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductItem.__proto__ || Object.getPrototypeOf(ProductItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "productInfo", "index", "handleProductClick"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductItem, [{
@@ -61,22 +61,20 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
   }, {
     key: "_createData",
     value: function _createData() {
-      var _this2 = this;
-
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
       var _props = this.__props,
-          onClick = _props.onClick,
+          handleProductClick = _props.handleProductClick,
           _props$productInfo = _props.productInfo,
           productInfo = _props$productInfo === undefined ? {} : _props$productInfo,
           index = _props.index;
 
 
       this.anonymousFunc0 = function () {
-        return _this2.__props.onClick(productInfo);
+        return handleProductClick(productInfo);
       };
 
       var anonymousState__temp = productInfo.price ? productInfo.price.toFixed(2) : null;

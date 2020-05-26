@@ -64,7 +64,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "loopArray37", "$compid__135", "list", "productDetail", "initTips", "requestProductData", "current", "index", "onClick"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtTabsPane", "ProductItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "loopArray41", "$compid__161", "list", "productDetail", "initTips", "requestProductData", "current", "index", "handleBuyClick"], _this.customComponents = ["AtTabsPane", "ProductItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductTab, [{
@@ -85,17 +85,17 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__135"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__161"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__135 = _genCompid2[0],
-          $compid__135 = _genCompid2[1];
+          $prevCompid__161 = _genCompid2[0],
+          $compid__161 = _genCompid2[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
           requestProductData = _props$requestProduct === undefined ? {} : _props$requestProduct,
           current = _props.current,
           index = _props.index,
-          onClick = _props.onClick,
+          handleBuyClick = _props.handleBuyClick,
           initTips = _props.initTips;
 
       var _useState = (0, _taroWeapp.useState)([]),
@@ -141,7 +141,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       }();
       var handleProductClick = function handleProductClick(product) {
         if (index === 0) {
-          _this2.__props.onClick(product);
+          handleBuyClick(product);
         } else if (index === 1) {
           _taroWeapp2.default.pageScrollTo({
             duration: 300,
@@ -151,7 +151,6 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
         }
       };
       (0, _taroWeapp.useEffect)(function () {
-        console.log(current === index && !requested.current && Object.keys(requestProductData).length > 0, 2222222);
         if (current === index && !requested.current && Object.keys(requestProductData).length > 0) {
           console.log('请求数据');
           getProductList(_extends({}, requestProductData, { type: index === 0 ? 'HF' : 'LL' }));
@@ -165,49 +164,44 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
 
       var anonymousState__temp = __webpack_require__(/*! ../../../../../../static/qrcode.jpg */ "./src/static/qrcode.jpg");
 
-      this.anonymousFunc1 = function () {
-        return _this2.__props.onClick(productDetail);
+      this.anonymousFunc0 = function () {
+        return handleBuyClick(productDetail);
       };
 
       var anonymousState__temp2 = Object.keys(requestProductData).length > 0;
       var anonymousState__temp3 = Object.keys(requestProductData).length === 0;
       var anonymousState__temp4 = Object.keys(productDetail).length;
-      var loopArray37 = list.length ? list.map(function (product, __index0) {
+      var loopArray41 = list.length ? list.map(function (product, _anonIdx) {
         product = {
           $original: (0, _taroWeapp.internal_get_original)(product)
         };
 
-        var _$indexKey = "hczzz" + __index0;
-
-        _this2.anonymousFunc0Map[_$indexKey] = handleProductClick;
-
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'hdzzzzzzzz' + __index0, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'hhzzzzzzzz' + _anonIdx, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__134 = _genCompid4[0],
-            $compid__134 = _genCompid4[1];
+            $prevCompid__160 = _genCompid4[0],
+            $compid__160 = _genCompid4[1];
 
         anonymousState__temp2 && list.length && _taroWeapp.propsManager.set({
           "index": index,
           "productInfo": product.$original,
-          "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
-        }, $compid__134, $prevCompid__134);
+          "handleProductClick": handleProductClick
+        }, $compid__160, $prevCompid__160);
         return {
-          _$indexKey: _$indexKey,
-          $compid__134: $compid__134,
+          $compid__160: $compid__160,
           $original: product.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "current": current,
         "index": index
-      }, $compid__135, $prevCompid__135);
+      }, $compid__161, $prevCompid__161);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
         anonymousState__temp4: anonymousState__temp4,
-        loopArray37: loopArray37,
-        $compid__135: $compid__135,
+        loopArray41: loopArray41,
+        $compid__161: $compid__161,
         list: list,
         productDetail: productDetail,
         initTips: initTips
@@ -216,26 +210,13 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
     }
   }, {
     key: 'anonymousFunc0',
-    value: function anonymousFunc0(_$indexKey) {
-      var _anonymousFunc0Map;
-
-      ;
-
-      for (var _len2 = arguments.length, e = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-        e[_key2 - 1] = arguments[_key2];
-      }
-
-      return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
-    }
-  }, {
-    key: 'anonymousFunc1',
-    value: function anonymousFunc1(e) {
+    value: function anonymousFunc0(e) {
       ;
     }
   }]);
 
   return ProductTab;
-}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc1"], _class.$$componentPath = "pages/index/components/ProductBar/components/ProductTab/index", _temp2);
+}(_taroWeapp2.default.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/index/components/ProductBar/components/ProductTab/index", _temp2);
 exports.default = ProductTab;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(ProductTab));
