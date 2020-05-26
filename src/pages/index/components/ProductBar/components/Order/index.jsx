@@ -8,14 +8,14 @@ import * as api from './api'
 export default function Order ({ orderVisible, onClose, orderData = {} })  {
   const [couponListVisible, setCouponListVisible] = useState(false)
   const [discountRadio, setDiscountRadio] = useState(null)
-  const [discountVisible, setDiscountVisible] = useState(true)
+  const discountVisible = useMemo(() => orderData.countryCode !== 'CN', [orderData])
   const displayOrderData = useMemo(() => {
     const { cname, carrier, name, point, price, couponList, uuid, selection } = orderData
     return {
       selection,
       name: `${cname} ${carrier} 运营商 ${name}`,
-      point: point >= price * 100 ? (price * 100 - 1) : point,
-      coupon: couponList && (couponList.filter(v => v.uuid === uuid)[0] || (couponList.length === 0 ? {} : { name: `${couponList.length}张可用` }))
+      point: discountVisible ? (point >= price * 100 ? (price * 100 - 1) : point) : 0,
+      coupon: discountVisible ? (couponList && (couponList.filter(v => v.uuid === uuid)[0] || (couponList.length === 0 ? {} : { name: `${couponList.length}张可用` }))) : {}
     }
   }, [orderData])
   const choosePointRadio = () => {
@@ -47,9 +47,14 @@ export default function Order ({ orderVisible, onClose, orderData = {} })  {
   }, [discountRadio])
   const payAmount = useMemo(() => {
     const payAmount = (orderData.price - discountPrice).toFixed(2) * 1
+    if (Number.isNaN(payAmount)) return orderData.price // 防御
     return payAmount > 0 ? payAmount : 0.01
-  }, [discountPrice])
+  }, [discountRadio])
   const payNow = async () => {
+    if (payAmount <= 0) { // 防御
+      Taro.showModal({ title: '提示', content: '系统异常，请联系管理官+v：yqq-NO2' })
+      return true
+    }
     const { result } = await api.orderPay({ ...orderData, pageUrl: encodeURIComponent('https://wechat.globalcharge.cn/home'), payment: 'wc_pay', tradeType: 'JSAPI', originalPayAmount: orderData.price, payAmount, uuid: displayOrderData.coupon.uuid, point: displayOrderData.point, selection: discountVisible ? discountRadio : null })
   }
   return (

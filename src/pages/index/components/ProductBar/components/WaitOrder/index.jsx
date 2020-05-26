@@ -4,7 +4,7 @@ import { AtModal, AtModalHeader, AtModalContent, AtModalAction } from "taro-ui"
 import './index.scss'
 import * as api from './api'
 
-export default function WaitOrder ({ waitOrderVisible, onClose, waitOrderData })  {
+export default function WaitOrder ({ waitOrderVisible, onClose, waitOrderData = {} })  {
   const closeOrder = async () => {
     await api.cancelOrder(waitOrderData.yqqNo)
     onClose()

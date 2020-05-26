@@ -8,7 +8,7 @@ const error = {
   'JU302': { message: '对不起，服务器正在维护！', href: 'serveDead' },
   'JU430': { message: '网络异常，请稍候再试！', href: 'networkError' },
 }
-Taro.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvSzlOQnYxUDBvMHhIZU5CVEs4QXVKTUZFdllZIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ4MTAzNCwiaWF0IjoxNTkwNDc3NDM0LCJqdGkiOiIyNjI2OCJ9.SnWskZ8j09pfmE9RM39YWTDdIdJelyhQD2oE4YtMfzk')
+Taro.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvR1BUaXYtTzVETEZlaC1MRG1EajRfSE1GblNVIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ4NTA5MSwiaWF0IjoxNTkwNDgxNDkxLCJqdGkiOiI5NzMifQ.ifD0IY53iPT7UqwV-brCCG4wk6-F2IlbPlZRzCB0AVw')
 export default function (url, data, method='POST') {
   return new Promise(resolve => {
     Taro.showLoading({ title: '加载中', mask: true })
