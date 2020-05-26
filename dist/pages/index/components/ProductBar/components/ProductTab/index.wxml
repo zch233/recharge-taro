@@ -1,11 +1,11 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-tabs-pane compid="{{$compid__42}}">
+    <at-tabs-pane compid="{{$compid__45}}">
         <block>
             <block wx:if="{{anonymousState__temp2}}">
                 <block>
                     <block wx:if="{{list.length}}">
                         <view class="productList">
-                            <product-item wx:key="code" wx:for="{{loopArray9}}" wx:for-item="product" wx:for-index="_anonIdx2" compid="{{product.$compid__41}}"></product-item>
+                            <product-item wx:key="code" wx:for="{{loopArray9}}" wx:for-item="product" wx:for-index="_anonIdx2" compid="{{product.$compid__44}}"></product-item>
                         </view>
                     </block>
                     <block wx:else>

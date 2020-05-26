@@ -45,6 +45,10 @@
   height: 100vh;
   max-height: 100vh;
 }
+.at-modal__header.waitOrder-title {
+  background-color: #108EE8;
+  color: #fff;
+}
 @charset "UTF-8";
 /**
  * Taro UI - Default variables

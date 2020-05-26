@@ -3,6 +3,7 @@ import { View } from '@tarojs/components'
 import './index.scss'
 import { AtTabs, AtTabsPane } from 'taro-ui'
 import Order from './components/Order/index'
+import WaitOrder from './components/WaitOrder/index'
 import ProductTab from './components/ProductTab/index'
 import * as api from './api'
 
@@ -21,12 +22,12 @@ export default function ProductBar ({ requestProductData = {}, initTips })  {
   }
   const handleBuyClick = async product => {
     const { waitOrderInfo, orderInfo } = await getPreOrderInfo(product)
+    setOrderData({...orderInfo, ...product, ...requestProductData})
+    console.log({...orderInfo, ...product, ...requestProductData})
     if (waitOrderInfo) {
       setWaitOrderData(waitOrderInfo)
       setWaitOrderVisible(true)
     } else {
-      setOrderData({...orderInfo, ...product, ...requestProductData})
-      console.log({...orderInfo, ...product, ...requestProductData})
       setOrderVisible(true)
     }
   }
@@ -45,6 +46,7 @@ export default function ProductBar ({ requestProductData = {}, initTips })  {
         </AtTabsPane>
       </AtTabs>
       <Order orderData={orderData} orderVisible={orderVisible} onClose={() => setOrderVisible(false)} />
+      <WaitOrder waitOrderData={waitOrderData} waitOrderVisible={waitOrderVisible} onClose={() => { setWaitOrderVisible(false);setOrderVisible(true) }} />
     </View>
   )
 }

@@ -143,7 +143,7 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__32", "$compid__33", "$compid__34", "$compid__35", "state", "setRequestProductData", "setInitTips"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__29", "$compid__30", "$compid__31", "$compid__32", "state", "setRequestProductData", "setInitTips"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(InputBar, [{
@@ -164,25 +164,25 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__32"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__29"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__32 = _genCompid2[0],
-          $compid__32 = _genCompid2[1];
+          $prevCompid__29 = _genCompid2[0],
+          $compid__29 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__33"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__30"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__33 = _genCompid4[0],
-          $compid__33 = _genCompid4[1];
+          $prevCompid__30 = _genCompid4[0],
+          $compid__30 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__34"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__31"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__34 = _genCompid6[0],
-          $compid__34 = _genCompid6[1];
+          $prevCompid__31 = _genCompid6[0],
+          $compid__31 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__35"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__32"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__35 = _genCompid8[0],
-          $compid__35 = _genCompid8[1];
+          $prevCompid__32 = _genCompid8[0],
+          $compid__32 = _genCompid8[1];
 
       var _props = this.__props,
           setRequestProductData = _props.setRequestProductData,
@@ -506,30 +506,30 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         "onChange": this.anonymousFunc1,
         "onFocus": this.anonymousFunc2,
         "onBlur": this.anonymousFunc3
-      }, $compid__32, $prevCompid__32);
+      }, $compid__29, $prevCompid__29);
       _taroWeapp.propsManager.set({
         "usedPhoneList": state.usedPhoneList,
         "onConfirm": this.anonymousFunc4,
         "visible": state.phoneInputHighLight
-      }, $compid__33, $prevCompid__33);
+      }, $compid__30, $prevCompid__30);
       _taroWeapp.propsManager.set({
         "countryList": state.countryList,
         "listVisible": state.countryListVisible,
         "onConfirm": this.anonymousFunc6,
         "onClose": this.anonymousFunc7
-      }, $compid__34, $prevCompid__34);
+      }, $compid__31, $prevCompid__31);
       _taroWeapp.propsManager.set({
         "currentCarrier": state.currentCarrier,
         "listVisible": state.carrierListVisible,
         "carrierList": state.carrierList,
         "onConfirm": this.anonymousFunc8,
         "onClose": this.anonymousFunc9
-      }, $compid__35, $prevCompid__35);
+      }, $compid__32, $prevCompid__32);
       Object.assign(this.__state, {
+        $compid__29: $compid__29,
+        $compid__30: $compid__30,
+        $compid__31: $compid__31,
         $compid__32: $compid__32,
-        $compid__33: $compid__33,
-        $compid__34: $compid__34,
-        $compid__35: $compid__35,
         state: state
       });
       return this.__state;

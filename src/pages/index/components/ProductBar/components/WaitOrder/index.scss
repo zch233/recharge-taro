@@ -1,0 +1,22 @@
+.waitOrder {
+  &-content {
+    &-item {
+      margin-bottom: 24px;
+      display: flex;
+      .discount {
+        color: #FF9A22;
+      }
+      .payPrice {
+        color: #FF3C3C;
+      }
+      .label {
+        color: #ADADAD;
+        font-size: 26px;
+        width: 8em;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

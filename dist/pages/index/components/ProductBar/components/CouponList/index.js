@@ -50,7 +50,7 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CouponList.__proto__ || Object.getPrototypeOf(CouponList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray10", "$compid__49", "$anonymousCallee__3", "couponListVisible", "__fn_onClick"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CouponList.__proto__ || Object.getPrototypeOf(CouponList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray10", "$compid__52", "$anonymousCallee__3", "couponListVisible", "__fn_onClick"], _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CouponList, [{
@@ -69,10 +69,10 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__49"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__52"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__49 = _genCompid2[0],
-          $compid__49 = _genCompid2[1];
+          $prevCompid__52 = _genCompid2[0],
+          $compid__52 = _genCompid2[1];
 
       var _props = this.__props,
           couponListVisible = _props.couponListVisible,
@@ -86,16 +86,16 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
 
         var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bgzzzzzzzz" + _anonIdx, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__48 = _genCompid4[0],
-            $compid__48 = _genCompid4[1];
+            $prevCompid__51 = _genCompid4[0],
+            $compid__51 = _genCompid4[1];
 
         _taroWeapp.propsManager.set({
           "value": "check",
           "size": "18",
           "color": "#fff"
-        }, $compid__48, $prevCompid__48);
+        }, $compid__51, $prevCompid__51);
         return {
-          $compid__48: $compid__48,
+          $compid__51: $compid__51,
           $original: v.$original
         };
       });
@@ -104,10 +104,10 @@ var CouponList = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": couponListVisible,
         "title": "\u4F18\u60E0\u5238",
         "onClose": this.__props.onClose
-      }, $compid__49, $prevCompid__49);
+      }, $compid__52, $prevCompid__52);
       Object.assign(this.__state, {
         loopArray10: loopArray10,
-        $compid__49: $compid__49,
+        $compid__52: $compid__52,
         $anonymousCallee__3: $anonymousCallee__3
       });
       return this.__state;
