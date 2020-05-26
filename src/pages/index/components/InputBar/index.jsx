@@ -1,7 +1,7 @@
 import Taro, { useReducer, useEffect } from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import './index.scss'
-import { AtInput } from 'taro-ui'
+import { AtInput, AtIcon } from 'taro-ui'
 import CountryList from './components/CountryList/index'
 import CarrierList from './components/CarrierList/index'
 import UsedPhoneList from './components/UsedPhoneList/index'
@@ -65,12 +65,18 @@ export default function InputBar ({ setRequestProductData, setInitTips })  {
     setState({ type: 'setRechargePhone', payload: phone })
     return phone
   }
+  const initPageState = () => {
+    setState({ type: 'setRechargePhone', payload: '' })
+    setState({ type: 'setCurrentCarrier', payload: {} })
+    setInitTips('请选择国家输入号码')
+    setRequestProductData({})
+  }
   const selectCountry = country => {
     console.log(country)
     setState({ type: 'setCountryListVisible', payload: false })
     if (country.countryCode === state.currentCountry.countryCode) return
     setState({ type: 'setCurrentCountry', payload: country })
-    setState({ type: 'setRechargePhone', payload: '' })
+    initPageState()
   }
   const getCarrierList = async countryCode => {
     const { result } = await api.getCarrierList(countryCode)
@@ -192,9 +198,10 @@ export default function InputBar ({ setRequestProductData, setInitTips })  {
       <View className={`${state.phoneInputHighLight && 'active'} phoneInputBg`} />
       <View className='InputBar-bottom'>
         <View className={`countryName ${state.currentCountry.cname.length > 4 && 'long'}`}>{state.currentCountry.cname}</View>
-        <View className='carrierName' onClick={showCarrierList}>{state.currentCarrier.carrierName}</View>
+        { state.currentCarrier.carrierName && <View className='carrierName' onClick={showCarrierList}><Text className='carrier'>{state.currentCarrier.carrierName}</Text><AtIcon value='alert-circle' size='13' color='#25a8f5'></AtIcon></View> }
       </View>
       <CountryList
+        currentCountry={state.currentCountry}
         countryList={state.countryList}
         listVisible={state.countryListVisible}
         onConfirm={selectCountry}

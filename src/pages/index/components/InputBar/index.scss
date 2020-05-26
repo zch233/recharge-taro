@@ -77,6 +77,11 @@
     }
     .carrierName {
       margin-left: 14px;
+      display: flex;
+      align-items: center;
+      .carrier {
+        margin-right: .4em;
+      }
     }
   }
 }

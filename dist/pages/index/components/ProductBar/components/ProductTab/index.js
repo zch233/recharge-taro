@@ -64,7 +64,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "loopArray29", "$compid__247", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick"], _this.customComponents = ["AtTabsPane", "ProductItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "loopArray33", "$compid__297", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick"], _this.customComponents = ["AtTabsPane", "ProductItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductTab, [{
@@ -85,10 +85,10 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__247"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__297"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__247 = _genCompid2[0],
-          $compid__247 = _genCompid2[1];
+          $prevCompid__297 = _genCompid2[0],
+          $compid__297 = _genCompid2[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
@@ -159,8 +159,10 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
         }
       }, [current]);
       (0, _taroWeapp.useEffect)(function () {
-        if (current === index && Object.keys(requestProductData).length > 0) {
-          getProductList(_extends({}, requestProductData, { type: index === 0 ? 'HF' : 'LL' }));
+        if (Object.keys(requestProductData).length > 0) {
+          current === index && getProductList(_extends({}, requestProductData, { type: index === 0 ? 'HF' : 'LL' }));
+        } else {
+          setList([]);
         }
       }, [requestProductData]);
 
@@ -173,37 +175,37 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var anonymousState__temp2 = Object.keys(requestProductData).length > 0;
       var anonymousState__temp3 = Object.keys(requestProductData).length === 0;
       var anonymousState__temp4 = index === 1 && Object.keys(currentProduct).length;
-      var loopArray29 = list.length ? list.map(function (product, _anonIdx) {
+      var loopArray33 = list.length ? list.map(function (product, _anonIdx) {
         product = {
           $original: (0, _taroWeapp.internal_get_original)(product)
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'dhzzzzzzzz' + _anonIdx, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'ebzzzzzzzz' + _anonIdx, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__246 = _genCompid4[0],
-            $compid__246 = _genCompid4[1];
+            $prevCompid__296 = _genCompid4[0],
+            $compid__296 = _genCompid4[1];
 
         anonymousState__temp2 && list.length && _taroWeapp.propsManager.set({
           "index": index,
           "productInfo": product.$original,
           "handleProductClick": handleProductClick
-        }, $compid__246, $prevCompid__246);
+        }, $compid__296, $prevCompid__296);
         return {
-          $compid__246: $compid__246,
+          $compid__296: $compid__296,
           $original: product.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "current": current,
         "index": index
-      }, $compid__247, $prevCompid__247);
+      }, $compid__297, $prevCompid__297);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
         anonymousState__temp4: anonymousState__temp4,
-        loopArray29: loopArray29,
-        $compid__247: $compid__247,
+        loopArray33: loopArray33,
+        $compid__297: $compid__297,
         list: list,
         currentProduct: currentProduct,
         initTips: initTips

@@ -34,8 +34,10 @@ export default function ProductTab ({ requestProductData = {}, current, index, h
     }
   }, [current])
   useEffect(() => {
-    if (current === index && Object.keys(requestProductData).length > 0) {
-      getProductList({ ...requestProductData, type: index === 0 ? 'HF' : 'LL' })
+    if (Object.keys(requestProductData).length > 0) {
+      current === index && getProductList({ ...requestProductData, type: index === 0 ? 'HF' : 'LL' })
+    } else {
+      setList([])
     }
   }, [requestProductData])
   return (

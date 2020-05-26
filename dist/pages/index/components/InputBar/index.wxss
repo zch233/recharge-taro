@@ -77,4 +77,9 @@
 }
 .InputBar-bottom .carrierName {
   margin-left: 14rpx;
+  display: flex;
+  align-items: center;
+}
+.InputBar-bottom .carrierName .carrier {
+  margin-right: .4em;
 }

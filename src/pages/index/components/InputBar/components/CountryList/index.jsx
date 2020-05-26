@@ -3,7 +3,7 @@ import { View, ScrollView } from '@tarojs/components'
 import './index.scss'
 import { AtFloatLayout, AtIcon, AtInput } from "taro-ui"
 
-export default function CountryList ({ listVisible, onClose, onConfirm, countryList = [] })  {
+export default function CountryList ({ listVisible, onClose, onConfirm, countryList = [], currentCountry = {} })  {
   const [searchValue, setSearchValue] = useState('')
   const handleSearch = value => {
     setSearchValue(value)
@@ -28,7 +28,7 @@ export default function CountryList ({ listVisible, onClose, onConfirm, countryL
       <ScrollView className='countryList' scroll-y>
         {
           countryList.filter(v => v.searchKeyword.indexOf(searchValue.toLowerCase()) >= 0).map(country => (
-            <View key={country.countryCode} className='countryList-item' onClick={() => onConfirm(country)}>
+            <View key={country.countryCode} className={`countryList-item ${currentCountry.countryCode === country.countryCode && 'active'}`} onClick={() => onConfirm(country)}>
               <View className='view-image'><Image className='image' mode='widthFix' lazyLoad src={`${IMAGE_URL}countryFlags/${country.ename}.svg`} /></View>
               <View className='areaNumber'>+{ country.areaNumber }</View>
               <View className='countryName'>{ country.cname }</View>

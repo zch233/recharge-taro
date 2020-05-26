@@ -143,7 +143,7 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__29", "$compid__30", "$compid__31", "$compid__32", "state", "setRequestProductData", "setInitTips"], _this.customComponents = ["AtInput", "UsedPhoneList", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = InputBar.__proto__ || Object.getPrototypeOf(InputBar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__323", "$compid__324", "$compid__325", "$compid__326", "$compid__327", "state", "setRequestProductData", "setInitTips"], _this.customComponents = ["AtInput", "UsedPhoneList", "AtIcon", "CountryList", "CarrierList"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(InputBar, [{
@@ -164,25 +164,30 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__29"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__323"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__29 = _genCompid2[0],
-          $compid__29 = _genCompid2[1];
+          $prevCompid__323 = _genCompid2[0],
+          $compid__323 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__30"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__324"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__30 = _genCompid4[0],
-          $compid__30 = _genCompid4[1];
+          $prevCompid__324 = _genCompid4[0],
+          $compid__324 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__31"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__325"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__31 = _genCompid6[0],
-          $compid__31 = _genCompid6[1];
+          $prevCompid__325 = _genCompid6[0],
+          $compid__325 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__32"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__326"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__32 = _genCompid8[0],
-          $compid__32 = _genCompid8[1];
+          $prevCompid__326 = _genCompid8[0],
+          $compid__326 = _genCompid8[1];
+
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__327"),
+          _genCompid10 = _slicedToArray(_genCompid9, 2),
+          $prevCompid__327 = _genCompid10[0],
+          $compid__327 = _genCompid10[1];
 
       var _props = this.__props,
           setRequestProductData = _props.setRequestProductData,
@@ -198,13 +203,19 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         setState({ type: 'setRechargePhone', payload: phone });
         return phone;
       };
+      var initPageState = function initPageState() {
+        setState({ type: 'setRechargePhone', payload: '' });
+        setState({ type: 'setCurrentCarrier', payload: {} });
+        setInitTips('请选择国家输入号码');
+        setRequestProductData({});
+      };
       var selectCountry = function selectCountry(country) {
         console.log(country);
         setState({ type: 'setCountryListVisible', payload: false });
         if (country.countryCode === state.currentCountry.countryCode) {
           return;
         }setState({ type: 'setCurrentCountry', payload: country });
-        setState({ type: 'setRechargePhone', payload: '' });
+        initPageState();
       };
       var getCarrierList = function () {
         var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee(countryCode) {
@@ -506,30 +517,37 @@ var InputBar = (_temp2 = _class = function (_Taro$Component) {
         "onChange": this.anonymousFunc1,
         "onFocus": this.anonymousFunc2,
         "onBlur": this.anonymousFunc3
-      }, $compid__29, $prevCompid__29);
+      }, $compid__323, $prevCompid__323);
       _taroWeapp.propsManager.set({
         "usedPhoneList": state.usedPhoneList,
         "onConfirm": this.anonymousFunc4,
         "visible": state.phoneInputHighLight
-      }, $compid__30, $prevCompid__30);
+      }, $compid__324, $prevCompid__324);
+      state.currentCarrier.carrierName && _taroWeapp.propsManager.set({
+        "value": "alert-circle",
+        "size": "13",
+        "color": "#25a8f5"
+      }, $compid__325, $prevCompid__325);
       _taroWeapp.propsManager.set({
+        "currentCountry": state.currentCountry,
         "countryList": state.countryList,
         "listVisible": state.countryListVisible,
         "onConfirm": this.anonymousFunc6,
         "onClose": this.anonymousFunc7
-      }, $compid__31, $prevCompid__31);
+      }, $compid__326, $prevCompid__326);
       _taroWeapp.propsManager.set({
         "currentCarrier": state.currentCarrier,
         "listVisible": state.carrierListVisible,
         "carrierList": state.carrierList,
         "onConfirm": this.anonymousFunc8,
         "onClose": this.anonymousFunc9
-      }, $compid__32, $prevCompid__32);
+      }, $compid__327, $prevCompid__327);
       Object.assign(this.__state, {
-        $compid__29: $compid__29,
-        $compid__30: $compid__30,
-        $compid__31: $compid__31,
-        $compid__32: $compid__32,
+        $compid__323: $compid__323,
+        $compid__324: $compid__324,
+        $compid__325: $compid__325,
+        $compid__326: $compid__326,
+        $compid__327: $compid__327,
         state: state
       });
       return this.__state;
