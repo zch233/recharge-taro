@@ -1,13 +1,15 @@
-import Taro, { useRouter } from '@tarojs/taro'
+import Taro, { useRouter, useMemo } from '@tarojs/taro'
 import { View, WebView  } from '@tarojs/components'
 
 export default function WebFrame ()  {
   const router = useRouter()
-  console.log(process.env)
+  const href = useMemo(() => {
+    return router.params && router.params.href || ''
+  }, [router])
 
   return (
     <View>
-      <WebView src={`${WEBVIEW_URL}/${router.params.href}`} />
+      <WebView src={href.indexOf('http') >= 0 ? href : `${WEBVIEW_URL}/${href}`} />
     </View>
   )
 }

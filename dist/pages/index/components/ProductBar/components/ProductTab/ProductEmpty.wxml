@@ -1,0 +1,8 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="product-empty">
+        <view class="view-image">
+            <image class="image" mode="widthFix" lazy-load="{{true}}" src="{{anonymousState__temp}}"></image>
+        </view>
+        <view class="tips">{{emptyTips}}</view>
+    </view>
+</block>

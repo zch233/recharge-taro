@@ -64,7 +64,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "loopArray17", "$compid__81", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick", "productDisabled"], _this.customComponents = ["AtTabsPane", "ProductItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "loopArray19", "$compid__142", "$compid__143", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick", "productDisabled"], _this.customComponents = ["AtTabsPane", "ProductItem", "ProductEmpty"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductTab, [{
@@ -85,10 +85,15 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__81"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__142"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__81 = _genCompid2[0],
-          $compid__81 = _genCompid2[1];
+          $prevCompid__142 = _genCompid2[0],
+          $compid__142 = _genCompid2[1];
+
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__143"),
+          _genCompid4 = _slicedToArray(_genCompid3, 2),
+          $prevCompid__143 = _genCompid4[0],
+          $compid__143 = _genCompid4[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
@@ -169,48 +174,49 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
         }
       }, [requestProductData]);
 
-      var anonymousState__temp = __webpack_require__(/*! ../../../../../../static/qrcode.jpg */ "./src/static/qrcode.jpg");
-
       this.anonymousFunc0 = function () {
         return handleBuyClick(currentProduct);
       };
 
-      var anonymousState__temp2 = Object.keys(requestProductData).length > 0;
-      var anonymousState__temp3 = Object.keys(requestProductData).length === 0;
-      var anonymousState__temp4 = index === 1 && Object.keys(currentProduct).length;
-      var loopArray17 = list.length ? list.map(function (product, _anonIdx) {
+      var anonymousState__temp = Object.keys(requestProductData).length > 0;
+      var anonymousState__temp2 = Object.keys(requestProductData).length === 0;
+      var anonymousState__temp3 = index === 1 && Object.keys(currentProduct).length;
+      var loopArray19 = list.length ? list.map(function (product, _anonIdx) {
         product = {
           $original: (0, _taroWeapp.internal_get_original)(product)
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'cfzzzzzzzz' + _anonIdx, true),
-            _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__80 = _genCompid4[0],
-            $compid__80 = _genCompid4[1];
+        var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + 'chzzzzzzzz' + _anonIdx, true),
+            _genCompid6 = _slicedToArray(_genCompid5, 2),
+            $prevCompid__141 = _genCompid6[0],
+            $compid__141 = _genCompid6[1];
 
-        anonymousState__temp2 && list.length && _taroWeapp.propsManager.set({
+        anonymousState__temp && list.length && _taroWeapp.propsManager.set({
           "currentProduct": currentProduct,
           "productDisabled": productDisabled,
           "index": index,
           "productInfo": product.$original,
           "handleProductClick": handleProductClick
-        }, $compid__80, $prevCompid__80);
+        }, $compid__141, $prevCompid__141);
         return {
-          $compid__80: $compid__80,
+          $compid__141: $compid__141,
           $original: product.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "current": current,
         "index": index
-      }, $compid__81, $prevCompid__81);
+      }, $compid__142, $prevCompid__142);
+      anonymousState__temp && !list.length && _taroWeapp.propsManager.set({
+        "emptyTips": '\u4EA7\u54C1\u7EF4\u62A4\u4E2D\uFF0C\u5982\u9700\u5145\u503C\u8BF7\u8054\u7CFB\u5BA2\u670D'
+      }, $compid__143, $prevCompid__143);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        anonymousState__temp4: anonymousState__temp4,
-        loopArray17: loopArray17,
-        $compid__81: $compid__81,
+        loopArray19: loopArray19,
+        $compid__142: $compid__142,
+        $compid__143: $compid__143,
         list: list,
         currentProduct: currentProduct,
         initTips: initTips
@@ -317,28 +323,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_E_Users_Desktop_company_coding_myApp_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_COMPONENT___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
-
-/***/ }),
-
-/***/ "./src/pages/index/components/ProductBar/components/ProductTab/index.scss":
-/*!********************************************************************************!*\
-  !*** ./src/pages/index/components/ProductBar/components/ProductTab/index.scss ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ "./src/static/qrcode.jpg":
-/*!*******************************!*\
-  !*** ./src/static/qrcode.jpg ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/qrcode.jpg";
 
 /***/ })
 

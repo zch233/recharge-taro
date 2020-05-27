@@ -56,7 +56,7 @@ const checkPhoneNumber = phone => {
     return true
   }
 }
-export default function InputBar ({ setRequestProductData, setInitTips, setProductDisabled })  {
+export default function InputBar ({ setRequestProductData, setInitTips, setProductDisabled, setBalanceQuery })  {
   const [state, setState] = useReducer(reducer, initialState);
   const initProductData = () => {
     setInitTips('请选择国家输入号码')
@@ -80,6 +80,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
     setState({ type: 'setCountryListVisible', payload: false })
     if (country.countryCode === state.currentCountry.countryCode) return
     setState({ type: 'setCurrentCountry', payload: country })
+    setBalanceQuery(country.balanceQueryUrl)
     initPageState()
   }
   const getCarrierList = async countryCode => {
@@ -167,6 +168,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
     setState({ type: 'setCountryList', payload: countryList })
     const currentCountry = getSelectedCountryFromCountryMap(result.nowCountry, countryList)
     setState({ type: 'setCurrentCountry', payload: currentCountry })
+    setBalanceQuery(currentCountry.balanceQueryUrl)
     if (result.lastMsisdn && result.nowCountry === result.lastMsisdn.countryCode && Object.keys(currentCountry).length >= 0) {
       setState({ type: 'setRechargePhone', payload: result.lastMsisdn.msisdn })
       getCarrierInfo()

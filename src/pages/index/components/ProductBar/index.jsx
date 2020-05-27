@@ -5,9 +5,10 @@ import { AtTabs, AtTabsPane } from 'taro-ui'
 import Order from './components/Order/index'
 import WaitOrder from './components/WaitOrder/index'
 import ProductTab from './components/ProductTab/index'
+import ProductEmpty from './components/ProductTab/ProductEmpty'
 import * as api from './api'
 
-export default function ProductBar ({ requestProductData = {}, initTips, productDisabled })  {
+export default function ProductBar ({ requestProductData = {}, initTips, productDisabled, balanceQuery })  {
   const tabList = [{ title: '充话费' }, { title: '充流量' }, { title: '余额查询' }]
   const [activeTab, setActiveTab] = useState(0)
   const [orderVisible, setOrderVisible] = useState(false)
@@ -31,6 +32,15 @@ export default function ProductBar ({ requestProductData = {}, initTips, product
       setOrderVisible(true)
     }
   }
+  const handleTabClick = index => {
+    if (index === 2 && balanceQuery) {
+      Taro.navigateTo({
+        url: `/pages/frame/frame?href=${balanceQuery}`
+      })
+      return
+    }
+    setActiveTab(index)
+  }
   useEffect(() => {
     if (Object.keys(requestProductData).length > 0) {
       setActiveTab(0)
@@ -38,11 +48,11 @@ export default function ProductBar ({ requestProductData = {}, initTips, product
   }, [requestProductData])
   return (
     <View>
-      <AtTabs className="myProductTab" current={activeTab} tabList={tabList} onClick={index => setActiveTab(index)}>
+      <AtTabs className="myProductTab" current={activeTab} tabList={tabList} onClick={handleTabClick}>
         <ProductTab productDisabled={productDisabled} handleBuyClick={handleBuyClick} initTips={initTips} requestProductData={requestProductData} current={activeTab} index={0} />
         <ProductTab productDisabled={productDisabled} handleBuyClick={handleBuyClick} initTips={initTips} requestProductData={requestProductData} current={activeTab} index={1} />
         <AtTabsPane current={activeTab} index={2}>
-          <View className='productList'>请选择国家或地区再输入号码</View>
+          <ProductEmpty emptyTips='请联系客服查询' />
         </AtTabsPane>
       </AtTabs>
       <Order orderData={orderData} orderVisible={orderVisible} onClose={() => setOrderVisible(false)} />

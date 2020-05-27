@@ -1,5 +1,16 @@
 (wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["common"],{
 
+/***/ "./src/pages/index/components/ProductBar/components/ProductTab/index.scss":
+/*!********************************************************************************!*\
+  !*** ./src/pages/index/components/ProductBar/components/ProductTab/index.scss ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./src/utils/api.js":
 /*!**************************!*\
   !*** ./src/utils/api.js ***!
@@ -246,6 +257,7 @@ function wechatPay(_ref3) {
       timeStamp = _ref3.timeStamp;
 
   return new Promise(function (resolve, reject) {
+    console.log({ nonceStr: nonceStr, paySign: paySign, signType: signType, payPackage: payPackage, timeStamp: timeStamp }, 123);
     _taroWeapp2.default.requestPayment({
       timeStamp: timeStamp,
       nonceStr: nonceStr,

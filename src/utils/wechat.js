@@ -18,6 +18,7 @@ export function login () {
 
 export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp }) {
   return new Promise((resolve, reject) => {
+    console.log({ nonceStr, paySign, signType, payPackage, timeStamp }, 123)
     Taro.requestPayment({
       timeStamp,
       nonceStr,

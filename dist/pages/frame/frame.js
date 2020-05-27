@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -48,7 +48,7 @@ var WebFrame = (_temp2 = _class = function (_Taro$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WebFrame.__proto__ || Object.getPrototypeOf(WebFrame)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '温馨提示'
-    }, _this.$usedState = ["router"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["anonymousState__temp"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(WebFrame, [{
@@ -68,10 +68,13 @@ var WebFrame = (_temp2 = _class = function (_Taro$Component) {
       ;
 
       var router = (0, _taroWeapp.useRouter)();
-      console.log(process.env);
+      var href = (0, _taroWeapp.useMemo)(function () {
+        return router.params && router.params.href || '';
+      }, [router]);
 
+      var anonymousState__temp = href.indexOf('http') >= 0 ? href : "https://shopping.kqlink.com/global-charge-wechat" + "/" + href;
       Object.assign(this.__state, {
-        router: router
+        anonymousState__temp: anonymousState__temp
       });
       return this.__state;
     }
@@ -85,7 +88,6 @@ WebFrame.config = { navigationBarTitleText: '温馨提示' };
 exports.default = WebFrame;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(WebFrame, true));
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
