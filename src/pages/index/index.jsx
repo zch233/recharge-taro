@@ -12,7 +12,6 @@ export default function Index ()  {
   return (
     <View>
       <OverHeader />
-      {productDisabled}
       <InputBar setProductDisabled={data => setProductDisabled(data)} setRequestProductData={data => setRequestProductData(data)} setInitTips={data => setInitTips(data)} />
       <ProductBar productDisabled={productDisabled} requestProductData={requestProductData} initTips={initTips} />
     </View>
