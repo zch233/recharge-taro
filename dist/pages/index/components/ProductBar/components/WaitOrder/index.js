@@ -36,6 +36,8 @@ var _api = __webpack_require__(/*! ./api */ "./src/pages/index/components/Produc
 
 var api = _interopRequireWildcard(_api);
 
+var _wechat = __webpack_require__(/*! ../../../../../../utils/wechat */ "./src/utils/wechat.js");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -62,7 +64,7 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WaitOrder.__proto__ || Object.getPrototypeOf(WaitOrder)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__55", "$compid__56", "waitOrderData", "waitOrderVisible"], _this.customComponents = ["AtModal", "AtModalHeader", "AtModalContent", "AtModalAction"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WaitOrder.__proto__ || Object.getPrototypeOf(WaitOrder)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__84", "$compid__85", "waitOrderData", "waitOrderVisible"], _this.customComponents = ["AtModal", "AtModalHeader", "AtModalContent", "AtModalAction"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(WaitOrder, [{
@@ -83,15 +85,15 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__55"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__84"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__55 = _genCompid2[0],
-          $compid__55 = _genCompid2[1];
+          $prevCompid__84 = _genCompid2[0],
+          $compid__84 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__56"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__85"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__56 = _genCompid4[0],
-          $compid__56 = _genCompid4[1];
+          $prevCompid__85 = _genCompid4[0],
+          $compid__85 = _genCompid4[1];
 
       var _props = this.__props,
           waitOrderVisible = _props.waitOrderVisible,
@@ -139,7 +141,9 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
                   _ref4 = _context2.sent;
                   result = _ref4.result;
 
-                case 4:
+                  (0, _wechat.wechatPay)(result || {});
+
+                case 5:
                 case 'end':
                   return _context2.stop();
               }
@@ -159,16 +163,16 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       _taroWeapp.propsManager.set({
         "isOpened": waitOrderVisible,
         "onClose": this.__props.onClose
-      }, $compid__55, $prevCompid__55);
+      }, $compid__84, $prevCompid__84);
       _taroWeapp.propsManager.set({
         "className": "waitOrder-title"
-      }, $compid__56, $prevCompid__56);
+      }, $compid__85, $prevCompid__85);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        $compid__55: $compid__55,
-        $compid__56: $compid__56,
+        $compid__84: $compid__84,
+        $compid__85: $compid__85,
         waitOrderData: waitOrderData
       });
       return this.__state;

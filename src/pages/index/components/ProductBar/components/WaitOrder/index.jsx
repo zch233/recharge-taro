@@ -3,6 +3,7 @@ import { View, Button } from '@tarojs/components'
 import { AtModal, AtModalHeader, AtModalContent, AtModalAction } from "taro-ui"
 import './index.scss'
 import * as api from './api'
+import { wechatPay } from '@/utils/wechat'
 
 export default function WaitOrder ({ waitOrderVisible, onClose, waitOrderData = {} })  {
   const closeOrder = async () => {
@@ -11,6 +12,7 @@ export default function WaitOrder ({ waitOrderVisible, onClose, waitOrderData = 
   }
   const payAgain = async () => {
     const { result } = await api.orderPayAgain(waitOrderData.yqqNo)
+    wechatPay(result || {})
   }
   return (
     <AtModal

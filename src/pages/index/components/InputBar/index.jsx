@@ -95,6 +95,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
   const selectCarrier = carrier => {
     setState({ type: 'setCurrentCarrier', payload: carrier })
     setState({ type: 'setCarrierListVisible', payload: false })
+    setProductDisabled(false)
     setRequestProductData({
       cname: state.currentCountry.cname,
       account: state.rechargePhone,

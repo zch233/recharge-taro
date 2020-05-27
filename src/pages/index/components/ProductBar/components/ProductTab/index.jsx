@@ -5,12 +5,13 @@ import ProductItem from '../ProductItem/index'
 import './index.scss'
 import * as api from './api'
 
-export default function ProductTab ({ requestProductData = {}, orderData = {}, current, index, handleBuyClick, initTips, productDisabled })  {
+export default function ProductTab ({ requestProductData = {}, current, index, handleBuyClick, initTips, productDisabled })  {
   const [list, setList] = useState([])
   const [currentProduct, setCurrentProduct] = useState({})
   const requested = useRef()
   const getProductList = async (requestProductData) => {
     const { result } = await api.getProductList(requestProductData)
+    setCurrentProduct({})
     requested.current = true
     setList(result || [])
   }
