@@ -23,7 +23,8 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/frame/frame'
+      'pages/order/order',
+      'pages/frame/frame',
     ],
     window: {
       backgroundTextStyle: 'light',

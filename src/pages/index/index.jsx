@@ -1,5 +1,5 @@
 import Taro, { useState } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Navigator } from '@tarojs/components'
 import './index.scss'
 import OverHeader from './components/OverHeader/index'
 import InputBar from './components/InputBar/index'
@@ -15,7 +15,7 @@ export default function Index ()  {
       <OverHeader />
       <InputBar setBalanceQuery={data => setBalanceQuery(data)} setProductDisabled={data => setProductDisabled(data)} setRequestProductData={data => setRequestProductData(data)} setInitTips={data => setInitTips(data)} />
       <ProductBar balanceQuery={balanceQuery} productDisabled={productDisabled} requestProductData={requestProductData} initTips={initTips} />
-      <View className='bottomOrderList'>充值记录</View>
+      <Navigator className='bottomOrderList' url='/pages/order/order'>充值记录</Navigator>
     </View>
   )
 }

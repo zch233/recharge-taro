@@ -1,8 +1,8 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
         <over-header></over-header>
-        <input-bar compid="{{$compid__178}}"></input-bar>
-        <product-bar compid="{{$compid__179}}"></product-bar>
-        <view class="bottomOrderList">充值记录</view>
+        <input-bar compid="{{$compid__376}}"></input-bar>
+        <product-bar compid="{{$compid__377}}"></product-bar>
+        <navigator class="bottomOrderList" url="/pages/order/order">充值记录</navigator>
     </view>
 </block>
