@@ -1,7 +1,8 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
         <over-header></over-header>
-        <input-bar compid="{{$compid__30}}"></input-bar>
-        <product-bar compid="{{$compid__31}}"></product-bar>
+        <input-bar compid="{{$compid__112}}"></input-bar>
+        <product-bar compid="{{$compid__113}}"></product-bar>
+        <view class="bottomOrderList">充值记录</view>
     </view>
 </block>

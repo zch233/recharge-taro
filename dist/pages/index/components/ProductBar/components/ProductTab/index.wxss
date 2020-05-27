@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 70rpx;
+  margin-bottom: 80rpx;
 }
 .flowProductDetail-info {
   padding-right: .4em;

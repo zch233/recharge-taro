@@ -14,6 +14,7 @@ export default function Index ()  {
       <OverHeader />
       <InputBar setProductDisabled={data => setProductDisabled(data)} setRequestProductData={data => setRequestProductData(data)} setInitTips={data => setInitTips(data)} />
       <ProductBar productDisabled={productDisabled} requestProductData={requestProductData} initTips={initTips} />
+      <View className='bottomOrderList'>充值记录</View>
     </View>
   )
 }
