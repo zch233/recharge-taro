@@ -56,7 +56,7 @@ export default function Order ({ orderVisible, onClose, orderData = {} })  {
       Taro.showModal({ title: '提示', content: '系统异常，请联系管理官+v：yqq-NO2' })
       return true
     }
-    const { result } = await api.orderPay({ ...orderData, pageUrl: encodeURIComponent('https://wechat.globalcharge.cn/home'), payment: 'wc_pay', tradeType: 'JSAPI', originalPayAmount: orderData.price, payAmount, uuid: displayOrderData.coupon.uuid, point: displayOrderData.point, selection: discountVisible ? discountRadio : null, appid: APP_ID, })
+    const { result } = await api.orderPay({ ...orderData, pageUrl: encodeURIComponent('https://wechat.globalcharge.cn/home'), payment: 'wc_pay', tradeType: 'JSAPI', originalPayAmount: orderData.price, payAmount, uuid: displayOrderData.coupon.uuid, point: displayOrderData.point, selection: discountVisible ? discountRadio : null, appid: APP_ID, paySource: 'MINI_PROGRAM' })
     wechatPay(result.payInfo || {})
   }
   return (
