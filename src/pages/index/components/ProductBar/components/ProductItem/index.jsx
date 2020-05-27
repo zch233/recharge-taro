@@ -3,10 +3,6 @@ import { View, Text } from '@tarojs/components'
 import './index.scss'
 
 export default function ProductItem ({ handleProductClick, productInfo = {}, index, productDisabled, currentProduct = {} })  {
-  const itemClass = useMemo(() => {
-    console.log(`ProductItem ${currentProduct.code === productInfo.code && 'active'} ${productDisabled && 'disabled'}`)
-    return 123
-  }, [productDisabled, currentProduct])
   return (
     <View className={`ProductItem ${currentProduct.code === productInfo.code && 'active'} ${productDisabled && 'disabled'}`} onClick={() => handleProductClick(productInfo)}>
       {productInfo.hotTips && <View className='hotTips'>{productInfo.hotTips}</View>}

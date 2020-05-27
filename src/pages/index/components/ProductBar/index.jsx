@@ -24,7 +24,6 @@ export default function ProductBar ({ requestProductData = {}, initTips, product
   const handleBuyClick = async product => {
     const { waitOrderInfo, orderInfo } = await getPreOrderInfo(product)
     setOrderData({...orderInfo, ...product, ...requestProductData})
-    console.log({...orderInfo, ...product, ...requestProductData})
     if (waitOrderInfo) {
       setWaitOrderData(waitOrderInfo)
       setWaitOrderVisible(true)

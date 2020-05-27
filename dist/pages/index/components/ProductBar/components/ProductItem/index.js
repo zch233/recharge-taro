@@ -76,11 +76,6 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
           currentProduct = _props$currentProduct === undefined ? {} : _props$currentProduct;
 
 
-      var itemClass = (0, _taroWeapp.useMemo)(function () {
-        console.log("ProductItem " + (currentProduct.code === productInfo.code && 'active') + " " + (productDisabled && 'disabled'));
-        return 123;
-      }, [productDisabled, currentProduct]);
-
       this.anonymousFunc0 = function () {
         return handleProductClick(productInfo);
       };

@@ -1,13 +1,13 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
-        <at-tabs compid="{{$compid__311}}">
-            <product-tab compid="{{$compid__312}}"></product-tab>
-            <product-tab compid="{{$compid__313}}"></product-tab>
-            <at-tabs-pane compid="{{$compid__314}}">
-                <product-empty compid="{{$compid__315}}"></product-empty>
+        <at-tabs compid="{{$compid__325}}">
+            <product-tab compid="{{$compid__326}}"></product-tab>
+            <product-tab compid="{{$compid__327}}"></product-tab>
+            <at-tabs-pane compid="{{$compid__328}}">
+                <product-empty compid="{{$compid__329}}"></product-empty>
             </at-tabs-pane>
         </at-tabs>
-        <order compid="{{$compid__316}}"></order>
-        <wait-order compid="{{$compid__317}}"></wait-order>
+        <order compid="{{$compid__330}}"></order>
+        <wait-order compid="{{$compid__331}}"></wait-order>
     </view>
 </block>
