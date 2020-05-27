@@ -52,7 +52,7 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '游全球'
-    }, _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__122", "$compid__123"], _this.customComponents = ["OverHeader", "InputBar", "ProductBar"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__30", "$compid__31"], _this.customComponents = ["OverHeader", "InputBar", "ProductBar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -71,15 +71,15 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__122"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__30"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__122 = _genCompid2[0],
-          $compid__122 = _genCompid2[1];
+          $prevCompid__30 = _genCompid2[0],
+          $compid__30 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__123"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__31"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__123 = _genCompid4[0],
-          $compid__123 = _genCompid4[1];
+          $prevCompid__31 = _genCompid4[0],
+          $compid__31 = _genCompid4[1];
 
       var _useState = (0, _taroWeapp.useState)({}),
           _useState2 = _slicedToArray(_useState, 2),
@@ -112,18 +112,18 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
         "setProductDisabled": anonymousState__temp,
         "setRequestProductData": anonymousState__temp2,
         "setInitTips": anonymousState__temp3
-      }, $compid__122, $prevCompid__122);
+      }, $compid__30, $prevCompid__30);
       _taroWeapp.propsManager.set({
         "productDisabled": productDisabled,
         "requestProductData": requestProductData,
         "initTips": initTips
-      }, $compid__123, $prevCompid__123);
+      }, $compid__31, $prevCompid__31);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        $compid__122: $compid__122,
-        $compid__123: $compid__123
+        $compid__30: $compid__30,
+        $compid__31: $compid__31
       });
       return this.__state;
     }

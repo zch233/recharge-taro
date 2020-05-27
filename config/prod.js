@@ -5,9 +5,10 @@ module.exports = {
   defineConstants: {
     WEBVIEW_URL: '"https://wechat.globalcharge.cn"',
     REQUEST_URL: '"https://wechat-api.globalcharge.cn"',
-    IMAGE_URL: '"https://oss.globalcharge.cn/prod/wechat/"',
     // WEBVIEW_URL: '"https://shopping.kqlink.com/global-charge-wechat"',
     // REQUEST_URL: '"https://shopping.kqlink.com/global-charge-wechat-api"',
+    IMAGE_URL: '"https://oss.globalcharge.cn/prod/wechat/"',
+    APP_ID: '7487be7c3e180189a492caad3b0d8acd',
   },
   mini: {},
   h5: {

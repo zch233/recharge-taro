@@ -173,6 +173,7 @@ var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "./node_
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 exports.login = login;
+exports.wechatPay = wechatPay;
 
 var _taroWeapp = __webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js");
 
@@ -181,6 +182,8 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 var _api = __webpack_require__(/*! ./api */ "./src/utils/api.js");
 
 var api = _interopRequireWildcard(_api);
+
+var _globalData = __webpack_require__(/*! ./globalData */ "./src/utils/globalData.js");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -192,12 +195,14 @@ function login() {
   _taroWeapp2.default.login({
     success: function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee(res) {
+        var _ref2, isSubscribe;
+
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 if (!res.code) {
-                  _context.next = 6;
+                  _context.next = 9;
                   break;
                 }
 
@@ -205,14 +210,18 @@ function login() {
                 return api.login(res.code);
 
               case 3:
+                _ref2 = _context.sent;
+                isSubscribe = _ref2.result;
+
+                (0, _globalData.setGlobalData)('isSubscribe', isSubscribe);
                 _taroWeapp2.default.reLaunch({ url: '/pages/index/index' });
-                _context.next = 7;
+                _context.next = 10;
                 break;
 
-              case 6:
+              case 9:
                 console.log('登录失败！' + res.errMsg);
 
-              case 7:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -226,6 +235,38 @@ function login() {
 
       return success;
     }()
+  });
+}
+
+function wechatPay(_ref3) {
+  var nonceStr = _ref3.nonceStr,
+      paySign = _ref3.paySign,
+      signType = _ref3.signType,
+      payPackage = _ref3.payPackage,
+      timeStamp = _ref3.timeStamp;
+
+  return new Promise(function (resolve, reject) {
+    _taroWeapp2.default.requestPayment({
+      timeStamp: timeStamp,
+      nonceStr: nonceStr,
+      package: payPackage,
+      signType: signType,
+      paySign: paySign,
+      success: function success() {
+        _taroWeapp2.default.requestSubscribeMessage({
+          tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
+          success: function success(res) {
+            resolve(res);
+          },
+          fail: function fail(err) {
+            reject(err);
+          }
+        });
+      },
+      fail: function fail(err) {
+        reject(err);
+      }
+    });
   });
 }
 

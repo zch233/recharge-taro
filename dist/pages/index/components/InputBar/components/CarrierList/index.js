@@ -50,7 +50,7 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CountryList.__proto__ || Object.getPrototypeOf(CountryList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray8", "$compid__41", "carrierList", "currentCarrier", "listVisible", "onClose", "onConfirm"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CountryList.__proto__ || Object.getPrototypeOf(CountryList)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray7", "$compid__38", "carrierList", "currentCarrier", "listVisible", "onClose", "onConfirm"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtFloatLayout", "AtIcon"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CountryList, [{
@@ -71,10 +71,10 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__41"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__38"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__41 = _genCompid2[0],
-          $compid__41 = _genCompid2[1];
+          $prevCompid__38 = _genCompid2[0],
+          $compid__38 = _genCompid2[1];
 
       var _props = this.__props,
           listVisible = _props.listVisible,
@@ -85,30 +85,30 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
           _props$currentCarrier = _props.currentCarrier,
           currentCarrier = _props$currentCarrier === undefined ? {} : _props$currentCarrier;
 
-      var loopArray8 = carrierList.map(function (carrier, __index0) {
+      var loopArray7 = carrierList.map(function (carrier, __index0) {
         carrier = {
           $original: (0, _taroWeapp.internal_get_original)(carrier)
         };
 
-        var _$indexKey = "bczzz" + __index0;
+        var _$indexKey = "bbzzz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return _this2.__props.onConfirm(carrier.$original);
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bdzzzzzzzz" + __index0, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "bczzzzzzzz" + __index0, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__40 = _genCompid4[0],
-            $compid__40 = _genCompid4[1];
+            $prevCompid__37 = _genCompid4[0],
+            $compid__37 = _genCompid4[1];
 
         _taroWeapp.propsManager.set({
           "value": "check",
           "size": "18",
           "color": "#fff"
-        }, $compid__40, $prevCompid__40);
+        }, $compid__37, $prevCompid__37);
         return {
           _$indexKey: _$indexKey,
-          $compid__40: $compid__40,
+          $compid__37: $compid__37,
           $original: carrier.$original
         };
       });
@@ -117,10 +117,10 @@ var CountryList = (_temp2 = _class = function (_Taro$Component) {
         "isOpened": listVisible,
         "title": "\u8BF7\u9009\u62E9\u8FD0\u8425\u5546",
         "onClose": this.__props.onClose
-      }, $compid__41, $prevCompid__41);
+      }, $compid__38, $prevCompid__38);
       Object.assign(this.__state, {
-        loopArray8: loopArray8,
-        $compid__41: $compid__41,
+        loopArray7: loopArray7,
+        $compid__38: $compid__38,
         carrierList: carrierList,
         currentCarrier: currentCarrier
       });

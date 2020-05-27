@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-modal compid="{{$compid__51}}">
-        <at-modal-header compid="{{$compid__52}}">您有一笔待支付订单</at-modal-header>
+    <at-modal compid="{{$compid__55}}">
+        <at-modal-header compid="{{$compid__56}}">您有一笔待支付订单</at-modal-header>
         <at-modal-content>
             <view class="waitOrder-content">
                 <view class="waitOrder-content-item"><text class="label">订单详情：</text><text class="value">{{waitOrderData.body}}</text>
