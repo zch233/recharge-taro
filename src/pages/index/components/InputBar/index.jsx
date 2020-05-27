@@ -56,18 +56,24 @@ const checkPhoneNumber = phone => {
     return true
   }
 }
-export default function InputBar ({ setRequestProductData, setInitTips })  {
+export default function InputBar ({ setRequestProductData, setInitTips, setProductDisabled })  {
   const [state, setState] = useReducer(reducer, initialState);
-  const phoneInputChange = value => {
-    const phone = value.replace(/[^0-9]+/g, '')
-    setState({ type: 'setRechargePhone', payload: phone })
-    return phone
+  const initProductData = () => {
+    setInitTips('请选择国家输入号码')
+    setRequestProductData({})
   }
   const initPageState = () => {
     setState({ type: 'setRechargePhone', payload: '' })
     setState({ type: 'setCurrentCarrier', payload: {} })
-    setInitTips('请选择国家输入号码')
-    setRequestProductData({})
+    initProductData()
+  }
+  const phoneInputChange = value => {
+    const phone = value.replace(/[^0-9]+/g, '')
+    setState({ type: 'setRechargePhone', payload: phone })
+    setState({ type: 'setCurrentCarrier', payload: {} })
+    setProductDisabled(true)
+    if (phone === '') initProductData()
+    return phone
   }
   const selectCountry = country => {
     console.log(country)
@@ -99,6 +105,7 @@ export default function InputBar ({ setRequestProductData, setInitTips })  {
   const getProductListOrCarrierListWithCarrierInfo = async carrierName => {
     if (carrierName) {
       setState({ type: 'setCurrentCarrier', payload: { carrierName } })
+      setProductDisabled(false)
       setRequestProductData({
         cname: state.currentCountry.cname,
         account: state.rechargePhone,

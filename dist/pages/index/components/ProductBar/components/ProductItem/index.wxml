@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="ProductItem" bindtap="anonymousFunc0">
+    <view class="{{'ProductItem ' + (currentProduct.code === productInfo.code && 'active') + ' ' + (productDisabled && 'disabled')}}" bindtap="anonymousFunc0">
         <block wx:if="{{productInfo.hotTips}}">
             <view class="hotTips">{{productInfo.hotTips}}</view>
         </block>

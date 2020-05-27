@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__37}}">
+    <at-float-layout compid="{{$compid__41}}">
         <view class="carrierList">
             <view wx:key="carrierName" class="carrierList-item" bindtap="anonymousFunc0" wx:for="{{loopArray8}}" wx:for-item="carrier" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{carrier._$indexKey}}">
                 <view class="view-image">
@@ -7,7 +7,7 @@
                 </view>
                 <view class="name">{{carrier.$original.carrierName}}</view>
                 <view class="{{'check ' + (carrier.$original.carrierName === currentCarrier.carrierName && 'selected')}}">
-                    <at-icon compid="{{carrier.$compid__36}}"></at-icon>
+                    <at-icon compid="{{carrier.$compid__40}}"></at-icon>
                 </view>
             </view>
         </view>

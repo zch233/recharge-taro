@@ -48,7 +48,7 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductItem.__proto__ || Object.getPrototypeOf(ProductItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "productInfo", "index", "handleProductClick"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductItem.__proto__ || Object.getPrototypeOf(ProductItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "currentProduct", "productInfo", "productDisabled", "index", "handleProductClick"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductItem, [{
@@ -70,8 +70,16 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
           handleProductClick = _props.handleProductClick,
           _props$productInfo = _props.productInfo,
           productInfo = _props$productInfo === undefined ? {} : _props$productInfo,
-          index = _props.index;
+          index = _props.index,
+          productDisabled = _props.productDisabled,
+          _props$currentProduct = _props.currentProduct,
+          currentProduct = _props$currentProduct === undefined ? {} : _props$currentProduct;
 
+
+      var itemClass = (0, _taroWeapp.useMemo)(function () {
+        console.log("ProductItem " + (currentProduct.code === productInfo.code && 'active') + " " + (productDisabled && 'disabled'));
+        return 123;
+      }, [productDisabled, currentProduct]);
 
       this.anonymousFunc0 = function () {
         return handleProductClick(productInfo);
@@ -80,7 +88,9 @@ var ProductItem = (_temp2 = _class = function (_Taro$Component) {
       var anonymousState__temp = productInfo.price ? productInfo.price.toFixed(2) : null;
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
+        currentProduct: currentProduct,
         productInfo: productInfo,
+        productDisabled: productDisabled,
         index: index
       });
       return this.__state;

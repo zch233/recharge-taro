@@ -66,7 +66,7 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__102", "$compid__103", "$compid__104", "$compid__105", "$compid__106", "$compid__107", "requestProductData", "initTips"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order", "WaitOrder"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__104", "$compid__105", "$compid__106", "$compid__107", "$compid__108", "$compid__109", "requestProductData", "initTips", "productDisabled"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "Order", "WaitOrder"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductBar, [{
@@ -87,40 +87,41 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__102"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__104"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__102 = _genCompid2[0],
-          $compid__102 = _genCompid2[1];
+          $prevCompid__104 = _genCompid2[0],
+          $compid__104 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__103"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__105"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__103 = _genCompid4[0],
-          $compid__103 = _genCompid4[1];
+          $prevCompid__105 = _genCompid4[0],
+          $compid__105 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__104"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__106"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__104 = _genCompid6[0],
-          $compid__104 = _genCompid6[1];
+          $prevCompid__106 = _genCompid6[0],
+          $compid__106 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__105"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__107"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__105 = _genCompid8[0],
-          $compid__105 = _genCompid8[1];
+          $prevCompid__107 = _genCompid8[0],
+          $compid__107 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__106"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__108"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__106 = _genCompid10[0],
-          $compid__106 = _genCompid10[1];
+          $prevCompid__108 = _genCompid10[0],
+          $compid__108 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__107"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__109"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__107 = _genCompid12[0],
-          $compid__107 = _genCompid12[1];
+          $prevCompid__109 = _genCompid12[0],
+          $compid__109 = _genCompid12[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
           requestProductData = _props$requestProduct === undefined ? {} : _props$requestProduct,
-          initTips = _props.initTips;
+          initTips = _props.initTips,
+          productDisabled = _props.productDisabled;
 
 
       var tabList = [{ title: '充话费' }, { title: '充流量' }, { title: '余额查询' }];
@@ -242,42 +243,44 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "current": activeTab,
         "tabList": tabList,
         "onClick": this.anonymousFunc0
-      }, $compid__102, $prevCompid__102);
+      }, $compid__104, $prevCompid__104);
       _taroWeapp.propsManager.set({
+        "productDisabled": productDisabled,
         "handleBuyClick": handleBuyClick,
         "initTips": initTips,
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 0
-      }, $compid__103, $prevCompid__103);
+      }, $compid__105, $prevCompid__105);
       _taroWeapp.propsManager.set({
+        "productDisabled": productDisabled,
         "handleBuyClick": handleBuyClick,
         "initTips": initTips,
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 1
-      }, $compid__104, $prevCompid__104);
+      }, $compid__106, $prevCompid__106);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 2
-      }, $compid__105, $prevCompid__105);
+      }, $compid__107, $prevCompid__107);
       _taroWeapp.propsManager.set({
         "orderData": orderData,
         "orderVisible": orderVisible,
         "onClose": this.anonymousFunc1
-      }, $compid__106, $prevCompid__106);
+      }, $compid__108, $prevCompid__108);
       _taroWeapp.propsManager.set({
         "waitOrderData": waitOrderData,
         "waitOrderVisible": waitOrderVisible,
         "onClose": this.anonymousFunc2
-      }, $compid__107, $prevCompid__107);
+      }, $compid__109, $prevCompid__109);
       Object.assign(this.__state, {
-        $compid__102: $compid__102,
-        $compid__103: $compid__103,
         $compid__104: $compid__104,
         $compid__105: $compid__105,
         $compid__106: $compid__106,
-        $compid__107: $compid__107
+        $compid__107: $compid__107,
+        $compid__108: $compid__108,
+        $compid__109: $compid__109
       });
       return this.__state;
     }

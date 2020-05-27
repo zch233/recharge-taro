@@ -52,7 +52,7 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '游全球'
-    }, _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "$compid__330", "$compid__331"], _this.customComponents = ["OverHeader", "InputBar", "ProductBar"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__30", "$compid__31", "productDisabled"], _this.customComponents = ["OverHeader", "InputBar", "ProductBar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -71,15 +71,15 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__330"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__30"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__330 = _genCompid2[0],
-          $compid__330 = _genCompid2[1];
+          $prevCompid__30 = _genCompid2[0],
+          $compid__30 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__331"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__31"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__331 = _genCompid4[0],
-          $compid__331 = _genCompid4[1];
+          $prevCompid__31 = _genCompid4[0],
+          $compid__31 = _genCompid4[1];
 
       var _useState = (0, _taroWeapp.useState)({}),
           _useState2 = _slicedToArray(_useState, 2),
@@ -91,27 +91,40 @@ var Index = (_temp2 = _class = function (_Taro$Component) {
           initTips = _useState4[0],
           setInitTips = _useState4[1];
 
+      var _useState5 = (0, _taroWeapp.useState)(false),
+          _useState6 = _slicedToArray(_useState5, 2),
+          productDisabled = _useState6[0],
+          setProductDisabled = _useState6[1];
+
       var anonymousState__temp = function anonymousState__temp(data) {
-        return setRequestProductData(data);
+        return setProductDisabled(data);
       };
 
       var anonymousState__temp2 = function anonymousState__temp2(data) {
+        return setRequestProductData(data);
+      };
+
+      var anonymousState__temp3 = function anonymousState__temp3(data) {
         return setInitTips(data);
       };
 
       _taroWeapp.propsManager.set({
-        "setRequestProductData": anonymousState__temp,
-        "setInitTips": anonymousState__temp2
-      }, $compid__330, $prevCompid__330);
+        "setProductDisabled": anonymousState__temp,
+        "setRequestProductData": anonymousState__temp2,
+        "setInitTips": anonymousState__temp3
+      }, $compid__30, $prevCompid__30);
       _taroWeapp.propsManager.set({
+        "productDisabled": productDisabled,
         "requestProductData": requestProductData,
         "initTips": initTips
-      }, $compid__331, $prevCompid__331);
+      }, $compid__31, $prevCompid__31);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
-        $compid__330: $compid__330,
-        $compid__331: $compid__331
+        anonymousState__temp3: anonymousState__temp3,
+        $compid__30: $compid__30,
+        $compid__31: $compid__31,
+        productDisabled: productDisabled
       });
       return this.__state;
     }

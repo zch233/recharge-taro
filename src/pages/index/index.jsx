@@ -8,11 +8,13 @@ import ProductBar from './components/ProductBar/index'
 export default function Index ()  {
   const [requestProductData, setRequestProductData] = useState({})
   const [initTips, setInitTips] = useState('请选择国家输入号码')
+  const [productDisabled, setProductDisabled] = useState(false)
   return (
     <View>
       <OverHeader />
-      <InputBar setRequestProductData={data => setRequestProductData(data)} setInitTips={data => setInitTips(data)} />
-      <ProductBar requestProductData={requestProductData} initTips={initTips} />
+      {productDisabled}
+      <InputBar setProductDisabled={data => setProductDisabled(data)} setRequestProductData={data => setRequestProductData(data)} setInitTips={data => setInitTips(data)} />
+      <ProductBar productDisabled={productDisabled} requestProductData={requestProductData} initTips={initTips} />
     </View>
   )
 }

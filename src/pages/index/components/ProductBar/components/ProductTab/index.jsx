@@ -5,7 +5,7 @@ import ProductItem from '../ProductItem/index'
 import './index.scss'
 import * as api from './api'
 
-export default function ProductTab ({ requestProductData = {}, current, index, handleBuyClick, initTips })  {
+export default function ProductTab ({ requestProductData = {}, orderData = {}, current, index, handleBuyClick, initTips, productDisabled })  {
   const [list, setList] = useState([])
   const [currentProduct, setCurrentProduct] = useState({})
   const requested = useRef()
@@ -46,7 +46,7 @@ export default function ProductTab ({ requestProductData = {}, current, index, h
         Object.keys(requestProductData).length > 0 ? (
           list.length ? (
             <View className='productList'>
-              { list.map(product => <ProductItem key={product.code} index={index} productInfo={product} handleProductClick={handleProductClick} />) }
+              { list.map(product => <ProductItem key={product.code} currentProduct={currentProduct} productDisabled={productDisabled} index={index} productInfo={product} handleProductClick={handleProductClick} />) }
             </View>
           ) : (
             <View class="product-empty">

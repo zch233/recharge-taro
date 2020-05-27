@@ -148,9 +148,9 @@ var error = {
   'JU404': { message: '找不到该页面啦！', href: '404' },
   'WX0005': { message: '请先关注公众号在访问哦！', href: 'leadFollow' },
   'JU302': { message: '对不起，服务器正在维护！', href: 'serveDead' },
-  'JU430': { message: '网络异常，请稍候再试！', href: 'networkError' }
-};
-_taroWeapp2.default.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvR1BUaXYtTzVETEZlaC1MRG1EajRfSE1GblNVIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ5MjQ5MCwiaWF0IjoxNTkwNDg4ODkwLCJqdGkiOiI5NzMifQ.5WgdgtA06q8v1xjf6D2MP85CbLOXoIFGlfPkdupLB4g');
+  'JU430': { message: '网络异常，请稍候再试！', href: 'networkError'
+    // Taro.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvR1BUaXYtTzVETEZlaC1MRG1EajRfSE1GblNVIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ5MjQ5MCwiaWF0IjoxNTkwNDg4ODkwLCJqdGkiOiI5NzMifQ.5WgdgtA06q8v1xjf6D2MP85CbLOXoIFGlfPkdupLB4g')
+  } };
 
 /***/ }),
 
