@@ -1,0 +1,5 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <web-view src="{{'https://shopping.kqlink.com/global-charge-wechat' + '/' + router.params.href}}"></web-view>
+    </view>
+</block>

@@ -1,7 +1,10 @@
 import Taro from '@tarojs/taro'
+import * as wechat from './wechat'
+import { setGlobalData, getGlobalData } from './globalData'
 
 const baseURL = REQUEST_URL
 const error = {
+  'JU402': { message: '当前用户不在线', href: '' },
   'JU403': { message: '对不起，您无权限访问该页面！', href: '403' },
   'JU404': { message: '找不到该页面啦！', href: '404' },
   'WX0005': { message: '请先关注公众号在访问哦！', href: 'leadFollow' },
@@ -12,7 +15,7 @@ Taro.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y
 export default function (url, data, method='POST') {
   return new Promise(resolve => {
     Taro.showLoading({ title: '加载中', mask: true })
-    Taro.request({
+    const request = Taro.request({
       url: baseURL + url,
       data: {
         timestamp: Date.now(),
@@ -27,9 +30,14 @@ export default function (url, data, method='POST') {
         const result = res.data
         if (result.code !== '00') {
           if (error[result.code]) {
-            Taro.showToast({ title: error[result.code].message, icon: 'none', duration: 2000, mask: true }).then(() => {
-              Taro.reLaunch({ url: `/pages/frame/frame?href=${error[result.code].href}` })
-            })
+            if (result.code === 'JU402') {
+              getGlobalData('requestList') && getGlobalData('requestList').map(v => v.abort()) // 可能会有取消不掉的情况
+              wechat.login()
+            } else {
+              Taro.showToast({ title: error[result.code].message, icon: 'none', duration: 2000, mask: true }).then(() => {
+                Taro.reLaunch({ url: `/pages/frame/frame?href=${error[result.code].href}` })
+              })
+            }
             return
           }
           if (result.message) {
@@ -45,11 +53,14 @@ export default function (url, data, method='POST') {
       },
       fail: function (err) {
         console.log(err, '请求失败')
-        throw Error(err)
+        Taro.showToast({ title: err.errMsg, icon: 'none', duration: 2000, mask: true })
+        throw Error(err.errMsg)
       },
       complete: function () {
         Taro.hideLoading()
       }
-    })
+    });
+    const requestList = getGlobalData('requestList') || []
+    setGlobalData('requestList', [... requestList, request])
   })
 }

@@ -7,9 +7,7 @@ import CarrierList from './components/CarrierList/index'
 import UsedPhoneList from './components/UsedPhoneList/index'
 import * as api from './api'
 import countryMap from '@/utils/countryMap'
-import JWT from 'jsonwebtoken'
 
-const userInfo = JWT.decode(Taro.getStorageSync('token'))
 const initialState = {
   rechargePhone: '',
   countryList: [],
@@ -169,7 +167,7 @@ export default function InputBar ({ setRequestProductData, setInitTips })  {
 
   useEffect(() => {
     getPageData()
-    userInfo.role !== 'BASE' && getUsedPhoneList()
+    getUsedPhoneList()
   }, [])
 
   return (

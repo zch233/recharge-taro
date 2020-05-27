@@ -1,7 +1,7 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
         <over-header></over-header>
-        <input-bar compid="{{$compid__27}}"></input-bar>
-        <product-bar compid="{{$compid__28}}"></product-bar>
+        <input-bar compid="{{$compid__330}}"></input-bar>
+        <product-bar compid="{{$compid__331}}"></product-bar>
     </view>
 </block>
