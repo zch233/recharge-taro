@@ -12,7 +12,7 @@ export default function WaitOrder ({ waitOrderVisible, onClose, waitOrderData = 
   }
   const payAgain = async () => {
     const { result } = await api.orderPayAgain(waitOrderData.yqqNo)
-    wechatPay(result || {})
+    wechatPay(result || {}, waitOrderData.yqqNo)
   }
   return (
     <AtModal

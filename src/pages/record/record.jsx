@@ -74,7 +74,7 @@ export default function Record ()  {
   })
   const payNow = async ({ yqqNo }) => {
     const { result } = await api.orderPayAgain(yqqNo)
-    wechatPay(result || {})
+    wechatPay(result || {}, yqqNo)
   }
   const closeOrder = async (order) => {
     await api.cancelOrder(order.yqqNo)

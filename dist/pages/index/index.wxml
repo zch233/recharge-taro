@@ -1,8 +1,9 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
         <over-header></over-header>
-        <input-bar compid="{{$compid__66}}"></input-bar>
-        <product-bar compid="{{$compid__67}}"></product-bar>
+        <input-bar compid="{{$compid__126}}"></input-bar>
+        <product-bar compid="{{$compid__127}}"></product-bar>
+        <button bindtap="anonymousFunc0">测试专用，误点。</button>
         <navigator class="bottomOrderList" url="/pages/record/record">充值记录</navigator>
     </view>
 </block>

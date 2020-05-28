@@ -117,7 +117,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
       navigationBarTitleText: '充值记录',
       enablePullDownRefresh: true,
       onReachBottomDistance: 50
-    }, _this.$usedState = ["loopArray18", "orderList", "HFIcon", "LLIcon", "isLastPage", "status"], _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["loopArray20", "orderList", "HFIcon", "LLIcon", "isLastPage", "status"], _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Record, [{
@@ -212,7 +212,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
                   _ref6 = _context2.sent;
                   result = _ref6.result;
 
-                  (0, _wechat.wechatPay)(result || {});
+                  (0, _wechat.wechatPay)(result || {}, yqqNo);
 
                 case 5:
                 case 'end':
@@ -255,20 +255,20 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
         currentPage.current = 1;
         getOrderList();
       }, []);
-      var loopArray18 = orderList.map(function (order, __index0) {
+      var loopArray20 = orderList.map(function (order, __index0) {
         order = {
           $original: (0, _taroWeapp.internal_get_original)(order)
         };
         var $loopState__temp2 = (0, _taroWeapp.internal_inline_style)({ color: order.$original.status && status[order.$original.status].color });
         var $loopState__temp4 = order.$original.selected ? (order.$original.originalPrice - order.$original.payPrice).toFixed(2) : null;
 
-        var _$indexKey = "dczzz" + __index0;
+        var _$indexKey = "dgzzz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return payNow(order.$original);
         };
 
-        var _$indexKey2 = "ddzzz" + __index0;
+        var _$indexKey2 = "dhzzz" + __index0;
 
         _this2.anonymousFunc1Map[_$indexKey2] = function () {
           return closeOrder(order.$original);
@@ -283,7 +283,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
         };
       });
       Object.assign(this.__state, {
-        loopArray18: loopArray18,
+        loopArray20: loopArray20,
         orderList: orderList,
         HFIcon: _HF2.default,
         LLIcon: _LL2.default,

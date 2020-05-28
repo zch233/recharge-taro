@@ -62,6 +62,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.login = login;
+exports.subscribe = subscribe;
 
 var _request = __webpack_require__(/*! ./request */ "./src/utils/request.js");
 
@@ -71,6 +72,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function login(jscode) {
   return (0, _request2.default)("/wx/user/miniLogin?code=" + jscode);
+}
+
+function subscribe(yqqNo) {
+  return (0, _request2.default)("/wechat/mini/subscription/" + yqqNo, null, 'GET');
 }
 
 /***/ }),
@@ -231,8 +236,6 @@ var _api = __webpack_require__(/*! ./api */ "./src/utils/api.js");
 
 var api = _interopRequireWildcard(_api);
 
-var _globalData = __webpack_require__(/*! ./globalData */ "./src/utils/globalData.js");
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -261,7 +264,7 @@ function login() {
                 _ref2 = _context.sent;
                 isSubscribe = _ref2.result;
 
-                (0, _globalData.setGlobalData)('isSubscribe', isSubscribe);
+                _taroWeapp2.default.setStorageSync('isSubscribe', isSubscribe);
                 _taroWeapp2.default.reLaunch({ url: '/pages/index/index' });
                 _context.next = 10;
                 break;
@@ -286,7 +289,7 @@ function login() {
   });
 }
 
-function wechatPay(_ref3) {
+function wechatPay(_ref3, orderCode) {
   var nonceStr = _ref3.nonceStr,
       paySign = _ref3.paySign,
       signType = _ref3.signType,
@@ -301,24 +304,48 @@ function wechatPay(_ref3) {
       signType: signType,
       paySign: paySign,
       success: function success() {
-        if (!(0, _globalData.getGlobalData)('isSubscribe')) {
+        if (!_taroWeapp2.default.setStorageSync('isSubscribe')) {
           _taroWeapp2.default.requestSubscribeMessage({
             tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
-            success: function success(res) {
-              resolve(res);
-            },
+            success: function () {
+              var _ref4 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(res) {
+                return _regenerator2.default.wrap(function _callee2$(_context2) {
+                  while (1) {
+                    switch (_context2.prev = _context2.next) {
+                      case 0:
+                        _context2.next = 2;
+                        return api.subscribe(orderCode);
+
+                      case 2:
+                        resolve(res);
+
+                      case 3:
+                      case "end":
+                        return _context2.stop();
+                    }
+                  }
+                }, _callee2, this);
+              }));
+
+              function success(_x2) {
+                return _ref4.apply(this, arguments);
+              }
+
+              return success;
+            }(),
             fail: function fail(err) {
               reject(err);
             },
             complete: function complete() {
-              _taroWeapp2.default.navigateTo({ url: '/pages/order/order' });
+              _taroWeapp2.default.navigateTo({ url: '/pages/record/record' });
             }
           });
         } else {
-          _taroWeapp2.default.navigateTo({ url: '/pages/order/order' });
+          _taroWeapp2.default.navigateTo({ url: '/pages/record/record' });
         }
       },
       fail: function fail(err) {
+        console.log('fail');
         reject(err);
       }
     });

@@ -1,13 +1,12 @@
 import Taro from '@tarojs/taro'
 import * as api from './api.js'
-import { setGlobalData, getGlobalData } from './globalData'
 
 export function login () {
   Taro.login({
     success: async function (res) {
       if (res.code) {
         const { result: isSubscribe } = await api.login(res.code)
-        setGlobalData('isSubscribe', isSubscribe)
+        Taro.setStorageSync('isSubscribe', isSubscribe)
         Taro.reLaunch({ url: '/pages/index/index' })
       } else {
         console.log('登录失败！' + res.errMsg)
@@ -16,7 +15,7 @@ export function login () {
   })
 }
 
-export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp }) {
+export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp }, orderCode) {
   return new Promise((resolve, reject) => {
     Taro.requestPayment({
       timeStamp,
@@ -25,24 +24,26 @@ export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp 
       signType,
       paySign,
       success () {
-        if (!getGlobalData('isSubscribe')) {
+        if (!Taro.setStorageSync('isSubscribe')) {
           Taro.requestSubscribeMessage({
             tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
-            success: function (res) {
+            async success (res) {
+              await api.subscribe(orderCode)
               resolve(res)
             },
             fail (err) {
               reject(err)
             },
             complete () {
-              Taro.navigateTo({ url: '/pages/order/order' })
+              Taro.navigateTo({ url: '/pages/record/record' })
             }
           })
         } else {
-          Taro.navigateTo({ url: '/pages/order/order' })
+          Taro.navigateTo({ url: '/pages/record/record' })
         }
       },
       fail (err) {
+        console.log('fail')
         reject(err)
       },
     })
