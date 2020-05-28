@@ -66,7 +66,7 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__325", "$compid__326", "$compid__327", "$compid__328", "$compid__329", "$compid__330", "$compid__331", "requestProductData", "initTips", "productDisabled", "balanceQuery"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "ProductEmpty", "Order", "WaitOrder"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductBar.__proto__ || Object.getPrototypeOf(ProductBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__39", "$compid__40", "$compid__41", "$compid__42", "$compid__43", "$compid__44", "$compid__45", "requestProductData", "initTips", "productDisabled", "balanceQuery"], _this.customComponents = ["AtTabs", "ProductTab", "AtTabsPane", "ProductEmpty", "Order", "WaitOrder"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductBar, [{
@@ -87,40 +87,40 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__325"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__39"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__325 = _genCompid2[0],
-          $compid__325 = _genCompid2[1];
+          $prevCompid__39 = _genCompid2[0],
+          $compid__39 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__326"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__40"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__326 = _genCompid4[0],
-          $compid__326 = _genCompid4[1];
+          $prevCompid__40 = _genCompid4[0],
+          $compid__40 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__327"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__41"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__327 = _genCompid6[0],
-          $compid__327 = _genCompid6[1];
+          $prevCompid__41 = _genCompid6[0],
+          $compid__41 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__328"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__42"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__328 = _genCompid8[0],
-          $compid__328 = _genCompid8[1];
+          $prevCompid__42 = _genCompid8[0],
+          $compid__42 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__329"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__43"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__329 = _genCompid10[0],
-          $compid__329 = _genCompid10[1];
+          $prevCompid__43 = _genCompid10[0],
+          $compid__43 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__330"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__44"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__330 = _genCompid12[0],
-          $compid__330 = _genCompid12[1];
+          $prevCompid__44 = _genCompid12[0],
+          $compid__44 = _genCompid12[1];
 
-      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__331"),
+      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__45"),
           _genCompid14 = _slicedToArray(_genCompid13, 2),
-          $prevCompid__331 = _genCompid14[0],
-          $compid__331 = _genCompid14[1];
+          $prevCompid__45 = _genCompid14[0],
+          $compid__45 = _genCompid14[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
@@ -254,7 +254,7 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "current": activeTab,
         "tabList": tabList,
         "onClick": this.anonymousFunc0
-      }, $compid__325, $prevCompid__325);
+      }, $compid__39, $prevCompid__39);
       _taroWeapp.propsManager.set({
         "productDisabled": productDisabled,
         "handleBuyClick": handleBuyClick,
@@ -262,7 +262,7 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 0
-      }, $compid__326, $prevCompid__326);
+      }, $compid__40, $prevCompid__40);
       _taroWeapp.propsManager.set({
         "productDisabled": productDisabled,
         "handleBuyClick": handleBuyClick,
@@ -270,32 +270,32 @@ var ProductBar = (_temp2 = _class = function (_Taro$Component) {
         "requestProductData": requestProductData,
         "current": activeTab,
         "index": 1
-      }, $compid__327, $prevCompid__327);
+      }, $compid__41, $prevCompid__41);
       _taroWeapp.propsManager.set({
         "current": activeTab,
         "index": 2
-      }, $compid__328, $prevCompid__328);
+      }, $compid__42, $prevCompid__42);
       _taroWeapp.propsManager.set({
         "emptyTips": '\u8BF7\u8054\u7CFB\u5BA2\u670D\u67E5\u8BE2'
-      }, $compid__329, $prevCompid__329);
+      }, $compid__43, $prevCompid__43);
       _taroWeapp.propsManager.set({
         "orderData": orderData,
         "orderVisible": orderVisible,
         "onClose": this.anonymousFunc1
-      }, $compid__330, $prevCompid__330);
+      }, $compid__44, $prevCompid__44);
       _taroWeapp.propsManager.set({
         "waitOrderData": waitOrderData,
         "waitOrderVisible": waitOrderVisible,
         "onClose": this.anonymousFunc2
-      }, $compid__331, $prevCompid__331);
+      }, $compid__45, $prevCompid__45);
       Object.assign(this.__state, {
-        $compid__325: $compid__325,
-        $compid__326: $compid__326,
-        $compid__327: $compid__327,
-        $compid__328: $compid__328,
-        $compid__329: $compid__329,
-        $compid__330: $compid__330,
-        $compid__331: $compid__331
+        $compid__39: $compid__39,
+        $compid__40: $compid__40,
+        $compid__41: $compid__41,
+        $compid__42: $compid__42,
+        $compid__43: $compid__43,
+        $compid__44: $compid__44,
+        $compid__45: $compid__45
       });
       return this.__state;
     }

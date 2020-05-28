@@ -15,7 +15,7 @@ export default function Index ()  {
       <OverHeader />
       <InputBar setBalanceQuery={data => setBalanceQuery(data)} setProductDisabled={data => setProductDisabled(data)} setRequestProductData={data => setRequestProductData(data)} setInitTips={data => setInitTips(data)} />
       <ProductBar balanceQuery={balanceQuery} productDisabled={productDisabled} requestProductData={requestProductData} initTips={initTips} />
-      <Navigator className='bottomOrderList' url='/pages/order/order'>充值记录</Navigator>
+      <Navigator className='bottomOrderList' url='/pages/record/record'>充值记录</Navigator>
     </View>
   )
 }

@@ -1,0 +1,32 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="order">
+        <view class="orderList">
+            <view wx:key="yqqNo" class="orderList-item" wx:for="{{loopArray18}}" wx:for-item="order" wx:for-index="__index0">
+                <view class="itemInfo">
+                    <view class="view-image">
+                        <image class="image" mode="widthFix" src="{{order.$original.type === 'HF' ? HFIcon : LLIcon}}"></image>
+                    </view>
+                    <view class="itemInfo-mainInfo"><text class="account">{{order.$original.accountData || order.$original.account}}</text>
+                        <view class="title">{{order.$original.body}}</view><text class="time">{{order.$original.created}}</text>
+                    </view>
+                    <view class="itemInfo-state" style="{{order.$loopState__temp2}}"><text class="status">{{order.$original.status && status[order.$original.status].text}}</text>
+                        <block wx:if="{{order.$original.originalPrice}}">
+                            <view class="price">￥{{order.$original.originalPrice}}</view>
+                        </block>
+                    </view>
+                </view>
+                <view class="orderPrice">
+                    <block wx:if="{{order.$original.selected}}"><text class="discount">使用{{order.$original.selected === 'point' && '积分' || order.$original.selected === 'coupon' && '优惠券'}} : <text style="color:#FE7E00"> -￥{{order.$loopState__temp4}}</text></text>
+                    </block><text class="price">消费金额 : ￥{{order.$original.payPrice}}</text>
+                    <block wx:if="{{order.$original.status === 'new_order'}}"><text class="button pay" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{order._$indexKey}}">立即支付</text>
+                    </block>
+                    <block wx:if="{{order.$original.status === 'new_order'}}"><text class="button close" bindtap="anonymousFunc1" data-e-tap-so="this" data-e-tap-a-a="{{order._$indexKey2}}">关闭订单</text>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{isLastPage}}">
+            <view class="emptyTips">这是我的底线</view>
+        </block>
+    </view>
+</block>

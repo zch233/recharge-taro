@@ -104,15 +104,15 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
       countryCode: state.currentCountry.countryCode,
     })
   }
-  const getProductListOrCarrierListWithCarrierInfo = async carrierName => {
+  const getProductListOrCarrierListWithCarrierInfo = async (country, carrierName, account) => {
     if (carrierName) {
       setState({ type: 'setCurrentCarrier', payload: { carrierName } })
       setProductDisabled(false)
       setRequestProductData({
-        cname: state.currentCountry.cname,
-        account: state.rechargePhone,
+        cname: country.cname,
+        account,
         carrier: carrierName,
-        countryCode: state.currentCountry.countryCode,
+        countryCode: country.countryCode,
       })
     } else {
       setState({ type: 'setCurrentCarrier', payload: { carrierName: '请选择运营商' } })
@@ -120,16 +120,16 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
       setState({ type: 'setCarrierListVisible', payload: true })
     }
   }
-  const getCarrierInfo = async () => {
-    if (!checkPhoneNumber(state.rechargePhone)) {
+  const getCarrierInfo = async (country, account) => {
+    if (!checkPhoneNumber(account)) {
       setInitTips('请选择国家输入号码')
       return
     } else {
       setInitTips('请选择运营商')
     }
     setTimeout(async () => {
-      const { result: carrierName } = await api.getCarrierInfo({ countryCode: state.currentCountry.countryCode, account: state.rechargePhone })
-      getProductListOrCarrierListWithCarrierInfo(carrierName)
+      const { result: carrierName } = await api.getCarrierInfo({ countryCode: country.countryCode, account })
+      getProductListOrCarrierListWithCarrierInfo(country, carrierName, account)
     })
   }
   const getSelectedCountryFromCountryMap = (countryCode, countryList) => {
@@ -160,7 +160,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
   const handleInputBlur = () => {
     setState({ type: 'setPhoneInputHighLight', payload: false })
     if (!checkPhoneNumber(state.rechargePhone)) return
-    getCarrierInfo()
+    getCarrierInfo(state.currentCountry, state.rechargePhone)
   }
   const getPageData = async () => {
     const { result } = await api.getPageData()
@@ -171,7 +171,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
     setBalanceQuery(currentCountry.balanceQueryUrl)
     if (result.lastMsisdn && result.nowCountry === result.lastMsisdn.countryCode && Object.keys(currentCountry).length >= 0) {
       setState({ type: 'setRechargePhone', payload: result.lastMsisdn.msisdn })
-      getCarrierInfo()
+      getCarrierInfo(currentCountry, result.lastMsisdn.msisdn)
     }
   }
 

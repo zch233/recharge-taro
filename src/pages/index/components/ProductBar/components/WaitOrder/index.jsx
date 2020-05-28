@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 import { View, Button } from '@tarojs/components'
 import { AtModal, AtModalHeader, AtModalContent, AtModalAction } from "taro-ui"
 import './index.scss'
-import * as api from './api'
+import * as api from '@/pages/record/api'
 import { wechatPay } from '@/utils/wechat'
 
 export default function WaitOrder ({ waitOrderVisible, onClose, waitOrderData = {} })  {

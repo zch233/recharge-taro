@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 import * as api from './api.js'
-import { setGlobalData } from './globalData'
+import { setGlobalData, getGlobalData } from './globalData'
 
 export function login () {
   Taro.login({
@@ -25,19 +25,26 @@ export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp 
       signType,
       paySign,
       success () {
-        Taro.requestSubscribeMessage({
-          tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
-          success: function (res) {
-            resolve(res)
-          },
-          fail (err) {
-            reject(err)
-          }
-        })
+        if (!getGlobalData('isSubscribe')) {
+          Taro.requestSubscribeMessage({
+            tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
+            success: function (res) {
+              resolve(res)
+            },
+            fail (err) {
+              reject(err)
+            },
+            complete () {
+              Taro.navigateTo({ url: '/pages/order/order' })
+            }
+          })
+        } else {
+          Taro.navigateTo({ url: '/pages/order/order' })
+        }
       },
       fail (err) {
         reject(err)
-      }
+      },
     })
   })
 }

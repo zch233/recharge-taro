@@ -23,7 +23,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/order/order',
+      'pages/record/record',
       'pages/frame/frame',
     ],
     window: {

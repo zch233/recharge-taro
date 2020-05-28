@@ -32,7 +32,7 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 __webpack_require__(/*! ./index.scss */ "./src/pages/index/components/ProductBar/components/WaitOrder/index.scss");
 
-var _api = __webpack_require__(/*! ./api */ "./src/pages/index/components/ProductBar/components/WaitOrder/api.js");
+var _api = __webpack_require__(/*! ../../../../../record/api */ "./src/pages/record/api.js");
 
 var api = _interopRequireWildcard(_api);
 
@@ -64,18 +64,18 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WaitOrder.__proto__ || Object.getPrototypeOf(WaitOrder)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__84", "$compid__85", "waitOrderData", "waitOrderVisible"], _this.customComponents = ["AtModal", "AtModalHeader", "AtModalContent", "AtModalAction"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WaitOrder.__proto__ || Object.getPrototypeOf(WaitOrder)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__61", "$compid__62", "waitOrderData", "waitOrderVisible"], _this.customComponents = ["AtModal", "AtModalHeader", "AtModalContent", "AtModalAction"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(WaitOrder, [{
-    key: '_constructor',
+    key: "_constructor",
     value: function _constructor(props) {
-      _get(WaitOrder.prototype.__proto__ || Object.getPrototypeOf(WaitOrder.prototype), '_constructor', this).call(this, props);
+      _get(WaitOrder.prototype.__proto__ || Object.getPrototypeOf(WaitOrder.prototype), "_constructor", this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: '_createData',
+    key: "_createData",
     value: function _createData() {
       var _this2 = this;
 
@@ -85,15 +85,15 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__84"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__61"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__84 = _genCompid2[0],
-          $compid__84 = _genCompid2[1];
+          $prevCompid__61 = _genCompid2[0],
+          $compid__61 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__85"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__62"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__85 = _genCompid4[0],
-          $compid__85 = _genCompid4[1];
+          $prevCompid__62 = _genCompid4[0],
+          $compid__62 = _genCompid4[1];
 
       var _props = this.__props,
           waitOrderVisible = _props.waitOrderVisible,
@@ -115,7 +115,7 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
                   _this2.__props.onClose();
 
                 case 3:
-                case 'end':
+                case "end":
                   return _context.stop();
               }
             }
@@ -144,7 +144,7 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
                   (0, _wechat.wechatPay)(result || {});
 
                 case 5:
-                case 'end':
+                case "end":
                   return _context2.stop();
               }
             }
@@ -163,27 +163,27 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       _taroWeapp.propsManager.set({
         "isOpened": waitOrderVisible,
         "onClose": this.__props.onClose
-      }, $compid__84, $prevCompid__84);
+      }, $compid__61, $prevCompid__61);
       _taroWeapp.propsManager.set({
         "className": "waitOrder-title"
-      }, $compid__85, $prevCompid__85);
+      }, $compid__62, $prevCompid__62);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        $compid__84: $compid__84,
-        $compid__85: $compid__85,
+        $compid__61: $compid__61,
+        $compid__62: $compid__62,
         waitOrderData: waitOrderData
       });
       return this.__state;
     }
   }, {
-    key: 'anonymousFunc0',
+    key: "anonymousFunc0",
     value: function anonymousFunc0(e) {
       ;
     }
   }, {
-    key: 'anonymousFunc1',
+    key: "anonymousFunc1",
     value: function anonymousFunc1(e) {
       ;
     }
@@ -205,38 +205,6 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "pages/index/components/ProductBar/components/WaitOrder/index.wxml";
-
-/***/ }),
-
-/***/ "./src/pages/index/components/ProductBar/components/WaitOrder/api.js":
-/*!***************************************************************************!*\
-  !*** ./src/pages/index/components/ProductBar/components/WaitOrder/api.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.orderPayAgain = orderPayAgain;
-exports.cancelOrder = cancelOrder;
-
-var _request = __webpack_require__(/*! ../../../../../../utils/request */ "./src/utils/request.js");
-
-var _request2 = _interopRequireDefault(_request);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function orderPayAgain(data) {
-  return (0, _request2.default)('/wx/charge/again/pay', data);
-}
-
-function cancelOrder(data) {
-  return (0, _request2.default)('/wx/charge/cancelOrder', data);
-}
 
 /***/ }),
 

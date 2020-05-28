@@ -11,6 +11,43 @@
 
 /***/ }),
 
+/***/ "./src/pages/record/api.js":
+/*!*********************************!*\
+  !*** ./src/pages/record/api.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getRechargeRecord = getRechargeRecord;
+exports.orderPayAgain = orderPayAgain;
+exports.cancelOrder = cancelOrder;
+
+var _request = __webpack_require__(/*! ../../utils/request */ "./src/utils/request.js");
+
+var _request2 = _interopRequireDefault(_request);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getRechargeRecord(data) {
+  return (0, _request2.default)('/wx/order/user', data);
+}
+
+function orderPayAgain(data) {
+  return (0, _request2.default)('/wx/charge/again/pay', data);
+}
+
+function cancelOrder(data) {
+  return (0, _request2.default)('/wx/charge/cancelOrder', data);
+}
+
+/***/ }),
+
 /***/ "./src/utils/api.js":
 /*!**************************!*\
   !*** ./src/utils/api.js ***!
@@ -264,15 +301,22 @@ function wechatPay(_ref3) {
       signType: signType,
       paySign: paySign,
       success: function success() {
-        _taroWeapp2.default.requestSubscribeMessage({
-          tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
-          success: function success(res) {
-            resolve(res);
-          },
-          fail: function fail(err) {
-            reject(err);
-          }
-        });
+        if (!(0, _globalData.getGlobalData)('isSubscribe')) {
+          _taroWeapp2.default.requestSubscribeMessage({
+            tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
+            success: function success(res) {
+              resolve(res);
+            },
+            fail: function fail(err) {
+              reject(err);
+            },
+            complete: function complete() {
+              _taroWeapp2.default.navigateTo({ url: '/pages/order/order' });
+            }
+          });
+        } else {
+          _taroWeapp2.default.navigateTo({ url: '/pages/order/order' });
+        }
       },
       fail: function fail(err) {
         reject(err);
