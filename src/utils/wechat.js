@@ -25,16 +25,20 @@ export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp 
       paySign,
       success () {
         if (!Taro.setStorageSync('isSubscribe')) {
+          const tmplIds = '8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'
           Taro.requestSubscribeMessage({
-            tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
+            tmplIds: [tmplIds],
             async success (res) {
-              await api.subscribe(orderCode)
-              resolve(res)
+              if (res[tmplIds] === 'accept') {
+                await api.subscribe(orderCode)
+                resolve(res)
+              } else {
+                resolve('拒绝授权')
+              }
+              Taro[Taro.getCurrentPages()[Taro.getCurrentPages().length - 1].route === 'pages/record/record' ? 'redirectTo' : 'navigateTo']({ url: '/pages/record/record' })
             },
             fail (err) {
               reject(err)
-            },
-            complete () {
               Taro.navigateTo({ url: '/pages/record/record' })
             }
           })

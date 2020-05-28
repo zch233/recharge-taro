@@ -305,21 +305,35 @@ function wechatPay(_ref3, orderCode) {
       paySign: paySign,
       success: function success() {
         if (!_taroWeapp2.default.setStorageSync('isSubscribe')) {
+          var tmplIds = '8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA';
           _taroWeapp2.default.requestSubscribeMessage({
-            tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
+            tmplIds: [tmplIds],
             success: function () {
               var _ref4 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(res) {
                 return _regenerator2.default.wrap(function _callee2$(_context2) {
                   while (1) {
                     switch (_context2.prev = _context2.next) {
                       case 0:
-                        _context2.next = 2;
+                        if (!(res[tmplIds] === 'accept')) {
+                          _context2.next = 6;
+                          break;
+                        }
+
+                        _context2.next = 3;
                         return api.subscribe(orderCode);
 
-                      case 2:
-                        resolve(res);
-
                       case 3:
+                        resolve(res);
+                        _context2.next = 7;
+                        break;
+
+                      case 6:
+                        resolve('拒绝授权');
+
+                      case 7:
+                        _taroWeapp2.default[_taroWeapp2.default.getCurrentPages()[_taroWeapp2.default.getCurrentPages().length - 1].route === 'pages/record/record' ? 'redirectTo' : 'navigateTo']({ url: '/pages/record/record' });
+
+                      case 8:
                       case "end":
                         return _context2.stop();
                     }
@@ -335,8 +349,6 @@ function wechatPay(_ref3, orderCode) {
             }(),
             fail: function fail(err) {
               reject(err);
-            },
-            complete: function complete() {
               _taroWeapp2.default.navigateTo({ url: '/pages/record/record' });
             }
           });

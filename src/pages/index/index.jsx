@@ -12,11 +12,13 @@ export default function Index ()  {
   const [productDisabled, setProductDisabled] = useState(false)
   const [balanceQuery, setBalanceQuery] = useState('')
   const xxxxxxxxxxx = () => {
+    const tmplIds = '8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'
     Taro.requestSubscribeMessage({
-      tmplIds: ['8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'],
+      tmplIds: [tmplIds],
       async success (res) {
-        await subscribe('202005281558153480510578')
-        console.log(res)
+        if (res[tmplIds] === 'accept') {
+          await subscribe('202005281558153480510578')
+        }
       },
       fail (err) {
         console.log(err)

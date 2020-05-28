@@ -74,11 +74,13 @@ export default function Record ()  {
   })
   const payNow = async ({ yqqNo }) => {
     const { result } = await api.orderPayAgain(yqqNo)
-    wechatPay(result || {}, yqqNo)
+    const isSuccess  = await wechatPay(result || {}, yqqNo)
+    console.log(Taro.getCurrentPages(), 123132132)
+    console.log(isSuccess)
   }
-  const closeOrder = async (order) => {
-    await api.cancelOrder(order.yqqNo)
-    order.status = 'close'
+  const closeOrder = async ({ yqqNo }) => {
+    await api.cancelOrder(yqqNo)
+    setOrderList(orderList.map(order => order.yqqNo === yqqNo ? (order.status = 'close') && order : order))
     Taro.showToast({ title: '关闭成功', icon: 'none', duration: 2000, mask: true })
   }
   useEffect(() => {
