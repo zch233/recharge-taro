@@ -57,7 +57,8 @@ export default function Order ({ orderVisible, onClose, orderData = {} })  {
       return true
     }
     const { result } = await api.orderPay({ ...orderData, pageUrl: encodeURIComponent('https://wechat.globalcharge.cn/home'), payment: 'wc_pay', tradeType: 'JSAPI', originalPayAmount: orderData.price, payAmount, uuid: displayOrderData.coupon.uuid, point: displayOrderData.point, selection: discountVisible ? discountRadio : null, appid: APP_ID, paySource: 'MINI_PROGRAM' })
-    wechatPay(result.payInfo || {}, result.orderCode)
+    const info = await wechatPay(result.payInfo || {}, result.orderCode)
+    if (info === 'paySuccess') onClose()
   }
   return (
     <View>

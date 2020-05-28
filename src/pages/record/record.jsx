@@ -74,9 +74,7 @@ export default function Record ()  {
   })
   const payNow = async ({ yqqNo }) => {
     const { result } = await api.orderPayAgain(yqqNo)
-    const isSuccess  = await wechatPay(result || {}, yqqNo)
-    console.log(Taro.getCurrentPages(), 123132132)
-    console.log(isSuccess)
+    wechatPay(result || {}, yqqNo)
   }
   const closeOrder = async ({ yqqNo }) => {
     await api.cancelOrder(yqqNo)

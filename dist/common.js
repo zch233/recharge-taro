@@ -201,9 +201,8 @@ var error = {
   'JU404': { message: '找不到该页面啦！', href: '404' },
   'WX0005': { message: '请先关注公众号在访问哦！', href: 'leadFollow' },
   'JU302': { message: '对不起，服务器正在维护！', href: 'serveDead' },
-  'JU430': { message: '网络异常，请稍候再试！', href: 'networkError'
-    // Taro.setStorageSync('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6Y2jwn42DICAgICAgICAgIOC8vSIsImF1ZCI6Imt1bXF1YXQiLCJ1bmlvbklkIjoib1BVaFdzOFh0S3p4aWVjd19icWM3eFhoOE52cyIsInJvbGUiOiJBVFRFTlRJT04iLCJvcGVuSWQiOiJvR1BUaXYtTzVETEZlaC1MRG1EajRfSE1GblNVIiwiaXNzIjoidG9ueSIsImV4cCI6MTU5MDQ5MjQ5MCwiaWF0IjoxNTkwNDg4ODkwLCJqdGkiOiI5NzMifQ.5WgdgtA06q8v1xjf6D2MP85CbLOXoIFGlfPkdupLB4g')
-  } };
+  'JU430': { message: '网络异常，请稍候再试！', href: 'networkError' }
+};
 
 /***/ }),
 
@@ -304,7 +303,7 @@ function wechatPay(_ref3, orderCode) {
       signType: signType,
       paySign: paySign,
       success: function success() {
-        if (!_taroWeapp2.default.setStorageSync('isSubscribe')) {
+        if (!_taroWeapp2.default.getStorageSync('isSubscribe')) {
           var tmplIds = '8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA';
           _taroWeapp2.default.requestSubscribeMessage({
             tmplIds: [tmplIds],
@@ -315,7 +314,7 @@ function wechatPay(_ref3, orderCode) {
                     switch (_context2.prev = _context2.next) {
                       case 0:
                         if (!(res[tmplIds] === 'accept')) {
-                          _context2.next = 6;
+                          _context2.next = 4;
                           break;
                         }
 
@@ -323,17 +322,12 @@ function wechatPay(_ref3, orderCode) {
                         return api.subscribe(orderCode);
 
                       case 3:
-                        resolve(res);
-                        _context2.next = 7;
-                        break;
+                        resolve('paySuccess');
 
-                      case 6:
-                        resolve('拒绝授权');
-
-                      case 7:
+                      case 4:
                         _taroWeapp2.default[_taroWeapp2.default.getCurrentPages()[_taroWeapp2.default.getCurrentPages().length - 1].route === 'pages/record/record' ? 'redirectTo' : 'navigateTo']({ url: '/pages/record/record' });
 
-                      case 8:
+                      case 5:
                       case "end":
                         return _context2.stop();
                     }
@@ -354,6 +348,7 @@ function wechatPay(_ref3, orderCode) {
           });
         } else {
           _taroWeapp2.default.navigateTo({ url: '/pages/record/record' });
+          resolve('paySuccess');
         }
       },
       fail: function fail(err) {

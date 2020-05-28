@@ -117,7 +117,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
       navigationBarTitleText: '充值记录',
       enablePullDownRefresh: true,
       onReachBottomDistance: 50
-    }, _this.$usedState = ["loopArray25", "orderList", "HFIcon", "LLIcon", "isLastPage", "status"], _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["loopArray76", "orderList", "HFIcon", "LLIcon", "isLastPage", "status"], _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Record, [{
@@ -199,7 +199,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
         var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(_ref4) {
           var yqqNo = _ref4.yqqNo;
 
-          var _ref6, result, isSuccess;
+          var _ref6, result;
 
           return _regenerator2.default.wrap(function _callee2$(_context2) {
             while (1) {
@@ -211,16 +211,10 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
                 case 2:
                   _ref6 = _context2.sent;
                   result = _ref6.result;
-                  _context2.next = 6;
-                  return (0, _wechat.wechatPay)(result || {}, yqqNo);
 
-                case 6:
-                  isSuccess = _context2.sent;
+                  (0, _wechat.wechatPay)(result || {}, yqqNo);
 
-                  console.log(_taroWeapp2.default.getCurrentPages(), 123132132);
-                  console.log(isSuccess);
-
-                case 9:
+                case 5:
                 case 'end':
                   return _context2.stop();
               }
@@ -264,20 +258,20 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
         currentPage.current = 1;
         getOrderList();
       }, []);
-      var loopArray25 = orderList.map(function (order, __index0) {
+      var loopArray76 = orderList.map(function (order, __index0) {
         order = {
           $original: (0, _taroWeapp.internal_get_original)(order)
         };
         var $loopState__temp2 = (0, _taroWeapp.internal_inline_style)({ color: order.$original.status && status[order.$original.status].color });
         var $loopState__temp4 = order.$original.selected ? (order.$original.originalPrice - order.$original.payPrice).toFixed(2) : null;
 
-        var _$indexKey = "egzzz" + __index0;
+        var _$indexKey = "bdezz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return payNow(order.$original);
         };
 
-        var _$indexKey2 = "ehzzz" + __index0;
+        var _$indexKey2 = "bdfzz" + __index0;
 
         _this2.anonymousFunc1Map[_$indexKey2] = function () {
           return closeOrder(order.$original);
@@ -292,7 +286,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
         };
       });
       Object.assign(this.__state, {
-        loopArray25: loopArray25,
+        loopArray76: loopArray76,
         orderList: orderList,
         HFIcon: _HF2.default,
         LLIcon: _LL2.default,

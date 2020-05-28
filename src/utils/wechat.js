@@ -24,16 +24,14 @@ export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp 
       signType,
       paySign,
       success () {
-        if (!Taro.setStorageSync('isSubscribe')) {
+        if (!Taro.getStorageSync('isSubscribe')) {
           const tmplIds = '8Q9-cY0jD1FTK59AqcDcGSKj5ZBC5uw1zdDcglsqyRA'
           Taro.requestSubscribeMessage({
             tmplIds: [tmplIds],
             async success (res) {
               if (res[tmplIds] === 'accept') {
                 await api.subscribe(orderCode)
-                resolve(res)
-              } else {
-                resolve('拒绝授权')
+                resolve('paySuccess')
               }
               Taro[Taro.getCurrentPages()[Taro.getCurrentPages().length - 1].route === 'pages/record/record' ? 'redirectTo' : 'navigateTo']({ url: '/pages/record/record' })
             },
@@ -44,6 +42,7 @@ export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp 
           })
         } else {
           Taro.navigateTo({ url: '/pages/record/record' })
+          resolve('paySuccess')
         }
       },
       fail (err) {
