@@ -64,7 +64,7 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WaitOrder.__proto__ || Object.getPrototypeOf(WaitOrder)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__61", "$compid__62", "waitOrderData", "waitOrderVisible"], _this.customComponents = ["AtModal", "AtModalHeader", "AtModalContent", "AtModalAction"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WaitOrder.__proto__ || Object.getPrototypeOf(WaitOrder)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__54", "$compid__55", "waitOrderData", "waitOrderVisible"], _this.customComponents = ["AtModal", "AtModalHeader", "AtModalContent", "AtModalAction"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(WaitOrder, [{
@@ -85,15 +85,15 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__61"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__54"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__61 = _genCompid2[0],
-          $compid__61 = _genCompid2[1];
+          $prevCompid__54 = _genCompid2[0],
+          $compid__54 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__62"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__55"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__62 = _genCompid4[0],
-          $compid__62 = _genCompid4[1];
+          $prevCompid__55 = _genCompid4[0],
+          $compid__55 = _genCompid4[1];
 
       var _props = this.__props,
           waitOrderVisible = _props.waitOrderVisible,
@@ -163,16 +163,16 @@ var WaitOrder = (_temp2 = _class = function (_Taro$Component) {
       _taroWeapp.propsManager.set({
         "isOpened": waitOrderVisible,
         "onClose": this.__props.onClose
-      }, $compid__61, $prevCompid__61);
+      }, $compid__54, $prevCompid__54);
       _taroWeapp.propsManager.set({
         "className": "waitOrder-title"
-      }, $compid__62, $prevCompid__62);
+      }, $compid__55, $prevCompid__55);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        $compid__61: $compid__61,
-        $compid__62: $compid__62,
+        $compid__54: $compid__54,
+        $compid__55: $compid__55,
         waitOrderData: waitOrderData
       });
       return this.__state;

@@ -68,7 +68,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "loopArray11", "$compid__52", "$compid__53", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick", "productDisabled"], _this.customComponents = ["AtTabsPane", "ProductItem", "ProductEmpty"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "loopArray11", "$compid__45", "$compid__46", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick", "productDisabled"], _this.customComponents = ["AtTabsPane", "ProductItem", "ProductEmpty"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductTab, [{
@@ -89,15 +89,15 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__52"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__45"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__52 = _genCompid2[0],
-          $compid__52 = _genCompid2[1];
+          $prevCompid__45 = _genCompid2[0],
+          $compid__45 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__53"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__46"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__53 = _genCompid4[0],
-          $compid__53 = _genCompid4[1];
+          $prevCompid__46 = _genCompid4[0],
+          $compid__46 = _genCompid4[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
@@ -193,8 +193,8 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
 
         var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + 'bizzzzzzzz' + _anonIdx, true),
             _genCompid6 = _slicedToArray(_genCompid5, 2),
-            $prevCompid__51 = _genCompid6[0],
-            $compid__51 = _genCompid6[1];
+            $prevCompid__44 = _genCompid6[0],
+            $compid__44 = _genCompid6[1];
 
         anonymousState__temp && list.length && _taroWeapp.propsManager.set({
           "currentProduct": currentProduct,
@@ -202,26 +202,26 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
           "index": index,
           "productInfo": product.$original,
           "handleProductClick": handleProductClick
-        }, $compid__51, $prevCompid__51);
+        }, $compid__44, $prevCompid__44);
         return {
-          $compid__51: $compid__51,
+          $compid__44: $compid__44,
           $original: product.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "current": current,
         "index": index
-      }, $compid__52, $prevCompid__52);
+      }, $compid__45, $prevCompid__45);
       anonymousState__temp && !list.length && _taroWeapp.propsManager.set({
         "emptyTips": '\u4EA7\u54C1\u7EF4\u62A4\u4E2D\uFF0C\u5982\u9700\u5145\u503C\u8BF7\u8054\u7CFB\u5BA2\u670D'
-      }, $compid__53, $prevCompid__53);
+      }, $compid__46, $prevCompid__46);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
         loopArray11: loopArray11,
-        $compid__52: $compid__52,
-        $compid__53: $compid__53,
+        $compid__45: $compid__45,
+        $compid__46: $compid__46,
         list: list,
         currentProduct: currentProduct,
         initTips: initTips

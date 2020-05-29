@@ -1,9 +1,9 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__46}}">
+    <at-float-layout compid="{{$compid__39}}">
         <view class="searchBar">
-            <at-icon compid="{{$compid__47}}"></at-icon>
+            <at-icon compid="{{$compid__40}}"></at-icon>
             <view class="searchInput">
-                <at-input compid="{{$compid__48}}"></at-input>
+                <at-input compid="{{$compid__41}}"></at-input>
             </view>
         </view>
         <scroll-view class="countryList" scroll-y="{{true}}">

@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
-        <at-float-layout compid="{{$compid__89}}">
+        <at-float-layout compid="{{$compid__49}}">
             <view class="orderDetail">
                 <view class="orderDetail-item">
                     <view class="orderDetail-item-label">订单详情</view>
@@ -20,7 +20,7 @@
                             <view class="orderDetail-item-label">积分<text class="pointDiscount">可用<text class="count">{{displayOrderData.point}}积分</text>抵扣<text class="price">￥{{anonymousState__temp2}}元</text></text>
                             </view>
                             <view class="orderDetail-item-radio">
-                                <at-icon compid="{{$compid__90}}"></at-icon>
+                                <at-icon compid="{{$compid__50}}"></at-icon>
                             </view>
                         </view>
                         <view class="{{'orderDetail-item radio ' + (discountRadio === 'coupon' && 'selected') + ' ' + (orderData.couponList && orderData.couponList.length === 0 && 'disabled')}}" bindtap="anonymousFunc1">
@@ -29,13 +29,13 @@
                                 </block>
                             </view>
                             <view class="orderDetail-item-radio">
-                                <at-icon compid="{{$compid__91}}"></at-icon>
+                                <at-icon compid="{{$compid__51}}"></at-icon>
                             </view>
                         </view>
                         <view class="{{'orderDetail-item radio  ' + (!discountRadio && 'selected')}}" bindtap="anonymousFunc2">
                             <view class="orderDetail-item-label">不使用优惠</view>
                             <view class="orderDetail-item-radio">
-                                <at-icon compid="{{$compid__92}}"></at-icon>
+                                <at-icon compid="{{$compid__52}}"></at-icon>
                             </view>
                         </view>
                     </view>
@@ -51,6 +51,6 @@
                 </block><text class="buyButton" bindtap="anonymousFunc3">立即付款</text>
             </view>
         </at-float-layout>
-        <coupon-list compid="{{$compid__93}}"></coupon-list>
+        <coupon-list compid="{{$compid__53}}"></coupon-list>
     </view>
 </block>
