@@ -9,7 +9,7 @@ import { wechatPay } from '@/utils/wechat'
 export default function Order ({ orderVisible, onClose, orderData = {} })  {
   const [couponListVisible, setCouponListVisible] = useState(false)
   const [discountRadio, setDiscountRadio] = useState(null)
-  const discountVisible = useMemo(() => orderData.countryCode !== 'CN', [orderData])
+  const discountVisible = useMemo(() => orderData.countryCode !== 'CN' && Taro.getStorageSync('isSubscribe'), [orderData])
   const displayOrderData = useMemo(() => {
     const { cname, carrier, name, point, price, couponList, uuid, selection } = orderData
     return {

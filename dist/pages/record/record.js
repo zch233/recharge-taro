@@ -121,7 +121,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
       navigationBarTitleText: '充值记录',
       enablePullDownRefresh: true,
       onReachBottomDistance: 50
-    }, _this.$usedState = ["loopArray112", "orderList", "HFIcon", "LLIcon", "isLastPage", "status"], _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["loopArray7", "orderList", "HFIcon", "LLIcon", "isLastPage", "status"], _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Record, [{
@@ -263,20 +263,20 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
         getOrderList();
         _mtaWechatAnalysis2.default.Event.stat("10003", {});
       }, []);
-      var loopArray112 = orderList.map(function (order, __index0) {
+      var loopArray7 = orderList.map(function (order, __index0) {
         order = {
           $original: (0, _taroWeapp.internal_get_original)(order)
         };
         var $loopState__temp2 = (0, _taroWeapp.internal_inline_style)({ color: order.$original.status && status[order.$original.status].color });
         var $loopState__temp4 = order.$original.selected ? (order.$original.originalPrice - order.$original.payPrice).toFixed(2) : null;
 
-        var _$indexKey = "bjezz" + __index0;
+        var _$indexKey = "bczzz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return payNow(order.$original);
         };
 
-        var _$indexKey2 = "bjfzz" + __index0;
+        var _$indexKey2 = "bdzzz" + __index0;
 
         _this2.anonymousFunc1Map[_$indexKey2] = function () {
           return closeOrder(order.$original);
@@ -291,7 +291,7 @@ var Record = (_temp2 = _class = function (_Taro$Component) {
         };
       });
       Object.assign(this.__state, {
-        loopArray112: loopArray112,
+        loopArray7: loopArray7,
         orderList: orderList,
         HFIcon: _HF2.default,
         LLIcon: _LL2.default,
