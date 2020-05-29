@@ -18,7 +18,7 @@ export default function ProductTab ({ requestProductData = {}, current, index, h
     setList(result || [])
   }
   const handleProductClick = product => {
-    MTA.Event.stat("10001", { product });
+    MTA.Event.stat("10001", { product: product.code });
     setCurrentProduct(product)
     if (index === 0) {
       handleBuyClick(product)
