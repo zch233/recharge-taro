@@ -28,6 +28,10 @@ __webpack_require__(/*! ./app.scss */ "./src/app.scss");
 
 __webpack_require__(/*! taro-ui/dist/style/index.scss */ "./node_modules/taro-ui/dist/style/index.scss");
 
+var _mtaWechatAnalysis = __webpack_require__(/*! mta-wechat-analysis */ "./node_modules/mta-wechat-analysis/index.js");
+
+var _mtaWechatAnalysis2 = _interopRequireDefault(_mtaWechatAnalysis);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -70,8 +74,20 @@ var _App = function (_BaseComponent) {
   }
 
   _createClass(_App, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {}
+  }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      _mtaWechatAnalysis2.default.App.init({
+        "appID": "500720694",
+        "eventID": "500720783",
+        "autoReport": true,
+        "statParam": true,
+        "ignoreParams": []
+      });
+      _mtaWechatAnalysis2.default.Event.stat("99999", {});
+    }
   }, {
     key: 'componentDidShow',
     value: function componentDidShow() {}

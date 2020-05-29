@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro'
 import * as api from './api.js'
+import MTA from 'mta-wechat-analysis'
 
 export function login () {
   Taro.login({
@@ -16,6 +17,7 @@ export function login () {
 }
 
 export function wechatPay ({ nonceStr, paySign, signType, payPackage, timeStamp }, orderCode) {
+  MTA.Event.stat("10002", { order: orderCode })
   return new Promise((resolve, reject) => {
     Taro.requestPayment({
       timeStamp,

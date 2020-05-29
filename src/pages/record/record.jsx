@@ -6,6 +6,7 @@ import { AtList, AtListItem } from 'taro-ui'
 import HFIcon from '@/static/HF.svg'
 import LLIcon from '@/static/LL.svg'
 import { wechatPay } from '@/utils/wechat'
+import MTA from 'mta-wechat-analysis'
 
 const status = {
   'processing': { text: '充值中..', color: '#ef8b0a' },
@@ -84,6 +85,7 @@ export default function Record ()  {
   useEffect(() => {
     currentPage.current = 1
     getOrderList()
+    MTA.Event.stat("10003", {});
   }, [])
   return (
     <View className='order'>

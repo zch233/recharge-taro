@@ -5,6 +5,7 @@ import ProductItem from '../ProductItem/index'
 import ProductEmpty from './ProductEmpty'
 import './index.scss'
 import * as api from './api'
+import MTA from 'mta-wechat-analysis'
 
 export default function ProductTab ({ requestProductData = {}, current, index, handleBuyClick, initTips, productDisabled })  {
   const [list, setList] = useState([])
@@ -17,6 +18,7 @@ export default function ProductTab ({ requestProductData = {}, current, index, h
     setList(result || [])
   }
   const handleProductClick = product => {
+    MTA.Event.stat("10001", { product });
     setCurrentProduct(product)
     if (index === 0) {
       handleBuyClick(product)

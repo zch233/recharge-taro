@@ -7,6 +7,7 @@ import CarrierList from './components/CarrierList/index'
 import UsedPhoneList from './components/UsedPhoneList/index'
 import * as api from './api'
 import countryMap from '@/utils/countryMap'
+import MTA from 'mta-wechat-analysis'
 
 const initialState = {
   rechargePhone: '',
@@ -161,6 +162,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
     setState({ type: 'setPhoneInputHighLight', payload: false })
     if (!checkPhoneNumber(state.rechargePhone)) return
     getCarrierInfo(state.currentCountry, state.rechargePhone)
+    MTA.Event.stat("10000", { phone: state.rechargePhone });
   }
   const getPageData = async () => {
     const { result } = await api.getPageData()
@@ -172,6 +174,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
     if (result.lastMsisdn && result.nowCountry === result.lastMsisdn.countryCode && Object.keys(currentCountry).length >= 0) {
       setState({ type: 'setRechargePhone', payload: result.lastMsisdn.msisdn })
       getCarrierInfo(currentCountry, result.lastMsisdn.msisdn)
+      MTA.Event.stat("10000", { phone: result.lastMsisdn.msisdn });
     }
   }
 

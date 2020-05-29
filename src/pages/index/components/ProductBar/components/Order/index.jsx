@@ -45,12 +45,12 @@ export default function Order ({ orderVisible, onClose, orderData = {} })  {
     } else {
       return 0
     }
-  }, [discountRadio])
+  }, [discountRadio, orderData])
   const payAmount = useMemo(() => {
     const payAmount = (orderData.price - discountPrice).toFixed(2) * 1
     if (Number.isNaN(payAmount)) return orderData.price // 防御
     return payAmount > 0 ? payAmount : 0.01
-  }, [discountRadio])
+  }, [discountRadio, orderData])
   const payNow = async () => {
     if (payAmount <= 0) { // 防御
       Taro.showModal({ title: '提示', content: '系统异常，请联系管理官+v：yqq-NO2' })

@@ -38,6 +38,10 @@ var _api = __webpack_require__(/*! ./api */ "./src/pages/index/components/Produc
 
 var api = _interopRequireWildcard(_api);
 
+var _mtaWechatAnalysis = __webpack_require__(/*! mta-wechat-analysis */ "./node_modules/mta-wechat-analysis/index.js");
+
+var _mtaWechatAnalysis2 = _interopRequireDefault(_mtaWechatAnalysis);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -64,7 +68,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "loopArray11", "$compid__52", "$compid__53", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick", "productDisabled"], _this.customComponents = ["AtTabsPane", "ProductItem", "ProductEmpty"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProductTab.__proto__ || Object.getPrototypeOf(ProductTab)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "loopArray125", "$compid__598", "$compid__599", "list", "currentProduct", "initTips", "requestProductData", "current", "index", "handleBuyClick", "productDisabled"], _this.customComponents = ["AtTabsPane", "ProductItem", "ProductEmpty"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ProductTab, [{
@@ -85,15 +89,15 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__52"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__598"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__52 = _genCompid2[0],
-          $compid__52 = _genCompid2[1];
+          $prevCompid__598 = _genCompid2[0],
+          $compid__598 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__53"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__599"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__53 = _genCompid4[0],
-          $compid__53 = _genCompid4[1];
+          $prevCompid__599 = _genCompid4[0],
+          $compid__599 = _genCompid4[1];
 
       var _props = this.__props,
           _props$requestProduct = _props.requestProductData,
@@ -147,6 +151,7 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
         };
       }();
       var handleProductClick = function handleProductClick(product) {
+        _mtaWechatAnalysis2.default.Event.stat("10001", { product: product });
         setCurrentProduct(product);
         if (index === 0) {
           handleBuyClick(product);
@@ -181,15 +186,15 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
       var anonymousState__temp = Object.keys(requestProductData).length > 0;
       var anonymousState__temp2 = Object.keys(requestProductData).length === 0;
       var anonymousState__temp3 = index === 1 && Object.keys(currentProduct).length;
-      var loopArray11 = list.length ? list.map(function (product, _anonIdx) {
+      var loopArray125 = list.length ? list.map(function (product, _anonIdx) {
         product = {
           $original: (0, _taroWeapp.internal_get_original)(product)
         };
 
-        var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + 'bizzzzzzzz' + _anonIdx, true),
+        var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + 'cbdzzzzzzz' + _anonIdx, true),
             _genCompid6 = _slicedToArray(_genCompid5, 2),
-            $prevCompid__51 = _genCompid6[0],
-            $compid__51 = _genCompid6[1];
+            $prevCompid__597 = _genCompid6[0],
+            $compid__597 = _genCompid6[1];
 
         anonymousState__temp && list.length && _taroWeapp.propsManager.set({
           "currentProduct": currentProduct,
@@ -197,26 +202,26 @@ var ProductTab = (_temp2 = _class = function (_Taro$Component) {
           "index": index,
           "productInfo": product.$original,
           "handleProductClick": handleProductClick
-        }, $compid__51, $prevCompid__51);
+        }, $compid__597, $prevCompid__597);
         return {
-          $compid__51: $compid__51,
+          $compid__597: $compid__597,
           $original: product.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "current": current,
         "index": index
-      }, $compid__52, $prevCompid__52);
+      }, $compid__598, $prevCompid__598);
       anonymousState__temp && !list.length && _taroWeapp.propsManager.set({
         "emptyTips": '\u4EA7\u54C1\u7EF4\u62A4\u4E2D\uFF0C\u5982\u9700\u5145\u503C\u8BF7\u8054\u7CFB\u5BA2\u670D'
-      }, $compid__53, $prevCompid__53);
+      }, $compid__599, $prevCompid__599);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        loopArray11: loopArray11,
-        $compid__52: $compid__52,
-        $compid__53: $compid__53,
+        loopArray125: loopArray125,
+        $compid__598: $compid__598,
+        $compid__599: $compid__599,
         list: list,
         currentProduct: currentProduct,
         initTips: initTips

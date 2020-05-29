@@ -3,6 +3,7 @@ import Index from './pages/index'
 import * as wechat from '@/utils/wechat'
 import './app.scss'
 import 'taro-ui/dist/style/index.scss'
+import MTA from 'mta-wechat-analysis'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -12,7 +13,18 @@ import 'taro-ui/dist/style/index.scss'
 
 class App extends Component {
 
-  componentDidMount () {}
+  componentWillMount () {}
+
+  componentDidMount () {
+    MTA.App.init({
+      "appID":"500720694",
+      "eventID": "500720783",
+      "autoReport": true,
+      "statParam": true,
+      "ignoreParams": [],
+    });
+    MTA.Event.stat("99999", {});
+  }
 
   componentDidShow () {}
 

@@ -235,6 +235,10 @@ var _api = __webpack_require__(/*! ./api */ "./src/utils/api.js");
 
 var api = _interopRequireWildcard(_api);
 
+var _mtaWechatAnalysis = __webpack_require__(/*! mta-wechat-analysis */ "./node_modules/mta-wechat-analysis/index.js");
+
+var _mtaWechatAnalysis2 = _interopRequireDefault(_mtaWechatAnalysis);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -295,6 +299,7 @@ function wechatPay(_ref3, orderCode) {
       payPackage = _ref3.payPackage,
       timeStamp = _ref3.timeStamp;
 
+  _mtaWechatAnalysis2.default.Event.stat("10002", { order: orderCode });
   return new Promise(function (resolve, reject) {
     _taroWeapp2.default.requestPayment({
       timeStamp: timeStamp,
