@@ -34,6 +34,7 @@ class App extends Component {
 
   config = {
     pages: [
+      'pages/vip/vip',
       'pages/index/index',
       'pages/record/record',
       'pages/frame/frame',
