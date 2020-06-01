@@ -1,15 +1,15 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__39}}">
+    <at-float-layout compid="{{$compid__46}}">
         <view class="searchBar">
-            <at-icon compid="{{$compid__40}}"></at-icon>
+            <at-icon compid="{{$compid__47}}"></at-icon>
             <view class="searchInput">
-                <at-input compid="{{$compid__41}}"></at-input>
+                <at-input compid="{{$compid__48}}"></at-input>
             </view>
         </view>
         <scroll-view class="countryList" scroll-y="{{true}}">
-            <view wx:key="countryCode" class="{{'countryList-item ' + (currentCountry.countryCode === country.$original.countryCode && 'active')}}" bindtap="anonymousFunc1" wx:for="{{loopArray9}}" wx:for-item="country" wx:for-index="__index1" data-e-tap-so="this" data-e-tap-a-a="{{country._$indexKey}}">
+            <view wx:key="countryCode" class="{{'countryList-item ' + (currentCountry.countryCode === country.$original.countryCode && 'active')}}" bindtap="anonymousFunc1" wx:for="{{loopArray8}}" wx:for-item="country" wx:for-index="__index1" data-e-tap-so="this" data-e-tap-a-a="{{country._$indexKey}}">
                 <view class="view-image">
-                    <image class="image" mode="widthFix" lazy-load="{{true}}" src="{{'https://oss.globalcharge.cn/sit/wechat/' + 'countryFlags/' + country.$original.ename + '.svg'}}"></image>
+                    <image class="image" mode="widthFix" lazy-load="{{true}}" src="{{'https://oss.globalcharge.cn/prod/wechat/' + 'countryFlags/' + country.$original.ename + '.svg'}}"></image>
                 </view>
                 <view class="areaNumber">+{{country.$original.areaNumber}}</view>
                 <view class="countryName">{{country.$original.cname}}</view>

@@ -180,7 +180,7 @@ export default function InputBar ({ setRequestProductData, setInitTips, setProdu
 
   useEffect(() => {
     getPageData()
-    getUsedPhoneList()
+    // getUsedPhoneList()
   }, [])
 
   return (

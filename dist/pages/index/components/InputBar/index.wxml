@@ -2,7 +2,7 @@
     <view class="InputBar">
         <view class="InputBar-top">
             <view class="view-image">
-                <image class="image" bindtap="anonymousFunc0" mode="widthFix" src="{{'https://oss.globalcharge.cn/sit/wechat/' + 'countryFlags/' + (state.currentCountry.ename || 'China') + '.svg'}}"></image>
+                <image class="image" bindtap="anonymousFunc0" mode="widthFix" src="{{'https://oss.globalcharge.cn/prod/wechat/' + 'countryFlags/' + (state.currentCountry.ename || 'China') + '.svg'}}"></image>
             </view>
             <view class="phoneInputBar">
                 <view class="areaNumber">+{{state.currentCountry.areaNumber}}</view>

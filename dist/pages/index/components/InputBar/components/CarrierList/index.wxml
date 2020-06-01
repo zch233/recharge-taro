@@ -1,13 +1,13 @@
 <block wx:if="{{$taroCompReady}}">
-    <at-float-layout compid="{{$compid__43}}">
+    <at-float-layout compid="{{$compid__53}}">
         <view class="carrierList">
-            <view wx:key="carrierName" class="carrierList-item" bindtap="anonymousFunc0" wx:for="{{loopArray10}}" wx:for-item="carrier" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{carrier._$indexKey}}">
+            <view wx:key="carrierName" class="carrierList-item" bindtap="anonymousFunc0" wx:for="{{loopArray11}}" wx:for-item="carrier" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{carrier._$indexKey}}">
                 <view class="view-image">
                     <image class="image" mode="widthFix" src="{{carrier.$original.carrierImgUrl + '?x-oss-process=image/resize,w_100'}}"></image>
                 </view>
                 <view class="name">{{carrier.$original.carrierName}}</view>
                 <view class="{{'check ' + (carrier.$original.carrierName === currentCarrier.carrierName && 'selected')}}">
-                    <at-icon compid="{{carrier.$compid__42}}"></at-icon>
+                    <at-icon compid="{{carrier.$compid__52}}"></at-icon>
                 </view>
             </view>
         </view>
