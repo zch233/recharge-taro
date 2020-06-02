@@ -1,1 +1,0 @@
-{"component":true,"usingComponents":{"at-tabs":"../../../../npm/taro-ui/dist/weapp/components/tabs/index","product-tab":"./components/ProductTab/index","at-tabs-pane":"../../../../npm/taro-ui/dist/weapp/components/tabs-pane/index","product-empty":"./components/ProductTab/ProductEmpty","order":"./components/Order/index","wait-order":"./components/WaitOrder/index"}}

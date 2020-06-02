@@ -1,5 +1,0 @@
-<block wx:if="{{$taroCompReady}}">
-    <view>
-        <web-view src="{{'https://shopping.kqlink.com/global-charge-wechat' + '/user/share-poster-mini?userkey=' + userKey}}"></web-view>
-    </view>
-</block>

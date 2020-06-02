@@ -1,1 +1,0 @@
-.waitOrder-content-item{margin-bottom:24rpx;display:flex}.waitOrder-content-item .discount{color:#ff9a22}.waitOrder-content-item .payPrice{color:#ff3c3c}.waitOrder-content-item .label{color:#adadad;font-size:26rpx;width:8em}.waitOrder-content-item:last-child{margin-bottom:0}
