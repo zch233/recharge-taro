@@ -1,4 +1,4 @@
-import Taro, { useState } from '@tarojs/taro'
+import Taro, { useState, useShareAppMessage } from '@tarojs/taro'
 import { View, Navigator, Button } from '@tarojs/components'
 import './index.scss'
 import OverHeader from './components/OverHeader/index'
@@ -11,6 +11,14 @@ export default function Index ()  {
   const [initTips, setInitTips] = useState('请选择国家输入号码')
   const [productDisabled, setProductDisabled] = useState(false)
   const [balanceQuery, setBalanceQuery] = useState('')
+
+  useShareAppMessage(() => {
+    return {
+      title: '充值就上游全球',
+      path: 'pages/index/index',
+      imageUrl: require('@/static/poster.png'),
+    }
+  })
 
   return (
     <View>

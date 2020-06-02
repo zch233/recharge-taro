@@ -1,4 +1,4 @@
-import Taro, { useState, useEffect, usePullDownRefresh, useReachBottom, useRef } from '@tarojs/taro'
+import Taro, { useState, useEffect, usePullDownRefresh, useReachBottom, useRef, useShareAppMessage } from '@tarojs/taro'
 import { View, Picker, Text } from '@tarojs/components'
 import './index.scss'
 import * as api from './api'
@@ -87,6 +87,14 @@ export default function Record ()  {
     getOrderList()
     MTA.Event.stat("10003", {});
   }, [])
+  useShareAppMessage(() => {
+    return {
+      title: '充值就上游全球',
+      path: 'pages/index/index',
+      imageUrl: require('@/static/poster.png'),
+    }
+  })
+
   return (
     <View className='order'>
       <View className='orderList'>

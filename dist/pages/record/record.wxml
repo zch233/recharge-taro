@@ -1,7 +1,7 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="order">
         <view class="orderList">
-            <view wx:key="yqqNo" class="orderList-item" wx:for="{{loopArray7}}" wx:for-item="order" wx:for-index="__index0">
+            <view wx:key="yqqNo" class="orderList-item" wx:for="{{loopArray21}}" wx:for-item="order" wx:for-index="__index0">
                 <view class="itemInfo">
                     <view class="view-image">
                         <image class="image" mode="widthFix" src="{{order.$original.type === 'HF' ? HFIcon : LLIcon}}"></image>

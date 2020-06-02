@@ -1,1 +1,85 @@
-.view-image .image{width:100%;height:106rpx}.InputBar{box-shadow:0 0 12rpx 3rpx rgba(0,0,0,.05);background-color:#fff;margin:0 auto;width:96%}.InputBar-top{display:flex;align-items:center;position:relative;padding:36rpx 24rpx 0;z-index:3;background-color:#fff}.InputBar-top .view-image{width:106rpx}.InputBar-top .phoneInputBar{flex:1;margin-left:14rpx;display:flex;align-items:center;border-bottom:1PX solid #dbdbdb;margin-top:-9rpx}.InputBar-top .phoneInputBar .areaNumber{color:#999;font-size:36rpx;font-weight:700;line-height:1}.InputBar-top .phoneInputBar .phoneInput{flex:1}.InputBar .phoneInputBg{opacity:.8;position:fixed;left:0;top:0;bottom:0;right:0;transition:all .3s;display:none;width:100%;height:100%;zoom:1;background-color:#000;z-index:2}.InputBar .phoneInputBg.active{display:block}.InputBar-bottom{display:flex;align-items:center;color:#25a8f5;font-size:24rpx;padding:0 20rpx 36rpx}.InputBar-bottom .countryName{width:106rpx;text-align:center}.InputBar-bottom .countryName.long{width:auto;max-width:200rpx;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}.InputBar-bottom .carrierName{margin-left:14rpx;display:flex;align-items:center}.InputBar-bottom .carrierName .carrier{margin-right:.4em}
+.view-image .image {
+  width: 100%;
+  height: 106rpx;
+}
+.InputBar {
+  box-shadow: 0 0 12rpx 3rpx rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  margin: 0 auto;
+  width: 96%;
+}
+.InputBar-top {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 36rpx 24rpx;
+  padding-bottom: 0;
+  z-index: 3;
+  background-color: #fff;
+}
+.InputBar-top .view-image {
+  width: 106rpx;
+}
+.InputBar-top .phoneInputBar {
+  flex: 1;
+  margin-left: 14rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1PX solid #DBDBDB;
+  margin-top: -9rpx;
+}
+.InputBar-top .phoneInputBar .areaNumber {
+  color: #999999;
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 1;
+}
+.InputBar-top .phoneInputBar .phoneInput {
+  flex: 1;
+}
+.InputBar .phoneInputBg {
+  opacity: 0.8;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: all .3s;
+  display: none;
+  width: 100%;
+  height: 100%;
+  zoom: 1;
+  background-color: #000;
+  z-index: 2;
+}
+.InputBar .phoneInputBg.active {
+  display: block;
+}
+.InputBar-bottom {
+  display: flex;
+  align-items: center;
+  color: #25A8F5;
+  font-size: 24rpx;
+  padding: 36rpx 20rpx;
+  padding-top: 0;
+}
+.InputBar-bottom .countryName {
+  width: 106rpx;
+  text-align: center;
+}
+.InputBar-bottom .countryName.long {
+  width: auto;
+  max-width: 200rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.InputBar-bottom .carrierName {
+  margin-left: 14rpx;
+  display: flex;
+  align-items: center;
+}
+.InputBar-bottom .carrierName .carrier {
+  margin-right: .4em;
+}
