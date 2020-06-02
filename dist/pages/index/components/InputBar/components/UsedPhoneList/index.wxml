@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="{{'phoneList ' + (visible && usedPhoneList.length && 'active')}}">
-        <view wx:key="msisdn" class="phoneList-item" bindtap="anonymousFunc0" wx:for="{{loopArray9}}" wx:for-item="phone" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{phone._$indexKey}}">
+        <view wx:key="msisdn" class="phoneList-item" bindtap="anonymousFunc0" wx:for="{{loopArray10}}" wx:for-item="phone" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{phone._$indexKey}}">
             <view class="areaNumber">{{phone.$original.areaNumber}}</view><text class="phone">{{phone.$original.msisdn}}</text><text class="name">{{phone.$original.cname}}（{{phone.$original.carrierName}}）</text>
         </view>
     </view>

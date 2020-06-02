@@ -30,7 +30,7 @@ export default function (url, data, method='POST') {
         if (result.code !== '00') {
           if (error[result.code]) {
             if (result.code === 'JU402') {
-              getGlobalData('requestList') && getGlobalData('requestList').map(v => v.abort()) // 可能会有取消不掉的情况
+              getGlobalData('requestList') && getGlobalData('requestList').map(v => v.abort()) // 可能会有取消不掉的情况，目前我没想出完美解决方案，遇到请自自行解决一下。
               wechat.login()
             } else {
               Taro.showToast({ title: error[result.code].message, icon: 'none', duration: 2000, mask: true }).then(() => {
@@ -40,9 +40,17 @@ export default function (url, data, method='POST') {
             return
           }
           if (result.message) {
-            Taro.showToast({ title: result.message, icon: 'none', duration: 2000, mask: true })
+            Taro.showModal({
+              title: '提示',
+              showCancel: false,
+              content: result.message,
+            })
           } else {
-            Taro.showToast({ title: '网络异常', icon: 'none', duration: 2000, mask: true })
+            Taro.showModal({
+              title: '提示',
+              showCancel: false,
+              content: '网络异常',
+            })
           }
           throw Error(result.message)
         } else {

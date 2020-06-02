@@ -38,19 +38,17 @@ const checkPhoneNumber = phone => {
   if (!phone) {
     return false
   } else if (!/\d{8}/.test(phone)) {
-    Taro.showToast({
-      title: '号码不能小于8位',
-      icon: 'none',
-      mask: true,
-      duration: 2000,
+    Taro.showModal({
+      title: '提示',
+      showCancel: false,
+      content: '号码不能小于8位',
     })
     return false
   } else if (/\d{16,}/.test(phone)) {
-    Taro.showToast({
-      title: '号码不能大于15位',
-      icon: 'none',
-      mask: true,
-      duration: 2000,
+    Taro.showModal({
+      title: '提示',
+      showCancel: false,
+      content: '号码不能大于15位',
     })
     return false
   } else {
